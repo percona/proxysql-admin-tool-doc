@@ -1,0 +1,4 @@
+
+|proxysql-admin| has not changed since the previous release.
+
+

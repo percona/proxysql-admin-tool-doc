@@ -1,0 +1,16 @@
+
+ONLINE
+   Backend node is fully operational.
+SHUNNED
+   backend node is temporarily taken out of use, because either too many
+   connection errors hapenned in a short time, or replication lag exceeded the
+   allowed threshold.
+OFFLINE_SOFT
+   New incoming connections aren't accepted, while existing connections are kept
+   until they become inactive. In other words, connections are kept in use until
+   the current transaction is completed.  This allows to gracefully detach a
+   backend node.
+OFFLINE_HARD
+   Existing connections are dropped, and new incoming connections aren't
+   accepted.  This is equivalent to deleting the node from a hostgroup, or
+   temporarily taking it out of the hostgroup for maintenance.

@@ -1,0 +1,19 @@
+.. list-table::
+   :header-rows: 1
+
+   * - Node
+     - Host name
+     - IP address
+   * - Node 1
+     - pxc1
+     - 192.168.70.61
+   * - Node 2
+     - pxc2
+     - 192.168.70.62
+   * - Node 3
+     - pxc3
+     - 192.168.70.63
+   * - Node 4
+     - proxysql
+     - 192.168.70.64       
+
