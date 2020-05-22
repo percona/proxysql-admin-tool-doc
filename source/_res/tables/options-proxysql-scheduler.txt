@@ -1,0 +1,38 @@
+
+.. list-table::
+   :widths: 15 20 25 40
+   :header-rows: 1
+
+   * - Option
+     - Name
+     - Required
+     - Description
+   * - ``--config-file``
+     - Configuration File
+     - Yes
+     - Specify ``proxysql-admin`` configuration file.
+   * - ``--write-hg``
+     - ``HOSTGROUP WRITERS``
+     - No
+     - Specify ProxySQL write hostgroup.
+   * - ``--read-hg``
+     - ``HOSTGROUP READERS``
+     - No
+     - Specify ProxySQL read hostgroup.
+   * - ``--writer-count``
+     - ``NUMBER WRITERS``
+     - No
+     - Specify write nodes count. ``0`` for ``loadbal`` mode and ``1`` for
+       ``singlewrite`` mode.
+   * - ``--mode``
+     - ``MODE``
+     - No
+     - Specify ProxySQL read/write configuration mode.
+   * - ``--priority``
+     - ``WRITER PRIORITY``
+     - No
+     - Specify write nodes priority.
+   * - ``--log``
+     - ``LOG FILE``
+     - No
+     - Specify ``proxysql_galera_checker`` log file.

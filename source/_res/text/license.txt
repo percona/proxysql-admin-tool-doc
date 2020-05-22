@@ -1,0 +1,3 @@
+
+|proxysql| is available under |license|.
+

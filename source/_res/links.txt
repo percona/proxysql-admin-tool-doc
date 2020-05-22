@@ -1,0 +1,16 @@
+.. _Galera: https://github.com/percona/galera
+.. _MariaDB: https://www.mariadb.com/
+.. _MySQL: https://www.mysql.com/
+.. _PS: https://www.percona.com/software/mysql-database/percona-server
+.. _PXB: https://www.percona.com/software/mysql-database/percona-xtrabackup
+.. _PXC: https://www.percona.com/software/mysql-database/percona-xtradb-cluster
+.. _ProxySQL global variables: https://github.com/sysown/proxysql/blob/master/doc/global_variables.md
+.. _ProxySQL scheduler: https://github.com/sysown/proxysql/blob/master/doc/scheduler.md
+.. _ProxySQL: http://www.proxysql.com/
+.. _ProxySQL downloads site: https://www.percona.com/downloads/proxysql/
+.. _pxc_maint_mode variable: https://www.percona.com/doc/percona-xtradb-cluster/LATEST/wsrep-system-index.html#pxc_maint_mode
+.. _pxc_maint_transition_period variable:  https://www.percona.com/doc/percona-xtradb-cluster/LATEST/wsrep-system-index.html#pxc_maint_transition_period
+.. _Percona repository: https://www.percona.com/software/percona-software-repositories-for-mysql
+.. _Percona download page for ProxySQL: https://percona.com/downloads/proxysql
+.. _download the original ProxySQL from GitHub: https://github.com/sysown/proxysql/releases
+.. _ProxySQL documentation in the wiki format: https://github.com/sysown/proxysql/wiki

@@ -1,0 +1,3 @@
+
+:Date: |date|
+:Installation: |url.proxysql-install-v2|
