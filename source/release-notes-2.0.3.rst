@@ -34,7 +34,7 @@ have been removed.
   meaning. If the cluster has not been enabled, then |opt.enable| is run.  If the
   cluster has already been enabled, then |opt.update-cluster| is run.
 - New command |opt.is-enabled| to see if a cluster has been enabled. This command
-  checks for the existence of a row in the |table.mysql_galera_hostgroups| table.
+  checks for the existence of a row in the |table.mysql-galera-hostgroups| table.
   |opt.writer-hg| may be used to specify the writer hostgroup used to
   search the |table.mysql-galera-hostgroups| table.
 - New command |opt.status| to display galera hostgroup information. This command
@@ -65,7 +65,7 @@ have been removed.
      only backup-writers can act as readers.
      
 - The commands |opt.syncusers|, |opt.sync-multi-cluster-users|, |opt.adduser|,
-  and |opt.disable can now use the |opt.writer-hg| option.
+  and |opt.disable| can now use the |opt.writer-hg| option.
 - The command |opt.disable| removes all users associated with the galera cluster
   hostgroups. Previously, this command only removed the users with the
   |const.cluster-app-username|.
@@ -81,7 +81,7 @@ have been removed.
   node is supported at this time.
 - Since the |command.proxysql-galera-checker| and
   |command.proxysql-node-monitor| scripts are no longer run in
-  |command.proxysql-scheduler|, automatic cluster membership updates are not
+  |proxysql-scheduler|, automatic cluster membership updates are not
   supported.
 - Checking the |opt.pxc-maint-mode| variable is no longer supported
 - Using desynced nodes if no other nodes are available is no longer supported.
@@ -89,9 +89,9 @@ have been removed.
 
 .. rubric:: Limitations
 
-- With |opt.writers-as-readers|=backup read-only nodes are not allowed. This a
+- With |opt.writers-as-readers| set to *backup*, read-only nodes are not allowed. This a
   limitation of |proxysql| 2.0.  Note that *backup* is the default value
-  of |opt.writers-as-readers| when |opt.mode|=singlewrite
+  of |opt.writers-as-readers| when |opt.mode| equals to *singlewrite*
 
 .. include:: _res/text/license.txt
 

@@ -9,7 +9,7 @@
 .. rubric:: Usability improvement
 
 - :jira:`PSQLADM-84`: Now |command.proxysql-status| tool dumps `host_priority`
-  and |file.proxysql-admin.cnf|. Also output format was changed.
+  and |file.proxysql-admin-cnf|. Also output format was changed.
 
 .. rubric:: Other improvements and bug fixes
 

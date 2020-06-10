@@ -10,12 +10,12 @@
 
 - :jira:`PSQLADM-32`: Now, |command.proxysql-admin| script can configure
   multiple clusters in |proxysql|, when there are unique cluster names specified
-  by the wsrep_cluster_name option, and the |file.proxysql_admin-cnf|
+  by the wsrep_cluster_name option, and the |file.proxysql-admin-cnf|
   configuration contains different |proxysql| READ/WRITE hostgroup and different
   application user for each cluster. Currently multiple clusters support is not
   compatible with host priority feature, which works only with a single cluster.
 - :jira:`81`: The new version substantially increases the number of test cases
-  in the |proxysql-adm| test-suite.
+  in the |proxysql-admin| test-suite.
 
 .. rubric:: Bug fixes
 
