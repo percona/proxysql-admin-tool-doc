@@ -62,9 +62,9 @@ html_static_path = ['_static']
 
 target_name = ''.join(product.split())
 latex_documents = [('index',              # source start file
-                    f'{target_name}.tex', # target_name
-                    f'{project}',         # title
-                    f'{author}',          # author
+                    '{}.tex'.format(target_name), # target_name
+                    '{}'.format(project),         # title
+                    '{}'.format(author),          # author
                     'manual')             # documentclass [howto/manual]
 ]
 
