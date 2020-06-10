@@ -66,7 +66,7 @@ The |command.proxysql-admin| tool has been enhanced to support the following new
 .. include:: _res/text/license.txt
 
 .. |date| replace:: October 23, 2019
-.. |release| replace:: 2.0.7
+.. |release| replace:: 2.0.5
 
 .. include:: _res/replace.txt
 .. include:: _res/links.txt
