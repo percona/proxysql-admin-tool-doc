@@ -278,7 +278,7 @@ The following example shows how you can load the script for default
 
 This scheduler script accepts the following options in the ``arg1`` argument:
 
-.. include:: _res/tables/options.proxysql-scheduler.txt
+.. include:: _res/tables/options-proxysql-scheduler.txt
 
 .. note:: Specify cluster name in `comment` column.
 

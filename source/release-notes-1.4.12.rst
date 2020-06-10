@@ -20,7 +20,7 @@
 - :jira:`PSQLADM-110`: In some cases, pattern cluster hostname did not work
   with |command.proxysql-admin|.
 - :jira:`PSQLADM-104`: |command.proxysql-admin| testsuite bug fixes.
-- :jira:`PSQLADM-113`: |file.proxysql-galera-checker| assumed that parameters
+- :jira:`PSQLADM-113`: |command.proxysql-galera-checker| assumed that parameters
   were given in the long format.
 - :jira:`PSQLADM-114`: In some cases, |proxysql| could not be started
 - :jira:`PSQLADM-115`: |command.proxysql-node-monitor| could fail with more

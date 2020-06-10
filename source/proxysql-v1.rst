@@ -13,8 +13,9 @@ It requires custom bash scripts to keep track of |pxc| status:
 Installing |proxysql-v1|
 ================================================================================
 
-If that is what you used to :ref:`install PXC <install>` or any other |percona|
-software, run the corresponding command:
+If that is what you used to `install PXC
+<https://www.percona.com/doc/percona-xtradb-cluster/5.7/install/index.html>`_ or
+any other |percona| software, run the corresponding command:
 
 * On Debian or Ubuntu:
 

@@ -26,7 +26,7 @@ The |command.proxysql-admin| tool now supports |mariadb| 10.4.
   used the cat command to display a file without checking if the file existed
   and was readable.
 - :jira:`PSQLADM-181`: When run with |opt.update-cluster|
-  |opt.write-node|=<node_name>, |command.proxysql-admin| now verifies that the
+  |opt.write-node| set to `<node_name>`, |command.proxysql-admin| now verifies that the
   writer nodes are not read-only.
 
 .. include:: _res/text/license.txt

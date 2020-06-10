@@ -97,8 +97,9 @@ Limitations
 Installing ProxySQL v2
 ================================================================================
 
-If that is what you used to :ref:`install PXC <install>` or any other Percona
-software, run the corresponding command:
+If that is what you used to `install PXC
+<https://www.percona.com/doc/percona-xtradb-cluster/5.7/install/index.html>`_
+or any other Percona software, run the corresponding command:
 
 * Installing on Debian or Ubuntu:
 
@@ -415,7 +416,7 @@ ProxySQL:
       5 rows in set (0.00 sec)
 
 
-.. code-block:: mysql
+.. code-block:: guess
 
    mysql> select * from mysql_galera_hostgroups\G
 

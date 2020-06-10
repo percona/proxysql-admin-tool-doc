@@ -25,12 +25,12 @@ license = p_info.license
 version = p_info.version
 release = p_info.release
 copyright = p_info.copyright
-rst_prolog = f"""
-.. |copyright| replace:: {copyright}
-.. |product| replace:: {product}
-.. |version| replace:: {version}
-.. |license| replace:: {license}
-"""
+rst_prolog = """
+.. |copyright| replace:: {}
+.. |product| replace:: {}
+.. |version| replace:: {}
+.. |license| replace:: {}
+""".format(copyright, product, version, license)
 
 # -- General configuration -----------------------------------------------------
 
