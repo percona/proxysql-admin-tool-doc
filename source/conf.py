@@ -53,8 +53,8 @@ extlinks = {
 
 # -- Options for HTML output ---------------------------------------------------
 
-#html_theme = 'percona-theme'
-#html_theme_path = ['.', './percona-theme']
+html_theme = 'percona-theme'
+html_theme_path = ['.', './percona-theme']
 html_title = project
 html_static_path = ['_static']
 
