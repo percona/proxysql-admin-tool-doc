@@ -1,4 +1,4 @@
-.. _pxc.proxysql.v2:
+.. _proxysql-v2:
 
 ================================================================================
 The |proxysql-admin| Tool with ProxySQL v2
@@ -94,6 +94,8 @@ Limitations
   limitation of ProxySQL 2.0.  Note that backup is the default value of
   ``--writers-as-readers`` when ``--mode=singlewrite``
 
+.. _proxysql-v2.installing:
+
 Installing ProxySQL v2
 ================================================================================
 
@@ -101,20 +103,18 @@ If that is what you used to `install PXC
 <https://www.percona.com/doc/percona-xtradb-cluster/5.7/install/index.html>`_
 or any other Percona software, run the corresponding command:
 
-* Installing on Debian or Ubuntu:
+Installing on Debian or Ubuntu:
+   .. code-block:: bash
 
-.. code-block:: bash
+      $ sudo apt-get install proxysql2
 
-   $ sudo apt-get install proxysql2
+Installing on Red Hat Enterprise Linux or CentOS:
 
-* Installing on Red Hat Enterprise Linux or CentOS:
+   .. code-block:: bash
 
-.. code-block:: bash
+      $ sudo yum install proxysql2
 
-   $ sudo yum install proxysql2
-
-Alternatively, you can download the packages from
-https://www.percona.com/downloads/proxysql2/.
+.. seealso:: :ref:`proxysql-admin-interface.installing-tarball`
 
 To start ProxySQL, run the following command:
 
