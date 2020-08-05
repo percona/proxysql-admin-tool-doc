@@ -8,6 +8,10 @@
 .. _ProxySQL scheduler: https://github.com/sysown/proxysql/blob/master/doc/scheduler.md
 .. _ProxySQL: http://www.proxysql.com/
 .. _ProxySQL downloads site: https://www.percona.com/downloads/proxysql/
+.. _ProxySQL v1 downloads site: https://www.percona.com/downloads/proxysql/
+.. _ProxySQL v2 downloads site: https://www.percona.com/downloads/proxysql2/
+.. _ProxySQL v1 downloads page: https://www.percona.com/downloads/proxysql/
+.. _ProxySQL v2 downloads page: https://www.percona.com/downloads/proxysql2/
 .. _pxc_maint_mode variable: https://www.percona.com/doc/percona-xtradb-cluster/LATEST/wsrep-system-index.html#pxc_maint_mode
 .. _pxc_maint_transition_period variable:  https://www.percona.com/doc/percona-xtradb-cluster/LATEST/wsrep-system-index.html#pxc_maint_transition_period
 .. _Percona repository: https://www.percona.com/software/percona-software-repositories-for-mysql

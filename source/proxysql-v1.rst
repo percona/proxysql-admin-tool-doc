@@ -10,6 +10,8 @@ It requires custom bash scripts to keep track of |pxc| status:
 .. contents::
    :local:
 
+.. _proxysql-v1.installing:
+
 Installing |proxysql-v1|
 ================================================================================
 
@@ -17,19 +19,17 @@ If that is what you used to `install PXC
 <https://www.percona.com/doc/percona-xtradb-cluster/5.7/install/index.html>`_ or
 any other |percona| software, run the corresponding command:
 
-* On Debian or Ubuntu:
+On Debian or Ubuntu:
+   .. code-block:: bash
 
-.. code-block:: bash
+      $ sudo apt-get install proxysql
 
-   $ sudo apt-get install proxysql
+On Red Hat Enterprise Linux or CentOS:
+   .. code-block:: bash
 
-* On Red Hat Enterprise Linux or CentOS:
+      $ sudo yum install proxysql
 
-.. code-block:: bash
-
-   $ sudo yum install proxysql
-
-Alternatively, you can download packages from the `ProxySQL downloads site`_.
+.. seealso:: :ref:`proxysql-admin-interface.installing-tarball`
 
 To start |proxysql|, run the following command:
 
