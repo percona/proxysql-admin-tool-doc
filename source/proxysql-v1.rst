@@ -39,12 +39,11 @@ To start |proxysql|, run the following command:
 
 .. _default-credentials:
 
-.. warning:: **Do not run |proxysql| with default credentials in production.**
+.. warning:: **Do not run ProxySQL with default credentials in production.**
 
-   Before starting the |command.proxysql| service,
-   you can change the defaults in |file.proxysql-cnf|
-   by changing the ``admin_credentials`` variable.
-   For more information, see `ProxySQL global variables`_.
+   Before starting the |command.proxysql| service, you can change the defaults
+   in |file.proxysql-cnf| by changing the ``admin_credentials`` variable.  For
+   more information, see `ProxySQL global variables`_.
 
 Automatic Configuration
 =======================
