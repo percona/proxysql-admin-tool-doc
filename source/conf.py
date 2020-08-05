@@ -48,7 +48,8 @@ exclude_patterns = []
 #primary_domain = 'psdom'
 
 extlinks = {
-    'jira': ('https://jira.percona.com/browse/%s', '')
+    'jira': ('https://jira.percona.com/browse/%s', ''),
+    'jirabug': ('https://jira.percona.com/browse/%s', '')
 }
 
 # -- Options for HTML output ---------------------------------------------------
