@@ -9,8 +9,7 @@
 
 https://github.com/sysown/proxysql/releases/tag/v2.0.13
 
-Bugs Fixed
-================================================================================
+.. rubric:: Bugs Fixed
 
 * :jira:`PSQLADM-209`: No installation documentation for ProxySQL tarball packages
 * :jira:`PSQLADM-254`: proxysql-admin script did not print write node info from runtime_mysql_servers table when using singlewrite mode
