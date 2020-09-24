@@ -5,17 +5,22 @@
 Installing from a tarball
 ================================================================================
 
-Installing |proxysql| from a tarball is an alterative method if recommended
-approaches, using apt or yum package managers, are not applicable in your
+Installing |proxysql| from a tarball is an alternative method if the recommended
+approaches, using either apt or yum package managers are not applicable in your
 environment. With this method, you download a |tar-file| file from the `ProxySQL
 v1 downloads page`_ or from `ProxySQL v2 downloads page`_ and then install to a
 custom directory.
 
 1. Visit one of the downloads pages, select **Linux - Generic** in the
    *Software* field and download the package appropriate for your platform.
-
-#. Extract the files from the archive and change to the directory that contains
-   the extracted files:
+   
+   .. note::
+   
+       As of ProxySQL 2.0.14 and later, the multiple tarball files are
+       combined into one file.
+                
+#. For versions 2.0.13 or lower, extract the files from the archive and change to the directory that contains
+   the extracted files (for version 2.0.14 and higher, review the note):
 
    .. code-block:: bash
       
@@ -23,7 +28,16 @@ custom directory.
       $ tar xzf proxysql-VERSION-Linux-PLATFORM-ARCHITECTURE.tar.gz
       $ # Change to the directory that contains the extracted files
       $ cd proxysql-VERSION-Linux-PLATFORM-ARCHITECTURE
-   
+      
+  .. note::
+  
+       For version 2.0.14 and higher, the step is the same except the extraction
+       command is:
+       
+       .. code-block:: bash
+       
+           tar xzf proxysql-2.0.XX-Linux-x86_64.glibc2.12.tar.gz
+       
 #. Create a directory to store |proxysql| data:
 
    .. code-block:: bash
