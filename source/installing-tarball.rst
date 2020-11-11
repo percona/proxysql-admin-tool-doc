@@ -16,9 +16,23 @@ custom directory.
    
    .. note::
    
-       As of ProxySQL 2.0.14 and later, the multiple tarball files are
-       combined into one file.
-                
+       As of ProxySQL 2.0.15 and later, the multiple tarball files are
+       combined into the following files:
+
+       .. tabularcolumns:: |p{5cm}|p{11cm}|
+       
+       .. list-table::
+          :header-rows: 1
+
+          * - Name
+            - Description
+          * - proxysql-<version>-Linux-x86_64.glibc2.12.tar.gz
+            - For every supported operating system but ``xenial``
+          * - proxysql-<version>-Linux-x86_64.glibc2.23.xenial.tar.gz
+            - For Ubuntu 16.04 ``xenial`` only
+
+              The password-based file encryption requires OpenSSL 1.1.1, but Ubuntu 16.04 does not support this OpenSSL version. A special statically linked OpenSSL 1.1.1 binary is packaged with the executable. This packaged binary avoids conflicts with the system OpenSSL and any shared libraries. Each new release rebuilds the binary.
+                          
 #. For versions 2.0.13 or lower, extract the files from the archive and change to the directory that contains
    the extracted files (for version 2.0.14 and higher, review the note):
 
