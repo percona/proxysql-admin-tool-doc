@@ -19,16 +19,18 @@ custom directory.
        As of ProxySQL 2.0.15 and later, the multiple tarball files are
        combined into the following files:
 
-       .. tabularcolumns:: |p{5cm}|p{11cm}|
+         .. tabularcolumns:: |p{5cm}|p{11cm}|
        
        .. list-table::
           :header-rows: 1
 
           * - Name
             - Description
-          * - proxysql-<version>-Linux-x86_64.glibc2.12.tar.gz
+          * - proxysql-2.0.XX-Linux-x86_64.glibc2.12.tar.gz
             - For every supported operating system but ``xenial``
-          * - proxysql-<version>-Linux-x86_64.glibc2.23.xenial.tar.gz
+
+              For CentOS 7, install OpenSSL 1.1.1, if needed. 
+          * - proxysql-2.0.XX-Linux-x86_64.glibc2.23.xenial.tar.gz
             - For Ubuntu 16.04 ``xenial`` only
 
               The password-based file encryption requires OpenSSL 1.1.1, but Ubuntu 16.04 does not support this OpenSSL version. A special statically linked OpenSSL 1.1.1 binary is packaged with the executable. This packaged binary avoids conflicts with the system OpenSSL and any shared libraries. Each new release rebuilds the binary.
@@ -39,7 +41,7 @@ custom directory.
    .. code-block:: bash
       
       $ # Extract the files (assuming you have changed to the download destination directory)
-      $ tar xzf proxysql-VERSION-Linux-PLATFORM-ARCHITECTURE.tar.gz
+      $ tar xzf proxysql-VERSION-Linux-PLATFORM-ARCHITECTURE*.tar.gz
       $ # Change to the directory that contains the extracted files
       $ cd proxysql-VERSION-Linux-PLATFORM-ARCHITECTURE
       
@@ -50,7 +52,7 @@ custom directory.
        
        .. code-block:: bash
        
-           tar xzf proxysql-2.0.XX-Linux-x86_64.glibc2.12.tar.gz
+           tar xzf proxysql-2.0.XX-<PLATFORM-ARCHITECTURE*>.tar.gz
        
 #. Create a directory to store |proxysql| data:
 
