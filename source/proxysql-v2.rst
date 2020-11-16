@@ -114,7 +114,7 @@ Installing on Red Hat Enterprise Linux or CentOS:
 
       $ sudo yum install proxysql2
 
-.. seealso:: :ref:`proxysql-admin-interface.installing-tarball`
+.. seealso:: :ref:`Installing from tarball <proxysql-admin-interface.installing-tarball>`
 
 To start ProxySQL, run the following command:
 
