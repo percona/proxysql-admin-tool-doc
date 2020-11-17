@@ -4,7 +4,7 @@
 ================================================================================
 
 .. include:: _res/text/release-notes/attr-v2.txt
-.. include:: _res/text/release-notes/description.txt
+.. include:: _res/text/release-notes/description-v2.txt
 .. include:: _res/text/release-notes/upstream.txt
 
 The |command.proxysql-admin| tool now supports |mariadb| 10.4.

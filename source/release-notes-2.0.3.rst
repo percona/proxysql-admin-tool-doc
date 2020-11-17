@@ -4,7 +4,7 @@
 ================================================================================
 
 .. include:: _res/text/release-notes/attr-v2.txt
-.. include:: _res/text/release-notes/description.txt
+.. include:: _res/text/release-notes/description-v2.txt
 
 With |proxysql| |release|, |proxysql-admin| now uses the native
 |proxysql| support for |pxc| and does not require custom bash scripts
