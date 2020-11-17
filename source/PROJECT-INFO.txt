@@ -1,5 +1,5 @@
 Product:   ProxySQL Admin
-Version:   2.0.14
+Version:   2.0.15
 Author:    Percona LLC and/or its affiliates 2009-2020
 Copyright: 2020, Percona LLC and/or its affiliates 2009-2020
 License: Open Source license GPLv3

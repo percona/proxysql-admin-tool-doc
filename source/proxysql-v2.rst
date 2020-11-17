@@ -25,7 +25,7 @@ Added Features
   reads. The default value is 100
 - New operation ``--update-cluster`` to update the cluster membership by adding
   server nodes as found. (Note that nodes are added but not removed).  The
-  ``--writer-hg`` option may be used to specify which galera hostgroup to
+  ``--writer-hg`` option may be used to specify which Galera hostgroup to
   update. The ``--remove-all-servers`` option instructs to remove all servers
   from the mysql_servers table before updating the cluster.
 - Hostgroups can be specified on the command-line: ``--writer-hg``,
@@ -409,7 +409,17 @@ The following is an example of the unencrypted data:
     cluster-app.user=cluster_one
     cluster-app.password=passw0rd
 
+The credential information is used in the following order:
+
+1. Command line
+
+#. Login-file
+
+#. ProxySQL admin configuration file
+
 .. rubric:: Creating the login file
+
+
 
 The following steps encrypt the login:
 
@@ -432,12 +442,18 @@ The following steps encrypt the login:
      # Method (1) : Encrypt this data with --password
      $ proxysql-login-file --in data.cnf --out login-file.cnf --password=${passwd}
 
-     # Method (2) : Encrypt the data with --password-file
+     # Method (2a) : Encrypt the data with --password-file
      #              Sending the password via the command-line is insecure,
      #              it's better to use --password-file so that the
      #              password doesn't show up in the command-line
      $ proxysql-login-file --in data.cnf --out login-file.cnf \
         --password-file=<(echo "${passwd}")
+
+     # Method (2b) : Running the command using sudo does not work with 
+                     bash's process substitution. In this case, send the
+                     password by stdin is another option
+     $ sudo echo "${passwd}" | proxysql-login-file --in data.cnf --out \
+       login-file.cnf --password-file=/dev/stdin
 
      # Method (3) : The script will prompt for the password
      #              if no password is provided via the command-line options.
