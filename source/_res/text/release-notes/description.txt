@@ -10,7 +10,7 @@ database. |proxysql-author| created |proxysql| for DBAs as a means of solving
 complex replication topology issues.
 
 The |proxysql| |release| source and binary packages available from the `Percona
-download page for ProxySQL`_ include |proxysql-admin| – a tool developed by
+download page for ProxySQL 2.0`_ include |proxysql-admin| – a tool developed by
 |percona| to configure |pxc| nodes into |proxysql|. |docker| images for release
 |release| are available as well. You can `download the original ProxySQL from
 GitHub`_. |github| offers the `ProxySQL documentation in the wiki format`_.
