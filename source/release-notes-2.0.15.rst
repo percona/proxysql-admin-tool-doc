@@ -5,7 +5,7 @@
 ================================================================================
 
 .. include:: _res/text/release-notes/attr-v2.txt
-.. include:: _res/text/release-notes/description.txt
+.. include:: _res/text/release-notes/description-v2.txt
 .. include:: _res/text/release-notes/upstream.txt
 
 https://github.com/sysown/proxysql/releases/tag/v2.0.15

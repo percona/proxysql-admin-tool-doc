@@ -4,7 +4,7 @@
 ================================================================================
 
 .. include:: _res/text/release-notes/attr-v2.txt
-.. include:: _res/text/release-notes/description.txt
+.. include:: _res/text/release-notes/description-v2.txt
 .. include:: _res/text/release-notes/upstream.txt
 
 The |command.proxysql-admin| tool has been enhanced to support the following new options and commands:
