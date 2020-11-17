@@ -58,6 +58,10 @@ html_theme = 'percona-theme'
 html_theme_path = ['.', './percona-theme']
 html_title = project
 html_static_path = ['_static']
+html_sidebars = {
+        '**': ['localtoc.html', 'sourcelink.html', 'edit.html', 'relations.html'],
+        'using/windows': ['windowssidebar.html'],
+}
 
 # -- Options for LaTeX output --------------------------------------------------
 
