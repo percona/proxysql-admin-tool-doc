@@ -3,9 +3,14 @@
 Release notes of |proxysql| and the |proxysql-admin| tool
 ********************************************************************************
 
-.. toctree::
-   :caption: Version 2.0
 
+   
+
+   
+.. toctree::
+   :caption: Version 2.x
+
+   release-notes-2.1.1
    release-notes-2.0.15
    release-notes-2.0.14
    release-notes-2.0.13

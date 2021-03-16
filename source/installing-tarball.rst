@@ -54,22 +54,22 @@ custom directory.
        
            tar xzf proxysql-2.0.XX-<PLATFORM-ARCHITECTURE*>.tar.gz
        
-#. Create a directory to store |proxysql| data:
+#. Create a directory to store the |proxysql| data:
 
    .. code-block:: bash
 
       $ mkdir /home/user/data
 	 
-#. Update the value of the |param.datadir| in the configuration file to point
+#. Update the value of the ``datadir`` in the configuration file to point
    to the data directory you have created.
 
    .. code-block:: text
 
       datadir="/home/user/data"
 
-#. Set other options as needed.
+#. Set the other options, as needed.
 
-Now, you can start |proxysql|. Use the |opt.c| option to pass the configuration
+Start |proxysql| with the ``-c`` option to pass the configuration
 file you have updated:
 
 .. code-block:: bash

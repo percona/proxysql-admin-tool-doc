@@ -17,5 +17,7 @@
 .. _Percona repository: https://www.percona.com/software/percona-software-repositories-for-mysql
 .. _Percona download page for ProxySQL: https://percona.com/downloads/proxysql
 .. _Percona download page for ProxySQL 2.0: https://www.percona.com/downloads/proxysql2/
+.. _Percona download page for ProxySQL 2: https://www.percona.com/downloads/proxysql2/
 .. _download the original ProxySQL from GitHub: https://github.com/sysown/proxysql/releases
+.. _ProxySQL documentation: https://proxysql.com/documentation/
 .. _ProxySQL documentation in the wiki format: https://github.com/sysown/proxysql/wiki
