@@ -16,9 +16,8 @@ ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) sou
 
 markdown:
 	@echo "Started generating documentation in the Markdown format"
-	@sphinx-build -b markdown source build/markdown
-	@echo
-	@echo "Successfully generated Markdown output in build/markdown"
+	$(SPHINXBUILD) -b markdown $(ALLSPHINXOPTS) $(BUILDDIR)/markdown
+	@echo "Successfully generated Markdown output in $(BUILDDIR)/markdown"
 
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
@@ -43,6 +42,12 @@ help:
 clean:
 	-rm -rf $(BUILDDIR)/*
 	-rm -f source/percona-theme/built
+
+netlify:
+	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) -c source/conf-netlify $(BUILDDIR)/html
+	@echo
+	@echo "Netlify build finished. The HTML pages are in $(BUILDDIR)/html."
+
 
 source/percona-theme/built:
 	@echo "Downloading percona-theme ..."

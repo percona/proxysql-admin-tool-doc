@@ -344,7 +344,7 @@ By default, the configuration file contains the following:
    # the read hostgroup.
    export WRITERS_ARE_READERS="backup"
    
-.. _pxc.admin-login
+.. _pxc.admin-login:
 
 Configuring the ProxySQL Admin Login
 ===============================================
@@ -357,7 +357,7 @@ If no credentials are specified, either on the command line or in the login-file
 
 * If the default MySQL client credentials either do not exist or do not connect to a ProxySQL instance, then the credentials in etc/proxysql-admin.cnf are used.
 
-.. _pxc.admin-file
+.. _pxc.admin-file:
 
 .. rubric:: Example of the ProxySQL Admin File
 
