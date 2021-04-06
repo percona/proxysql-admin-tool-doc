@@ -6,13 +6,10 @@
 
 .. include:: _res/text/release-notes/attr-v2.txt
 .. include:: _res/text/release-notes/description-v2.txt
-.. include:: _res/text/release-notes/upstream.txt
-
-https://github.com/sysown/proxysql/releases/tag/v2.0.17
 
 .. rubric:: Bug Fixes
 
-* :jira:`PSQLADM-282`: Fix proxysql-admin zombi processes issue
+* :jira:`PSQLADM-282`: Fix proxysql-admin zombie processes issue
 
 .. include:: _res/text/license.txt
 
