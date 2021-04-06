@@ -13,4 +13,4 @@ The |proxysql| |release| source and binary packages available from the `Percona
 download page for ProxySQL`_ include |proxysql-admin| – a tool developed by
 |percona| to configure |pxc| nodes into |proxysql|. |docker| images for release
 |release| are available as well. You can `download the original ProxySQL from
-GitHub`_. |github| offers the `ProxySQL documentation in the wiki format`_.
+GitHub`_. |proxysql| offers the `ProxySQL documentation`_.
