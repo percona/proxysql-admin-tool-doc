@@ -4,7 +4,7 @@
 |proxysql| |release| and |command.proxysql-admin|
 ===============================================================================
 
-.. include:: _res/text/release-notes/attr-V2.txt
+.. include:: _res/text/release-notes/attr-v2.txt
 .. include:: _res/text/release-notes/description-v2.txt
 .. include:: _res/text/release-notes/upstream.txt
 
