@@ -151,6 +151,13 @@ or ::
 
    `ProxySQL Getting Started <https://proxysql.com/documentation/getting-started/>`__
 
+Upgrading from an earlier version
+==================================
+
+If you are upgrading from ProxySQL v1.x to ProxySQL v2.x, you must remove the ProxySQL v1.x packages before installing ProxySQL v2.x. 
+
+If you are upgrading from ProxySQL v2.x to a newer version, the upgrade is automatic. 
+
 Automatic Configuration
 ================================================================================
 
