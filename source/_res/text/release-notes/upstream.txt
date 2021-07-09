@@ -1,6 +1,2 @@
 
-This release includes |proxysql| |release| which fixes many bugs and
-introduces a number of features and enhancements. For more information
-see:
-
-
+The  includes |proxysql| |release|. For more information on the issues fixed, features, or enhancements, see the |proxysql| |release| `release notes <https://github.com/sysown/proxysql/releases/tag/v2.0.17>`_

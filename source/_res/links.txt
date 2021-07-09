@@ -21,3 +21,4 @@
 .. _download the original ProxySQL from GitHub: https://github.com/sysown/proxysql/releases
 .. _ProxySQL documentation: https://proxysql.com/documentation/
 .. _ProxySQL documentation in the wiki format: https://github.com/sysown/proxysql/wiki
+
