@@ -31,7 +31,7 @@ and `2.1.1 release notes <https://github.com/sysown/proxysql/releases/tag/v2.1.1
 
 .. include:: _res/text/license.txt
 
-.. |date| replace:: July 10, 2021
+.. |date| replace:: July 9, 2021
 .. |release| replace:: 2.1.1
 
 .. include:: _res/replace.txt
