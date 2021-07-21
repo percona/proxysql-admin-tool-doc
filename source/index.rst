@@ -19,7 +19,7 @@ backend |mysql| servers.
 configuration can be done at runtime using queries similar to SQL statements.
 These include runtime parameters, server grouping, and traffic-related settings.
 
-.. seealso::
+# Reference
 
    |proxysql| documentation
       https://github.com/sysown/proxysql/tree/master/doc
@@ -30,8 +30,7 @@ custom bash scripts to keep track of the status of |pxc| nodes using the
 |proxysql| scheduler.
 
 |proxysql-v2| natively supports |pxc|. With this version,
-the |command.proxysql-admin| tool does not require custom scripts to keep track of
-|abbr.pxc| status.
+the |command.proxysql-admin| tool does not require custom scripts to keep track of |pxc| status.
 
 .. toctree::
    :maxdepth: 1
