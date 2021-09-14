@@ -43,7 +43,7 @@ extensions = ['sphinx.ext.intersphinx',
 ]
 pygments_style = 'sphinx'
 templates_path = ['_templates']
-source_suffix = '.rst'
+source_suffix = '.md'
 exclude_patterns = []
 #primary_domain = 'psdom'
 

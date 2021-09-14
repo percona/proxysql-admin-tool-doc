@@ -1,0 +1,6 @@
+# Configuration for Netlify builds
+
+INHERIT: mkdocs-base.yml
+
+plugins:
+   section-index: {} 

@@ -1,0 +1,15 @@
+# Configuration for builds on percona.com
+
+INHERIT: mkdocs-base.yml
+
+theme:
+  name: material
+  custom_dir: _resource/theme
+
+plugins:
+  bootstrap-tables: {}
+  section-index: {} # Adds links to nodes - comment out when creating PDF
+
+extra_css:
+  - css/version-select.css
+  - css/toctree.css
