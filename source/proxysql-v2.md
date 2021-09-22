@@ -96,7 +96,7 @@ or any other Percona software, run the corresponding command:
 
 Installing ProxySQL 2.0.x on Debian or Ubuntu: :
 
-    $ sudo apt-get install proxysql2
+    $ sudo apt install proxysql2
 
 Installing ProxySQL 2.0.x on Red Hat Enterprise Linux or CentOS: :
 
@@ -980,7 +980,7 @@ If no credentials are specified the credentials in
 
 Uninstalling ProxySQL 2.0.x on Debian or Ubuntu :
 
-    $ sudo apt-get remove proxysql2
+    $ sudo apt remove proxysql2
 
 Uninstalling ProxySQL 2.1.x on Red Hat Enterprise Linux or Centos: :
 
@@ -988,7 +988,7 @@ Uninstalling ProxySQL 2.1.x on Red Hat Enterprise Linux or Centos: :
 
 Uninstalling ProxySQL 2.1.x on Debian or Ubuntu :
 
-    $ sudo apt-get remove proxysql21
+    $ sudo apt remove proxysql21
 
 Uninstalling ProxySQL 2.1.x on Red Hat Enterprise Linux or Centos: :
 
