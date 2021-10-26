@@ -4,12 +4,15 @@ Release notes of |proxysql| and the |proxysql-admin| tool
 ********************************************************************************
 
 
-   
 
-   
+
+
 .. toctree::
+   :maxdepth: 1
    :caption: Version 2.x
+   :name: version-2
 
+   release-notes-2.3.2
    release-notes-2.2.0
    release-notes-2.1.1
    release-notes-2.0.18
@@ -34,6 +37,6 @@ Release notes of |proxysql| and the |proxysql-admin| tool
    release-notes-1.4.6
    release-notes-1.4.5
    release-notes-1.4.4
-   
+
 .. include:: _res/replace.txt
 .. include:: _res/links.txt
