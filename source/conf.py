@@ -34,8 +34,14 @@ extlinks = {
     'jira': ('https://jira.percona.com/browse/%s', ''),
     'jirabug': ('https://jira.percona.com/browse/%s', '')
 }
+
 html_theme = 'percona-theme'
 html_theme_path = ['.', './percona-theme']
+html_context = {
+    'repo_name': '/percona/proxysql-admin-tool-doc',
+    'repo_url': 'https://github.com/percona/proxysql-admin-tool-doc',
+    'edit_uri': 'edit/main/source'
+}
 html_title = project
 html_static_path = ['_static']
 html_sidebars = {
