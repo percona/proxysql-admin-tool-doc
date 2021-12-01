@@ -10,7 +10,7 @@ or any other Percona software, run the corresponding command based on the suppor
 Installing ProxySQL 2.0.x and ProxySQL Admin on Debian or the supported derivatives:
 
 ```bash
-sudo apt-get install proxysql2
+sudo apt install proxysql2
 ```
 Installing ProxySQL 2.0.x and ProxySQL Admin on Red Hat Enterprise Linux or the supported derivatives:
 

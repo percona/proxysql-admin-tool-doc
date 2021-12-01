@@ -15,10 +15,10 @@ The result lists all installed packages with the specified phrase.
 
 ### Remove Package with Apt
 
-The `apt-get remove` command only removes the packages when these packages were installed by `apt`. The configuration files and dependencies are not removed. To uninstall ProxySQL 2.x on Debian or Ubuntu, use the following command:
+The `apt remove` command only removes the packages when these packages were installed by `apt`. The configuration files and dependencies are not removed. To uninstall ProxySQL 2.x on Debian or Ubuntu, use the following command:
 
 ```bash
-    sudo apt-get remove proxysql2 -y
+    sudo apt remove proxysql2 -y
 ```
 
 > Note:

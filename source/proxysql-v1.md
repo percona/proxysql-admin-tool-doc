@@ -13,7 +13,7 @@ or any other software, run the corresponding command:
 On Debian or Ubuntu:
 
    ``` bash
-    $ sudo apt-get install proxysql
+    $ sudo apt install proxysql
    ```
 
 On Red Hat Enterprise Linux or CentOS:

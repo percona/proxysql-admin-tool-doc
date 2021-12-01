@@ -20,7 +20,7 @@ installed (*Node 1*, *Node 2*, *Node 3*) or install the client on *Node
 - On Debian or Ubuntu:
 
     ``` bash
-    [root@proxysql ~]# apt-get install percona-xtradb-cluster-client
+    [root@proxysql ~]# apt install percona-xtradb-cluster-client
     ```
 
 - On Red Hat Enterprise Linux or CentOS:
@@ -397,7 +397,7 @@ You can install `sysbench` from Percona software repositories:
 - For Debian or Ubuntu:
 
     ``` bash
-    root@proxysql:~# apt-get install sysbench
+    root@proxysql:~# apt install sysbench
     ```
 
 - For Red Hat Enterprise Linux or CentOS
