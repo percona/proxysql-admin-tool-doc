@@ -19,6 +19,10 @@ html_logo = '../_images/percona-logo.svg'
 html_favicon = '../_images/percona_favicon.ico'
 pygments_style = 'emacs'
 gitstamp_fmt = "%b %d, %Y"
+# Specify the text pattern that won't be copied with the code block contents
 copybutton_prompt_text = '$'
-plantuml = 'java -jar ../../bin/plantuml.jar'
+# Add any paths that contain templates here, relative to this directory.
+templates_path = ['../_templates/theme']
 #html_last_updated_fmt = ''
+plantuml = 'java -jar ../../bin/plantuml.jar'
+
