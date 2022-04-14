@@ -15,7 +15,7 @@ release = '.'.join([version, '2'])
 #project = u'ProxySQL and proxysql-admin'
 product_name = 'ProxySQL and proxySQL-admin'
 project = ' '.join([product_name, release, 'Documentation'])
-copyright = u'Percona LLC and/or its affiliates 2015-2021'
+copyright = u'Percona LLC and/or its affiliates 2015-2022'
 exclude_patterns = []
 pygments_style = 'default'
 
