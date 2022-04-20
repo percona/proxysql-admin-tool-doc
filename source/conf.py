@@ -36,6 +36,12 @@ extlinks = {
 }
 html_theme = 'percona-theme'
 html_theme_path = ['.', './percona-theme']
+# Redirect info for Edit on Github link
+html_context = {
+    'repo_name': '/percona/proxysql-admin-tool-doc',
+    'repo_url': 'https://github.com/percona/proxysql-admin-tool-doc',
+    'edit_uri': 'blob/main/source'
+}
 html_title = project
 html_static_path = ['_static']
 html_sidebars = {
