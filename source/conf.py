@@ -34,6 +34,7 @@ extlinks = {
     'jira': ('https://jira.percona.com/browse/%s', ''),
     'jirabug': ('https://jira.percona.com/browse/%s', '')
 }
+
 html_theme = 'percona-theme'
 html_theme_path = ['.', './percona-theme']
 # Redirect info for Edit on Github link
