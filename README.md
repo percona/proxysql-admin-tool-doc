@@ -14,13 +14,11 @@ The ProxySQL and ProxySQL Admin tool documentation source is [here](https://gith
 
 ## ProxySQL Information
 
-You can also install ProxySQL from the source code [here](https://github.com/sysown/proxysql)
-
 The ProxySQL Documentation is available [here](https://proxysql.com/documentation/)
 
 ## Submit a Bug Report or Feature Request
 
-If you find a bug in ProxySQL and the ProxySQL Admin tool, you can submit a report to the project's [Jira issue tracker](https://jira.percona.com/projects/proxysql).
+If you find a bug in ProxySQL and the ProxySQL Admin tool, you can submit a report to the project's [Jira issue tracker](https://jira.percona.com/projects/PSQLADM).
 
 As a general rule of thumb, please try to create a bug report that has the following qualities:
 - Reproducible - include the steps on how to reproduce the issue
@@ -36,7 +34,7 @@ ProxySQL Admin Copyright (c) Percona LLC and/or its affiliates 2015-2022
 
 We encourage contributions and are always looking for new members that are as dedicated to serving the community as we are. 
 
-The [Contributing Guide for Documentation](https://github.com/proxysql-admin-tool-doc/source/contributing.md) contains the guidelines on how you can contribute.
+The [Contributing Guide for Documentation](https://github.com/percona/proxysql-admin-tool-doc/blob/main/source/contributing.md) contains the guidelines on how you can contribute.
 
 ## Contact 
 
