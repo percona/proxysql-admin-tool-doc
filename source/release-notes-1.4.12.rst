@@ -1,4 +1,4 @@
-.. _proxysql-release-notes-1.4.12:
+.. _1.4.12:
 
 |proxysql| |release| and |command.proxysql-admin|
 ================================================================================
