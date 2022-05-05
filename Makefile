@@ -43,10 +43,10 @@ clean:
 	-rm -rf $(BUILDDIR)/*
 	-rm -f source/percona-theme/built
 
-netlify:
-	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) -c source/conf-netlify $(BUILDDIR)/html
+material:
+	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) -c source/conf-material $(BUILDDIR)/html
 	@echo
-	@echo "Netlify build finished. The HTML pages are in $(BUILDDIR)/html."
+	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
 
 source/percona-theme/built:

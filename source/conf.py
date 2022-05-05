@@ -15,7 +15,7 @@ release = '.'.join([version, '2'])
 #project = u'ProxySQL and proxysql-admin'
 product_name = 'ProxySQL and proxySQL-admin'
 project = ' '.join([product_name, release, 'Documentation'])
-copyright = u'Percona LLC and/or its affiliates 2015-2021'
+copyright = u'Percona LLC and/or its affiliates 2015-2022'
 exclude_patterns = []
 pygments_style = 'default'
 
@@ -37,10 +37,11 @@ extlinks = {
 
 html_theme = 'percona-theme'
 html_theme_path = ['.', './percona-theme']
+# Redirect info for Edit on Github link
 html_context = {
     'repo_name': '/percona/proxysql-admin-tool-doc',
     'repo_url': 'https://github.com/percona/proxysql-admin-tool-doc',
-    'edit_uri': 'edit/main/source'
+    'edit_uri': 'blob/main/source'
 }
 html_title = project
 html_static_path = ['_static']

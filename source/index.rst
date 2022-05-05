@@ -40,13 +40,12 @@ the |command.proxysql-admin| tool does not require custom scripts to keep track 
    proxysql-v1
    Release notes <release-notes>
 
-2021, Percona LLC and/or its affiliates 2009-2021
+2022, Percona LLC and/or its affiliates 2009-2022
 
 .. rubric:: Indices and tables
 
 * :ref:`genindex`
 * :ref:`modindex`
-* :ref:`search`
 
 .. include:: _res/replace.txt
 .. include:: _res/links.txt
