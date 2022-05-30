@@ -1,0 +1,6 @@
+Release Highlights
+=================================================
+
+Percona adds support for the `Percona Scheduler Admin tool <https://docs.percona.com/proxysql/psa-scheduler.html>`_. 
+
+This tool manages the integration between ProxySQL and Galera/Percona XtraDB Cluster. The tool maintains the ProxySQL `mysql_server table` during maintenance or if negative scenarios occur, such as failures or service degradation. The tool replaces the Replication Manager, simplifying the cluster's architecture.
