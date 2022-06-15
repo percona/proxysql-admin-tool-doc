@@ -1,6 +1,6 @@
-.. _proxysql-release-notes-2.0.4:
+.. _2.0.4:
 
-|proxysql| |release|
+|proxysql| |release| and |command.proxysql-admin|
 ================================================================================
 
 .. include:: _res/text/release-notes/attr-v2.txt

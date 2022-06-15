@@ -1,4 +1,4 @@
-.. proxysql-release-notes-2.2.0:
+.. _2.2.0:
 
 ===============================================================================
 |proxysql| |release| and |command.proxysql-admin|

@@ -1,38 +1,53 @@
 .. _proxysql.release-notes:
 
-Release notes of the ProxySQL and admin tools
-************************************************************************************************
+Release notes of |proxysql| and the |proxysql-admin| tool
+********************************************************************************
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Version 2.x.x
-   :name: version-2
+Version 2.x release notes
 
-   release-notes-2.3.2
-   release-notes-2.2.0
-   release-notes-2.1.1
-   release-notes-2.0.18
-   release-notes-2.0.17
-   release-notes-2.0.15
-   release-notes-2.0.14
-   release-notes-2.0.13
-   release-notes-2.0.12
-   release-notes-2.0.7
-   release-notes-2.0.6
-   release-notes-2.0.5
-   release-notes-2.0.4
-   release-notes-2.0.3
+:ref:`2.3.2` (2021-11-03)
 
-.. toctree::
-   :caption: Version 1.4.x
+:ref:`2.2.0` (2021-08-10)
 
-   release-notes-1.4.16
-   release-notes-1.4.12
-   release-notes-1.4.8
-   release-notes-1.4.7
-   release-notes-1.4.6
-   release-notes-1.4.5
-   release-notes-1.4.4
+:ref:`2.1.1` (2021-07-09)
+
+:ref:`2.0.18` (2021-04-19)
+
+:ref:`2.0.17` (2021-04-06)
+
+:ref:`2.0.15` (2020-11-17)
+
+:ref:`2.0.14` (2020-09-24)
+
+:ref:`2.0.13` (2020-08-05)
+
+:ref:`2.0.12` (2020-06-11)
+
+:ref:`2.0.7` (2019-10-23)
+
+:ref:`2.0.6` (2019-08-21)
+
+:ref:`2.0.5` (2019-11-23)
+
+:ref:`2.0.4` (2019-05-28)
+
+:ref:`2.0.3` (2019-05-07)
+
+Version 1.4 release notes
+
+:ref:`1.4.16` (2020-02-11)
+
+:ref:`1.4.12` (2018-11-13)
+
+:ref:`1.4.8` (2018-05-22)
+
+:ref:`1.4.7` (2018-04-16)
+
+:ref:`1.4.6` (2018-03-12)
+
+:ref:`1.4.5` (2018-02-15)
+
+:ref:`1.4.4` (2018-01-18)
 
 .. include:: _res/replace.txt
 .. include:: _res/links.txt
