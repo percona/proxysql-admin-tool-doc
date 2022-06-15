@@ -4,13 +4,13 @@
 ProxySQL 2.x.x and Percona Scheduler Admin tool
 ==========================================================
 
-Implemented in *ProxySQL* 2.3.2-1, the `Percona Scheduler Admin`
+Implemented in *ProxySQL* 2.3.2-1.2, the `Percona Scheduler Admin`
 (percona-scheduler-admin) tool configures **Percona XtraDB Cluster** nodes into
 *ProxySQL*.
 
 .. important::
 
-  The Percona Scheduler Admin has been tested with ProxySQL 2.3.0 and ProxySQL 2.3.2-1.
+  The Percona Scheduler Admin has been tested with ProxySQL 2.3.0 and ProxySQL 2.3.2-1.2.
 
 This tool has a segment-aware failover mechanism and can automatically perform a failover due to node failures,
 service degradation, or maintenance requirements. The external
@@ -47,6 +47,6 @@ The following are the prerequisites for using the Percona Scheduler Admin:
     
 * The ProxySQL and Percona XtraDB Cluster should be up and running.
 
-.. _psa-usage:
+For information on how to install the Percona Scheduler Admin tool, see :ref:`psa-build`.
 
 

@@ -1,7 +1,7 @@
-.. _2.3.2-1:
+.. _2.3.2-1.2:
 
 ====================================================================================
-ProxySQL 2.3.2-1, **proxysql-admin**, and **percona-scheduler-admin** (2022-06-15)
+ProxySQL 2.3.2-1.2, **proxysql-admin**, and **percona-scheduler-admin** (2022-06-15)
 ====================================================================================
 
 .. include:: _res/rn/proxysql-and-proxysql-admin-blurb.txt
