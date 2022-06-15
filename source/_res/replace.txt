@@ -66,12 +66,12 @@
 .. |param.datadir| replace:: :code:`datadir`
 .. |percona| replace:: Percona
 .. |proxysql-admin-interface| replace:: ProxySQL admin interface
-.. |proxysql-admin| replace:: ProxySQL Admin
+.. |proxysql-admin| replace:: **ProxySQL Admin**
 .. |proxysql-author| replace:: René Cannaò
 .. |proxysql-scheduler| replace:: ProxySQL scheduler
-.. |proxysql-v1| replace:: ProxySQL v1
-.. |proxysql-v2| replace:: ProxySQL v2
-.. |proxysql| replace:: ProxySQL
+.. |proxysql-v1| replace:: ProxySQL 1.x.x
+.. |proxysql-v2| replace:: ProxySQL 2.x.x
+.. |proxysql| replace:: *ProxySQL*
 .. |ps| replace:: Percona Server for MySQL
 .. |pxc| replace:: Percona XtraDB Cluster
 .. |repository| replace:: Percona repository

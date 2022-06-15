@@ -3,8 +3,7 @@
 Using |proxysql-v1| with |proxysql-admin|
 ================================================================================
 
-|proxysql| version 1.4 does not natively support |pxc| and |command.proxysql-admin|.
-It requires custom bash scripts to keep track of |pxc| status:
+|proxysql| version 1.4.x does not natively support |pxc| and |command.proxysql-admin| and requires custom bash scripts to keep track of |pxc| status:
 |command.proxysql-galera-checker| and |command.proxysql-node-monitor|.
 
 .. contents::
@@ -22,14 +21,14 @@ any other |percona| software, run the corresponding command:
 On Debian or Ubuntu:
    .. code-block:: bash
 
-      $ sudo apt-get install proxysql
+      $ sudo apt install proxysql
 
 On Red Hat Enterprise Linux or CentOS:
    .. code-block:: bash
 
       $ sudo yum install proxysql
 
-.. seealso:: :ref:`proxysql-admin-interface.installing-tarball`
+.. seealso:: :ref:`tarball-v1`
 
 To start |proxysql|, run the following command:
 
@@ -88,14 +87,14 @@ To view usage information, run ``proxysql-admin`` without any options:
                                       (default: 'singlewrite')
    --write-node=host_name:port        Writer node to accept write statments.
                                       This option is supported only when using --mode=singlewrite
-                                      Can accept comma delimited list with the first listed being
+                                      Can accept comma-delimited list with the first listed being
                                       the highest priority.
    --include-slaves=host_name:port    Add specified slave node(s) to ProxySQL, these nodes will go
                                       into the reader hostgroup and will only be put into
                                       the writer hostgroup if all cluster nodes are down (this
                                       depends on the value of --use-slave-as-writer).
-                                      Slaves must be read only.  Can accept a comma delimited list.
-                                      If this is used make sure 'read_only=1' is in the slave's my.cnf
+                                      Slaves must be read only.  Can accept a comma-delimited list.
+                                      If used, make sure 'read_only=1' is in the slave's my.cnf
    --use-slave-as-writer=<yes/no>     If this value is 'yes', then a slave may be used as a writer
                                       if the entire cluster is down. If 'no', then a slave
                                       will not be used as a writer. This option is required
@@ -106,14 +105,14 @@ To view usage information, run ``proxysql-admin`` without any options:
                                       if there are no other readers.
                                       (default: 'ondemand')
    --max-connections=<NUMBER>         Value for max_connections in the mysql_servers table.
-                                      This is the maximum number of connections that
+                                      This value is the maximum number of connections that
                                       ProxySQL will open to the backend servers.
                                       (default: 1000)
    --debug                            Enables additional debug logging.
    --help                             Dispalys this help text.
  
    These options are the possible operations for proxysql-admin.
-   One of the options below must be provided.
+   You must provide one of the options.
    --adduser                          Adds the Percona XtraDB Cluster application user to the ProxySQL database
    --disable, -d                      Remove any Percona XtraDB Cluster configurations from ProxySQL
    --enable, -e                       Auto-configure Percona XtraDB Cluster nodes into ProxySQL
@@ -128,17 +127,16 @@ To view usage information, run ``proxysql-admin`` without any options:
 
 .. note::
 
-   Before using the |command.proxysql-admin|, ensure that |proxysql| and
-   |PXC| nodes you want to add are running. For security purposes,
-   please ensure to change the default user settings in the |proxysql|
+   The **Percona XtraDB Cluster** nodes and *ProxySQL* must be available before using the |command.proxysql-admin| tool. For security purposes,
+   change the default user settings in the |proxysql|
    configuration file.
 
 Preparing Configuration File
 --------------------------------------------------------------------------------
 
-It is recommended to provide connection and authentication information
+We recommend providing the connection and authentication information
 in the |proxysql| configuration file (|file.proxysql-admin-cnf|),
-instead of specifying it on the command line.
+instead of specifying this information on the command line.
 
 By default, the configuration file contains the following:
 
@@ -180,7 +178,7 @@ By default, the configuration file contains the following:
     
 .. note::
 
-   It is recommended to :ref:`change default |proxysql| credentials
+   We recommend :ref:`change default |proxysql| credentials
    <default-credentials>` before running |proxysql| in production.
    Make sure that you provide |proxysql| location and credentials in
    the configuration file.
@@ -203,20 +201,20 @@ into |proxysql|.  The ``proxysql-admin`` tool will do the following:
   node membership and re-configures |proxysql| if the membership
   changes.
 * Create two new |pxc| users with the ``USAGE`` privilege on the node and add
-  them to |proxysql| configuration, if they are not already configured.  |proxysql|
+  them to |proxysql| configuration if they are not already configured.  |proxysql|
   uses one user for monitoring cluster nodes, and the other one is used for
-  communicating with the cluster. Make sure to use super user credentials
-  from Cluster to setup the default users.
+  communicating with the cluster. Make sure to use superuser credentials
+  from cluster to set up the default users.
 
 .. warning::
 
-   Running more then one copy of ``proxysql_galera_check`` in the same runtime
+   Running more than one copy of ``proxysql_galera_check`` in the same runtime
    environment simultaneously is not supported and may lead to undefined
    behavior.
 
    To avoid this problem, Galera process identification prevents a duplicate
    script execution in most cases. However, in some rare cases, it may be
-   possible to circumvent this check if you run more then one copy of
+   possible to circumvent this check if you run more than one copy of
    ``proxysql_galera_check``.
 
 The following example shows how to add a |PXC| node
@@ -232,7 +230,7 @@ with all necessary connection and authentication information:
    .. code-block:: text
    
       This script will assist with configuring ProxySQL for use with
-      Percona XtraDB Cluster (currently only PXC in combination with ProxySQL is supported)
+      Percona XtraDB Cluster (currently, only PXC in combination with ProxySQL is supported)
    
       ProxySQL read/write configuration mode is singlewrite
    
@@ -244,7 +242,7 @@ with all necessary connection and authentication information:
       Configuring the Percona XtraDB Cluster application user to connect through ProxySQL
       Percona XtraDB Cluster application user name as per command line/config-file is proxysql_user
    
-      Percona XtraDB Cluster application user 'proxysql_user'@'127.%' has been added with ALL privileges, this user is created for testing purposes
+      Percona XtraDB Cluster application user 'proxysql_user'@'127.%' has been added with ALL privileges. This user is created for testing purposes.
       Adding the Percona XtraDB Cluster server nodes to ProxySQL
    
       Write node info
@@ -323,14 +321,14 @@ The following extra options can be used:
 * ``--syncusers``
 
   Sync user accounts currently configured in |PXC| to |proxysql| database
-  except users with no password and the ``admin`` user.
+  except for users with no password and the ``admin`` user.
 
   .. note:: This option also deletes users
      that are not in |PXC| from |proxysql| database.
 
 * ``--sync-multi-cluster-users``
 
-  This option works in the same way as --syncusers but it does not delete |proxysql|
+  This option works in the same way as ``--syncusers``, but it does not delete |proxysql|
   users that are not present in the Percona XtraDB Cluster. It is to be used when
   syncing proxysql instances that manage multiple clusters.
 
@@ -353,7 +351,7 @@ The following extra options can be used:
   * ``singlewrite`` is the default mode,
     it will accept writes only on one single node
     (based on the info you provide in ``--write-node``).
-    Remaining nodes will accept only read statements.
+    The remaining nodes will accept only read statements.
 
     Servers can be separated by commas, for example::
 
@@ -475,7 +473,7 @@ The following extra options can be used:
   This option helps to include specified slave node(s) to |proxysql| database.
   These nodes will go into the reader hostgroup and will only be put into the
   writer hostgroup if all cluster nodes are down. Slaves must be read only. Can
-  accept comma delimited list. If this is used, make sure ``read_only=1`` is
+  accept comma-delimited list. If this is used, make sure ``read_only=1`` is
   included into the slave's ``my.cnf`` configuration file.
 
   .. note:: With ``loadbal`` mode slave hosts only accept read/write requests
