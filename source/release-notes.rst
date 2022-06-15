@@ -5,7 +5,7 @@ Release notes of ProxySQL, proxysql-admin, and percona-scheduler-admin
 
 Version 2.x release notes
 
-:ref:`2.3.2-1`
+:ref:`2.3.2-1.2`
 
 :ref:`2.3.2` (2021-11-03)
 

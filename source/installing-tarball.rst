@@ -44,10 +44,10 @@ Follow these steps:
 .. _2.3.2-1:
 
 
-Available tar files for ProxySQL 2.3.2-1 and higher
+Available tar files for ProxySQL 2.3.2-1.2 and higher
 ---------------------------------------------------------------------
 
-Starting with **ProxySQL 2.3.2-1**, Percona no longer provides a tarball for
+Starting with **ProxySQL 2.3.2-1.2**, Percona no longer provides a tarball for
 CentOS 6.
 
 .. note:: For more information, see `Spring Cleaning: Discontinuing RHEL
@@ -63,10 +63,9 @@ The following tar files are available:
 
    * - Name
      - Description
-   * - proxysql-2-version-Linux-x86_64.glibc2.17.tar.gz
+   * - proxysql-2-version-Linux-x86_64.glibc2.23.tar.gz
      - For every supported operating system.
 
-       For CentOS 7, install OpenSSL 1.1.1, if needed.
 
 
 
