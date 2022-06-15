@@ -3,8 +3,6 @@
 Release notes of |proxysql| and the |proxysql-admin| tool
 ********************************************************************************
 
-
-
 Version 2.x release notes
 
 :ref:`2.3.2` (2021-11-03)
@@ -50,7 +48,6 @@ Version 1.4 release notes
 :ref:`1.4.5` (2018-02-15)
 
 :ref:`1.4.4` (2018-01-18)
-
 
 .. include:: _res/replace.txt
 .. include:: _res/links.txt
