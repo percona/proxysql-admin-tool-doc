@@ -1,7 +1,7 @@
 .. _2.0.17:
 
 ===============================================================================
-|proxysql| |release| and |command.proxysql-admin|
+*ProxySQL* |release| and `proxysql-admin`
 ===============================================================================
 
 .. include:: _res/text/release-notes/attr-v2.txt

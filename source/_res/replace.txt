@@ -15,7 +15,7 @@
 .. |const.cluster-app-username| replace:: `CLUSTER_APP_USERNAME`
 .. |const.offline-hard| replace:: `OFFLINE_HARD`
 .. |const.offline-soft| replace:: `OFFLINE_SOFT`
-.. |docker| replace:: Docker
+.. `Docker` replace:: Docker
 .. |file.etc-proxysql-admin-cnf| replace:: :file:`/etc/proxysql-admin.cnf`
 .. |file.etc-proxysql-cnf| replace:: :file:`/etc/proxysql.cnf`
 .. |file.proxysql-admin-cnf| replace:: :file:`/etc/proxysql-admin.cnf`
@@ -27,8 +27,8 @@
 .. |github| replace:: GitHub
 .. |k8s| replace:: Kubernetes
 .. |kubernetes| replace:: Kubernetes
-.. |mariadb| replace:: MariaDB
-.. |mysql| replace:: MySQL
+.. `MariaDB` replace:: MariaDB
+.. `MySQL` replace:: MySQL
 .. |opt..healthcheck| replace:: `mysql-monitor_galera_healthcheck_interval`
 .. |opt.adduser| replace:: `--adduser`
 .. |opt.add-user| replace:: `--adduser`
@@ -36,7 +36,7 @@
 .. |opt.backup-writer-hg| replace:: `--backup-writer-hg`
 .. |opt.c| replace:: `--c`
 .. |opt.config-file| replace:: `--config-file`
-.. |opt.disable| replace:: `--disable`
+.. `--disable` replace:: `--disable`
 .. |opt.disable-updates| replace:: `--disable-updates`
 .. |opt.enable| replace:: `--enable`
 .. |opt.force| replace:: `--force`
@@ -64,16 +64,16 @@
 .. |opt.writer-hg| replace:: `--writer-hg`
 .. |opt.writers-as-readers| replace:: `--writers-as-readers`
 .. |param.datadir| replace:: :code:`datadir`
-.. |percona| replace:: Percona
+.. **Percona** replace:: Percona
 .. |proxysql-admin-interface| replace:: ProxySQL admin interface
-.. |proxysql-admin| replace:: **ProxySQL Admin**
+.. `ProxySQL Admin` replace:: **ProxySQL Admin**
 .. |proxysql-author| replace:: René Cannaò
-.. |proxysql-scheduler| replace:: ProxySQL scheduler
+.. `ProxySQL scheduler` replace:: ProxySQL scheduler
 .. |proxysql-v1| replace:: ProxySQL 1.x.x
 .. |proxysql-v2| replace:: ProxySQL 2.x.x
-.. |proxysql| replace:: *ProxySQL*
-.. |ps| replace:: Percona Server for MySQL
-.. |pxc| replace:: Percona XtraDB Cluster
+.. *ProxySQL* replace:: *ProxySQL*
+.. **Percona Server for MySQL** replace:: Percona Server for MySQL
+.. **Percona XtraDB Cluster** replace:: Percona XtraDB Cluster
 .. |repository| replace:: Percona repository
 .. |scheduler| replace:: ProxySQL scheduler
 .. |table.mysql-galera-hostgroups| replace:: `mysql_galera_hostgroups`
