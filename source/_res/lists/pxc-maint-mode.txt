@@ -1,5 +1,5 @@
 DISABLED
-   This is the default state that tells |proxysql| to route traffic to
+   This is the default state that tells *ProxySQL* to route traffic to
    the node as usual.
 SHUTDOWN
    This state is set automatically when you initiate node shutdown.
@@ -7,12 +7,12 @@ SHUTDOWN
    You may need to shut down a node when upgrading the OS, adding resources,
    changing hardware parts, relocating the server, etc.
  
-   When you initiate node shutdown, |pxc| does not send the signal
+   When you initiate node shutdown, **Percona XtraDB Cluster** does not send the signal
    immediately.  Instead, it changes the state to
    ``pxc_maint_mode=SHUTDOWN`` and waits for a predefined period, which
    is determined by the value of the
    `pxc_maint_transition_period variable`_).  After detecting that the
-   maintenance mode is set to ``SHUTDOWN``, |proxysql| changes the
+   maintenance mode is set to ``SHUTDOWN``, *ProxySQL* changes the
    status of this node to ``OFFLINE_SOFT``, which stops creating new
    connections for the node.  After the transition period ends, any
    long-running transactions that are still active are aborted.
@@ -21,11 +21,11 @@ MAINTENANCE
    without shutting it down.
  
    You may need to isolate the node for some time, so that it does not receive
-   traffic from |proxysql| while you resize the buffer pool, truncate the undo
+   traffic from *ProxySQL* while you resize the buffer pool, truncate the undo
    log, defragment or check disks, etc.
  
    To do this, set ``pxc_maint_mode=MAINTENANCE``.  Control is not returned to
-   the user for a predefined period (10 seconds by default).  When |proxysql|
+   the user for a predefined period (10 seconds by default).  When *ProxySQL*
    detects that the mode is set to ``MAINTENANCE``, it stops routing traffic to
    the node.  Once control is returned, you can perform maintenance activity.
  
@@ -34,5 +34,5 @@ MAINTENANCE
       Any data changes will still be replicated across the cluster.
  
    After you finish maintenance, set the mode back to ``DISABLED``.  When
-   |proxysql| detects this, it starts routing traffic to the node again.
+   *ProxySQL* detects this, it starts routing traffic to the node again.
  

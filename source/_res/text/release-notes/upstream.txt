@@ -1,2 +1,2 @@
 
-The  includes |proxysql| |release|. For more information on the issues fixed, features, or enhancements, see the |proxysql| |release| `release notes <https://github.com/sysown/proxysql/releases/tag/v2.0.17>`_
+The  includes *ProxySQL* |release|. For more information on the issues fixed, features, or enhancements, see the *ProxySQL* |release| `release notes <https://github.com/sysown/proxysql/releases/tag/v2.0.17>`_

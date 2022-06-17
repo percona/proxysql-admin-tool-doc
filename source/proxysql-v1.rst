@@ -1,22 +1,22 @@
 .. _proxysql-v1:
 
-Using |proxysql-v1| with |proxysql-admin|
+Using `ProxySQL 1.x.x` with `ProxySQL Admin`
 ================================================================================
 
-|proxysql| version 1.4.x does not natively support |pxc| and |command.proxysql-admin| and requires custom bash scripts to keep track of |pxc| status:
-|command.proxysql-galera-checker| and |command.proxysql-node-monitor|.
+*ProxySQL* version 1.4.x does not natively support **Percona XtraDB Cluster** and `proxysql-admin` and requires custom bash scripts to keep track of **Percona XtraDB Cluster** status:
+`proxysql_galera_checker` and `proxysql_node_monitor`.
 
 .. contents::
    :local:
 
 .. _proxysql-v1.installing:
 
-Installing |proxysql-v1|
+Installing `ProxySQL 1.x.x`
 ================================================================================
 
 If that is what you used to `install PXC
 <https://www.percona.com/doc/percona-xtradb-cluster/5.7/install/index.html>`_ or
-any other |percona| software, run the corresponding command:
+any other **Percona** software, run the corresponding command:
 
 On Debian or Ubuntu:
    .. code-block:: bash
@@ -30,7 +30,7 @@ On Red Hat Enterprise Linux or CentOS:
 
 .. seealso:: :ref:`tarball-v1`
 
-To start |proxysql|, run the following command:
+To start *ProxySQL*, run the following command:
 
 .. code-block:: bash
 
@@ -40,22 +40,22 @@ To start |proxysql|, run the following command:
 
 .. warning:: **Do not run ProxySQL with default credentials in production.**
 
-   Before starting the |command.proxysql| service, you can change the defaults
-   in |file.proxysql-cnf| by changing the ``admin_credentials`` variable.  For
+   Before starting the `proxysql` service, you can change the defaults
+   in `/etc/proxysql.cnf` by changing the ``admin_credentials`` variable.  For
    more information, see `ProxySQL global variables`_.
 
 Automatic Configuration
 =======================
 
-The ``proxysql`` package from |percona| includes the |command.proxysql-admin| tool
-for configuring |pxc| nodes with |proxysql|.
+The ``proxysql`` package from **Percona** includes the `proxysql-admin` tool
+for configuring **Percona XtraDB Cluster** nodes with *ProxySQL*.
 
-.. note:: |command.proxysql-admin| is specially developed by |percona| to
-   automate the |proxysql| configuration. Bug reports and feature proposals are welcome
-   in the |command.proxysql-admin| `issue tracking system <https://jira.percona.com/projects/PSQLADM>`_.
+.. note:: `proxysql-admin` is specially developed by **Percona** to
+   automate the *ProxySQL* configuration. Bug reports and feature proposals are welcome
+   in the `proxysql-admin` `issue tracking system <https://jira.percona.com/projects/PSQLADM>`_.
 
-.. note:: The |command.proxysql-admin| tool can only be used for
-   *initial* |proxysql| configuration.
+.. note:: The `proxysql-admin` tool can only be used for
+   *initial* *ProxySQL* configuration.
 
 To view usage information, run ``proxysql-admin`` without any options:
 
@@ -127,15 +127,15 @@ To view usage information, run ``proxysql-admin`` without any options:
 
 .. note::
 
-   The **Percona XtraDB Cluster** nodes and *ProxySQL* must be available before using the |command.proxysql-admin| tool. For security purposes,
-   change the default user settings in the |proxysql|
+   The **Percona XtraDB Cluster** nodes and *ProxySQL* must be available before using the `proxysql-admin` tool. For security purposes,
+   change the default user settings in the *ProxySQL*
    configuration file.
 
 Preparing Configuration File
 --------------------------------------------------------------------------------
 
 We recommend providing the connection and authentication information
-in the |proxysql| configuration file (|file.proxysql-admin-cnf|),
+in the *ProxySQL* configuration file (`/etc/proxysql-admin.cnf`),
 instead of specifying this information on the command line.
 
 By default, the configuration file contains the following:
@@ -163,11 +163,11 @@ By default, the configuration file contains the following:
    export CLUSTER_APP_USERNAME='proxysql_user'
    export CLUSTER_APP_PASSWORD='passw0rd'
    
-   # |proxysql| read/write hostgroup 
+   # *ProxySQL* read/write hostgroup 
    export WRITE_HOSTGROUP_ID='10'
    export READ_HOSTGROUP_ID='11'
    
-   # |proxysql| read/write configuration mode.
+   # *ProxySQL* read/write configuration mode.
    export MODE="singlewrite"
    
    # Writer-is-reader configuration
@@ -178,30 +178,30 @@ By default, the configuration file contains the following:
     
 .. note::
 
-   We recommend :ref:`change default |proxysql| credentials
-   <default-credentials>` before running |proxysql| in production.
-   Make sure that you provide |proxysql| location and credentials in
+   We recommend :ref:`change default *ProxySQL* credentials
+   <default-credentials>` before running *ProxySQL* in production.
+   Make sure that you provide *ProxySQL* location and credentials in
    the configuration file.
 
-   Provide superuser credentials for one of the |PXC| nodes.
+   Provide superuser credentials for one of the **Percona XtraDB Cluster** nodes.
    The ``proxysql-admin`` script will detect
    other nodes in the cluster automatically.
 
-Enabling |proxysql|
+Enabling *ProxySQL*
 --------------------------------------------------------------------------------
 
-Use the ``--enable`` option to automatically configure a |PXC| node
-into |proxysql|.  The ``proxysql-admin`` tool will do the following:
+Use the ``--enable`` option to automatically configure a **Percona XtraDB Cluster** node
+into *ProxySQL*.  The ``proxysql-admin`` tool will do the following:
 
-* Add a |pxc| node into the |proxysql| database
+* Add a **Percona XtraDB Cluster** node into the *ProxySQL* database
 * Add the ``proxysql_galera_checker`` monitoring script into the
   `ProxySQL scheduler`_ table if it is not available.  This script
   checks for desynced nodes and temporarily deactivates them.  It also
   calls the ``proxysql_node_monitor`` script, which checks cluster
-  node membership and re-configures |proxysql| if the membership
+  node membership and re-configures *ProxySQL* if the membership
   changes.
-* Create two new |pxc| users with the ``USAGE`` privilege on the node and add
-  them to |proxysql| configuration if they are not already configured.  |proxysql|
+* Create two new **Percona XtraDB Cluster** users with the ``USAGE`` privilege on the node and add
+  them to *ProxySQL* configuration if they are not already configured.  *ProxySQL*
   uses one user for monitoring cluster nodes, and the other one is used for
   communicating with the cluster. Make sure to use superuser credentials
   from cluster to set up the default users.
@@ -217,8 +217,8 @@ into |proxysql|.  The ``proxysql-admin`` tool will do the following:
    possible to circumvent this check if you run more than one copy of
    ``proxysql_galera_check``.
 
-The following example shows how to add a |PXC| node
-using the |proxysql| configuration file
+The following example shows how to add a **Percona XtraDB Cluster** node
+using the *ProxySQL* configuration file
 with all necessary connection and authentication information:
 
 .. code-block:: bash
@@ -280,25 +280,25 @@ with all necessary connection and authentication information:
       +--------------+-----------+-------+--------+---------+
       5 rows in set (0.00 sec)
    
-Disabling |proxysql|
+Disabling *ProxySQL*
 --------------------------------------------------------------------------------
 
-Use the ``--disable`` option to remove a |PXC| node's configuration
-from |proxysql|.
+Use the ``--disable`` option to remove a **Percona XtraDB Cluster** node's configuration
+from *ProxySQL*.
 The ``proxysql-admin`` tool will do the following:
 
-* Remove |PXC| node from the |proxysql| database
-* Stop the |proxysql| monitoring daemon for this node
+* Remove **Percona XtraDB Cluster** node from the *ProxySQL* database
+* Stop the *ProxySQL* monitoring daemon for this node
 * Remove the application user for this cluster
 * Remove any query rules set up for this cluster
 
-The following example shows how to disable |proxysql|
-and remove the |PXC| node:
+The following example shows how to disable *ProxySQL*
+and remove the **Percona XtraDB Cluster** node:
 
 .. code-block:: bash
 
    $ proxysql-admin --config-file=/etc/proxysql-admin.cnf --disable
-   |proxysql| configuration removed!
+   *ProxySQL* configuration removed!
 
 Additional Options
 ------------------
@@ -307,28 +307,28 @@ The following extra options can be used:
 
 * ``--adduser``
 
-  Add |pxc| application user to |proxysql| database.
+  Add **Percona XtraDB Cluster** application user to *ProxySQL* database.
 
   .. code-block:: bash
 
      $ proxysql-admin --config-file=/etc/proxysql-admin.cnf --adduser
 
-     Adding Percona XtraDB Cluster application user to |proxysql| database
+     Adding Percona XtraDB Cluster application user to *ProxySQL* database
      Enter Percona XtraDB Cluster application user name: cluster_user
      Enter Percona XtraDB Cluster application user password: cluster_passw0Rd
-     Added Percona XtraDB Cluster application user to |proxysql| database!
+     Added Percona XtraDB Cluster application user to *ProxySQL* database!
 
 * ``--syncusers``
 
-  Sync user accounts currently configured in |PXC| to |proxysql| database
+  Sync user accounts currently configured in **Percona XtraDB Cluster** to *ProxySQL* database
   except for users with no password and the ``admin`` user.
 
   .. note:: This option also deletes users
-     that are not in |PXC| from |proxysql| database.
+     that are not in **Percona XtraDB Cluster** from *ProxySQL* database.
 
 * ``--sync-multi-cluster-users``
 
-  This option works in the same way as ``--syncusers``, but it does not delete |proxysql|
+  This option works in the same way as ``--syncusers``, but it does not delete *ProxySQL*
   users that are not present in the Percona XtraDB Cluster. It is to be used when
   syncing proxysql instances that manage multiple clusters.
 
@@ -344,7 +344,7 @@ The following extra options can be used:
 
 * ``--mode``
 
-  Set the read/write mode for |PXC| nodes in |proxysql| database,
+  Set the read/write mode for **Percona XtraDB Cluster** nodes in *ProxySQL* database,
   based on the hostgroup.
   Supported modes are ``loadbal`` and ``singlewrite``.
 
@@ -371,9 +371,9 @@ The following extra options can be used:
        $ sudo grep "MODE" /etc/proxysql-admin.cnf
        export MODE="singlewrite"
        $ sudo proxysql-admin --config-file=/etc/proxysql-admin.cnf --write-node=127.0.0.1:25000 --enable
-       |proxysql| read/write configuration mode is singlewrite
+       *ProxySQL* read/write configuration mode is singlewrite
        [..]
-       |proxysql| configuration completed!
+       *ProxySQL* configuration completed!
   
     To check the configuration you can run:
 
@@ -399,13 +399,13 @@ The following extra options can be used:
 
        $ sudo proxysql-admin --config-file=/etc/proxysql-admin.cnf --mode=loadbal --enable
 
-       This script will assist with configuring |proxysql| (currently only Percona XtraDB cluster in combination with |proxysql| is supported)
+       This script will assist with configuring *ProxySQL* (currently only Percona XtraDB cluster in combination with *ProxySQL* is supported)
 
-       |proxysql| read/write configuration mode is loadbal
+       *ProxySQL* read/write configuration mode is loadbal
        [..]
-       |proxysql| has been successfully configured to use with Percona XtraDB Cluster
+       *ProxySQL* has been successfully configured to use with Percona XtraDB Cluster
 
-       You can use the following login credentials to connect your application through |proxysql|
+       You can use the following login credentials to connect your application through *ProxySQL*
 
        mysql --user=proxysql_user --password=*****  --host=127.0.0.1 --port=6033 --protocol=tcp 
 
@@ -425,13 +425,13 @@ The following extra options can be used:
 
 * ``--quick-demo``
 
-  This option is used to setup dummy |proxysql| configuration.
+  This option is used to setup dummy *ProxySQL* configuration.
 
   .. code-block:: bash
 
     $ sudo  proxysql-admin  --enable --quick-demo
 
-    You have selected the dry test run mode. WARNING: This will create a test user (with all privileges) in the Percona XtraDB Cluster & |proxysql| installations.
+    You have selected the dry test run mode. WARNING: This will create a test user (with all privileges) in the Percona XtraDB Cluster & *ProxySQL* installations.
 
     You may want to delete this user after you complete your testing!
 
@@ -439,7 +439,7 @@ The following extra options can be used:
 
     Setting up proxysql test configuration!
 
-    Do you want to use the default |proxysql| credentials (admin:admin:6032:127.0.0.1) [y/n] ? y
+    Do you want to use the default *ProxySQL* credentials (admin:admin:6032:127.0.0.1) [y/n] ? y
     Do you want to use the default Percona XtraDB Cluster credentials (root::3306:127.0.0.1) [y/n] ? n
 
     Enter the Percona XtraDB Cluster username (super user): root
@@ -448,29 +448,29 @@ The following extra options can be used:
     Enter the Percona XtraDB Cluster hostname: localhost
 
 
-    |proxysql| read/write configuration mode is singlewrite
+    *ProxySQL* read/write configuration mode is singlewrite
 
-    Configuring |proxysql| monitoring user..
+    Configuring *ProxySQL* monitoring user..
 
     User 'monitor'@'127.%' has been added with USAGE privilege
 
-    Configuring the Percona XtraDB Cluster application user to connect through |proxysql|
+    Configuring the Percona XtraDB Cluster application user to connect through *ProxySQL*
 
     Percona XtraDB Cluster application user 'pxc_test_user'@'127.%' has been added with ALL privileges, this user is created for testing purposes
 
-    Adding the Percona XtraDB Cluster server nodes to |proxysql|
+    Adding the Percona XtraDB Cluster server nodes to *ProxySQL*
 
-    |proxysql| configuration completed!
+    *ProxySQL* configuration completed!
 
-    |proxysql| has been successfully configured to use with Percona XtraDB Cluster
+    *ProxySQL* has been successfully configured to use with Percona XtraDB Cluster
 
-    You can use the following login credentials to connect your application through |proxysql|
+    You can use the following login credentials to connect your application through *ProxySQL*
 
     mysql --user=pxc_test_user  --host=127.0.0.1 --port=6033 --protocol=tcp 
 
 * ``--include-slaves=host_name:port``
 
-  This option helps to include specified slave node(s) to |proxysql| database.
+  This option helps to include specified slave node(s) to *ProxySQL* database.
   These nodes will go into the reader hostgroup and will only be put into the
   writer hostgroup if all cluster nodes are down. Slaves must be read only. Can
   accept comma-delimited list. If this is used, make sure ``read_only=1`` is
@@ -479,10 +479,10 @@ The following extra options can be used:
   .. note:: With ``loadbal`` mode slave hosts only accept read/write requests
      when all cluster nodes are down.
 
-|command.proxysql-status| script
+`proxysql_status` script
 --------------------------------------------------------------------------------
 
-There is a simple script to dump |proxysql| configuration and statistics:
+There is a simple script to dump *ProxySQL* configuration and statistics:
 
 .. code-block:: text
 

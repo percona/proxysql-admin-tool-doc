@@ -29,7 +29,7 @@ This tutorial describes how to configure *ProxySQL* with three *Percona XtraDB C
 *ProxySQL* can be configured either using *etc/proxysql-admin.cnf* or using the
 admin interface. The admin interface can change the configuration dynamically (no need to restart the proxy).
 
-To connect to the |proxysql-admin-interface|, use the ``mysql`` client.  You
+To connect to the `ProxySQL admin interface`, use the ``mysql`` client.  You
 can either connect to the admin interface from a *Percona XtraDB Cluster* node that already has the
 ``mysql`` client installed (*Node 1*, *Node 2*, *Node 3*) or install the client on
 *Node 4* and connect locally.  For this tutorial, install *Percona XtraDB Cluster* on Node 4:
@@ -53,7 +53,7 @@ specified in the `ProxySQL global variables`_.
 
    Do not use default credentials in production!
 
-The following example shows how to connect to the |proxysql-admin-interface|
+The following example shows how to connect to the `ProxySQL admin interface`
 with default credentials:
 
 .. code-block:: bash
@@ -297,17 +297,17 @@ of the *Percona XtraDB Cluster* nodes:
    mysql@pxc3> GRANT ALL ON *.* TO 'sbuser'@'192.168.70.64';
    Query OK, 0 rows affected (0.00 sec)
 
-Adding Galera support in |proxysql-v1|
+Adding Galera support in `ProxySQL 1.x.x`
 --------------------------------------------------------------------------------
 
-|proxysql-v2| supports monitoring the status *Percona XtraDB Cluster* nodes. |proxysql-v1| cannot
+`ProxySQL 2.x.x` supports monitoring the status *Percona XtraDB Cluster* nodes. `ProxySQL 1.x.x` cannot
 detect a node which is not in ``Synced`` state.  To monitor the status of *Percona XtraDB Cluster*
-nodes in |proxysql-v1|, use the script |command.proxysql-galera-checker|.
+nodes in `ProxySQL 1.x.x`, use the script `proxysql_galera_checker`.
 
 To use this script, load it into `ProxySQL scheduler`_.
 
 The following example shows how you can load the script for default
-|proxysql-v1| configuration:
+`ProxySQL 1.x.x` configuration:
 
 .. code-block:: text
 
@@ -330,7 +330,7 @@ To load the scheduler changes into the runtime space:
    mysql@proxysql> LOAD SCHEDULER TO RUNTIME;
 
 To make sure that the script has been loaded,
-check the |table.runtime-scheduler| table:
+check the `runtime_scheduler` table:
 
 .. code-block:: text
 

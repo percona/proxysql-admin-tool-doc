@@ -1,6 +1,6 @@
 .. _1.4.7:
 
-|proxysql| |release| and |command.proxysql-admin|
+*ProxySQL* |release| and `proxysql-admin`
 ================================================================================
 
 .. include:: _res/text/release-notes/attr-v1.txt
@@ -8,29 +8,29 @@
 
 .. rubric:: Usability improvements
 
-- Added |command.proxysql-status| tool to dump |proxysql| configuration and
+- Added `proxysql_status` tool to dump *ProxySQL* configuration and
   statistics.
 
 .. rubric:: Bug fixes
 
-- :jira:`PSQLADM-2`: |command.proxysql-galera-checker| script didn’t check if
+- :jira:`PSQLADM-2`: `proxysql_galera_checker` script didn’t check if
   another instance of itself is already running. While running more then one
-  copy of |command.proxysql-galera-checker| in the same runtime environment at
+  copy of `proxysql_galera_checker` in the same runtime environment at
   the same time is still not supported, the introduced fix is able to prevent
   duplicate script execution in most cases.
-- :jira:`PSQLADM-40`: |proxysql-scheduler| generated a lot of
-  |command.proxysql-galera-checker| and |command.proxysql-node-monitor|
-  processes in case of wrong ProxySQL credentials in |file.proxysql-admin-cnf|
+- :jira:`PSQLADM-40`: `ProxySQL scheduler` generated a lot of
+  `proxysql_galera_checker` and `proxysql_node_monitor`
+  processes in case of wrong ProxySQL credentials in `/etc/proxysql-admin.cnf`
   file.
 - :jira:`PSQLADM-41`: Timeout error handling was improved with clear messages.
-- :jira:`PSQLADM-42`: An inconsistency of the date format in |proxysql| and scripts was
+- :jira:`PSQLADM-42`: An inconsistency of the date format in *ProxySQL* and scripts was
   fixed.
-- :jira:`PSQLADM-43`: |command.proxysql-galera-checker| didn’t take into account
+- :jira:`PSQLADM-43`: `proxysql_galera_checker` didn’t take into account
   the possibility of special characters presence in
-  |table.mysql-monitor-password|.
-- :jira:`PSQLADM-44`: |command.proxysql-galera-checker| generated unclear errors
-  in the |file.proxysql-log| file if wrong credentials where passed.
-- :jira:`PSQLADM-46`: |command.proxysql-node-monitor| script incorrectly split
+  `mysql-monitor_password`.
+- :jira:`PSQLADM-44`: `proxysql_galera_checker` generated unclear errors
+  in the `/etc/proxysql.log` file if wrong credentials where passed.
+- :jira:`PSQLADM-46`: `proxysql_node_monitor` script incorrectly split
   the hostname and the port number in URLs containing hyphen character.
 
 .. include:: _res/text/license.txt
