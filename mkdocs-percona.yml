@@ -1,0 +1,8 @@
+INHERIT: mkdocs-base.yml
+
+site_url: 'https://percona.com/doc/proxysql-admin-tool-doc/'
+
+theme:
+  name: material
+  custom_dir: _resource/theme
+

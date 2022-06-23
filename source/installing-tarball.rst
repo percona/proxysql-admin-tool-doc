@@ -15,16 +15,16 @@ Follow these steps:
 #. In the *Software* field, select **Linux - Generic**.
 #. Select the tar file.
 
-   See :ref:`2.3.2-1`.
+   See :ref:`tb-2.3.2-1`.
 
-   See :ref:`2.0.15`
+   See :ref:`tb-2.0.15`
 
 #. Navigate to the downloaded tar file.
 #. Extract the files with the following commands:
 
-   See :ref:`2.0.14`.
+   See :ref:`tb-2.0.14`.
 
-   See :ref:`2.0.13`.
+   See :ref:`tb-2.0.13`.
 
 #. Create a directory to store the *ProxySQL* data.
 
@@ -41,7 +41,7 @@ Follow these steps:
 
 #. Set the other options, as needed.
 
-.. _2.3.2-1:
+.. _tb-2.3.2-1:
 
 
 Available tar files for ProxySQL 2.3.2-1.2 and higher
@@ -69,7 +69,7 @@ The following tar files are available:
 
 
 
-.. _2.0.15:
+.. _tb-2.0.15:
 
 
 Available tar files from ProxySQL 2.0.15 to ProxySQL 2.3.2
@@ -99,7 +99,7 @@ The tarball files are combined into the following files:
 
        The password-based file encryption requires OpenSSL 1.1.1, but Ubuntu 16.04 does not support this OpenSSL version. A special statically linked OpenSSL 1.1.1 binary is packaged with the executable. This packaged binary avoids conflicts with the system OpenSSL and any shared libraries. Each new release rebuilds the binary.
 
-.. _2.0.14:
+.. _tb-2.0.14:
 
 ProxySQL 2.0.14 or higher extraction commands
 ----------------------------------------------
@@ -114,7 +114,7 @@ The extraction commands for version 2.0.14 and higher:
    $> cd proxysql-VERSION-Linux-PLATFORM-ARCHITECTURE
 
 
-.. _2.0.13:
+.. _tb-2.0.13:
 
 ProxySQL 2.0.13 or lower extraction commands
 ---------------------------------------------

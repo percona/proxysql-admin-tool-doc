@@ -37,6 +37,10 @@ Version 2.x release notes
 
 Version 1.4 release notes
 
+.. toctree::
+   :maxdepth: 1
+
+
 :ref:`1.4.16` (2020-02-11)
 
 :ref:`1.4.12` (2018-11-13)
@@ -49,5 +53,5 @@ Version 1.4 release notes
 
 :ref:`1.4.5` (2018-02-15)
 
-:ref:`1.4.4` (2018-01-18)
+:ref:`1.4.4`
 
