@@ -17,7 +17,7 @@ SHUTDOWN
    connections for the node.  After the transition period ends, any
    long-running transactions that are still active are aborted.
 MAINTENANCE
-   You can change to this state if you need to perform maintenace on a node
+   You can change to this state if you need to perform maintenance on a node
    without shutting it down.
  
    You may need to isolate the node for some time, so that it does not receive

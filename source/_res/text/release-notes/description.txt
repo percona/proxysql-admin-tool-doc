@@ -1,7 +1,7 @@
 
-*ProxySQL* |release|, released by ProxySQL_, is now available for download in
+*ProxySQL* release, released by ProxySQL_, is now available for download in
 the `Percona repository`_ along with an updated version of **Percona**’s
-|command.proxysql-admin| tool.
+**proxysql-admin** tool.
 
 *ProxySQL* is a high-performance proxy, currently for `MySQL`, and database
 servers in the `MySQL` ecosystem (like **Percona Server for MySQL** and `MariaDB`). It acts as an
@@ -9,8 +9,6 @@ intermediary for client requests seeking resources from the
 database. René Cannaò created *ProxySQL* for DBAs as a means of solving
 complex replication topology issues.
 
-The *ProxySQL* |release| source and binary packages available from the `Percona
+The *ProxySQL* release source and binary packages available from the `Percona
 download page for ProxySQL`_ include `ProxySQL Admin` – a tool developed by
-**Percona** to configure **Percona XtraDB Cluster** nodes into *ProxySQL*. `Docker` images for release
-|release| are available as well. You can `download the original ProxySQL from
-GitHub`_. *ProxySQL* offers the `ProxySQL documentation`_.
+**Percona** to configure **Percona XtraDB Cluster** nodes into *ProxySQL*. `Docker` images are available as well. You can `download the original ProxySQL from GitHub`_. *ProxySQL* offers the `ProxySQL documentation`_.

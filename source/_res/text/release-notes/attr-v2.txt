@@ -1,3 +1,3 @@
 
-:Date: |date|
+:Date: 
 :Installation: https://www.percona.com/doc/percona-xtradb-cluster/LATEST/howtos/proxysql-v2.html#installing-proxysql-v2

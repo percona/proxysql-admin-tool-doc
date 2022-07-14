@@ -1,3 +1,14 @@
+Markdown
+mkdocs
+mkdocs-exclude
+mkdocs-git-revision-date-plugin
+mkdocs-htmlproofer-plugin
+mkdocs-include
+mkdocs-macros-plugin
+mkdocs-material
+mkdocs-material-extensions
+mkdocs-section-index
+mkdocs-versioning
 sphinx-autobuild==2020.9.1
 sphinx-copybutton
 sphinx-markdown-builder

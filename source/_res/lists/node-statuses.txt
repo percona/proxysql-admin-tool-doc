@@ -3,7 +3,7 @@ ONLINE
    Backend node is fully operational.
 SHUNNED
    backend node is temporarily taken out of use, because either too many
-   connection errors hapenned in a short time, or replication lag exceeded the
+   connection errors happened in a short time, or replication lag exceeded the
    allowed threshold.
 OFFLINE_SOFT
    New incoming connections aren't accepted, while existing connections are kept
