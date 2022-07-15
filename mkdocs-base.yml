@@ -3,8 +3,8 @@
 site_name: Percona ProxySQL Admin tool
 site_description: Documentation
 site_author: Percona LLC
-copyright: Percona LLC, &#169; 2022
-site_url: ""
+copyright: Percona LLC and/or its affiliates, &#169; 2009-2022
+
 repo_name: percona/proxysql-admin-tool-doc
 repo_url: https://github.com/percona/proxysql-admin-tool-doc
 edit_uri: edit/main/docs/

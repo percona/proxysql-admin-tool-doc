@@ -1,7 +1,7 @@
 # MkDocs configuration for Netlify builds
 
 INHERIT: mkdocs-base.yml
-site_url: https://docs.percona.com/proxysql/index.html
+site_url: "https://docs.percona.com/proxysql/index.html"
 
 theme:
   name: material
