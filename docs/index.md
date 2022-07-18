@@ -10,7 +10,7 @@ ProxySQL maintains the connection pool. The pool allows a certain number of conn
 
 The configuration options include runtime parameters, server grouping, and traffic-related parameters. Many of the settings can be done at runtime using queries that are similar to SQL statements.
 
-THe [ProxySQL documentation](https://proxysql.com/documentation/) provides information on installing and running ProxySQL.
+The [ProxySQL documentation](https://proxysql.com/documentation/) provides information on installing and running ProxySQL.
 
 *ProxySQL* is available from the **Percona** software repositories in the following versions:
 
@@ -176,8 +176,6 @@ Implemented in version 2.3.2-1, the Percona Scheduler Admin tool can be used to 
 ## Release notes for ProxySQL v2.x and ProxySQL v1.4.x
 
 * [Release notes of ProxySQL, proxysql-admin, and percona-scheduler-admin](release-notes.md)
-
-2022, Percona LLC and/or its affiliates 2009-2022
 
 <!-- `Docker` replace:: Docker -->
 <!-- `MariaDB` replace:: MariaDB -->
