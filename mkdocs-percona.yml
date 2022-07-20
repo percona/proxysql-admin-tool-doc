@@ -2,6 +2,10 @@ INHERIT: mkdocs-base.yml
 
 site_url: "https://docs.percona.com/proxysql/index.html"
 
+plugins:
+  section-index: {}
+  bootstrap-tables: {}
+
 theme:
   name: material
   custom_dir: _resource/theme
