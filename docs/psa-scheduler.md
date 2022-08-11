@@ -27,6 +27,20 @@ If you find a bug in the the Percona Scheduler Admin tool, add a bug report in t
 **NOTE**: The Percona Scheduler Admin tool has different features than
 the [proxy-admin](v2-config.md) tool. You cannot use the options from one tool in the other tool. Mixing the options may cause unintended results.
 
+## Version changes
+
+* When ``pxc_scheduler_handler`` launches, a lock file is created to prevent the running of multiple instances of ``pxc_scheduler_handler``. Prior to **ProxySQL 2.4.2**, the lock file remained in the file system and prevented the handler script from running. 
+
+  Starting with **ProxySQL 2.4.2**, on startup, ``pxc_scheduler_handler`` does the following:
+
+   * reads the Process identifier (PID), 
+
+   * reads the timestamp from the lock file, 
+   
+   * checks if PID is running on startup.
+ 
+  If PID is still running, the newly launched ``pxc_scheduler_handler`` exits. If the PID is not running, ``pxc_scheduler_handler`` checks whether the timeout specified in `lockFileTimeout` exceeds. If the timeout exceeds, ``pxc_scheduler_handler`` removes the lock file and performs the operations.
+
 <!-- _prerequisites -->
 ## Prerequisites
 
