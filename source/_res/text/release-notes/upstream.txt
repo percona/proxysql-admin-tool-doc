@@ -1,2 +1,0 @@
-
-This version includes *ProxySQL* release. For more information on the issues fixed, features, or enhancements, see the *ProxySQL* release `release notes <https://github.com/sysown/proxysql/releases/tag/v2.0.17>`_
