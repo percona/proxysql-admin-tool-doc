@@ -4,8 +4,6 @@ We welcome contributions from all users and the community. By contributing, you 
 
 You can contribute to the documentation in either of the following ways:
 
-
-
 - [Documentation Contributing Guide](#documentation-contributing-guide)
   - [Add a forum topic](#add-a-forum-topic)
   - [Request a change with a Jira issue](#request-a-change-with-a-jira-issue)
@@ -49,7 +47,6 @@ In the Contact Us section, select the link in "open a JIRA ticket"
 
 Using either the [Edit documentation online with GitHub](#edit-documentation-online-with-github) method or the [Edit documentation locally](#edit-documentation-locally) method to make changes to the documentation and create a pull request. 
  
-
 ### What you should know
 
 Most of the document is in plain text, but you may use [Markdown] (https://www.markdownguide.org/) to add syntax elements (notes, tables, and so on) to the documentation. 
@@ -162,3 +159,4 @@ The output is the following:
 <img src= "./docs/_images/mkdocs.png" alt="Running MkDocs" width = 70% height = 70% />
 
 Open a browser and navigate to `http://127.0.0.1:8000/proxysql/` to see the HTML files. You may need to navigate to the document that you have changed.
+

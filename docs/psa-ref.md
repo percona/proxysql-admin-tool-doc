@@ -13,7 +13,7 @@ percona-scheduler-admin --config-file=config.toml [option] [option]
 If you do not include the configuration file, the result is an error and nothing happens.
 
 ```
-$> ./percona-scheduler-admin --debug
+$> percona-scheduler-admin --debug
 
 ERROR : The --config-file option is required but is missing from the command.
 ```
@@ -26,9 +26,9 @@ disable and enable can also be selected with one hyphen (-) and an abbreviation.
 The following examples return the same result:
 
 ```
-$> ./percona-scheduler-admin --config-file=config.toml -e
+$> percona-scheduler-admin --config-file=config.toml -e
 
-$> ./percona-scheduler-admin --config-file=config.toml --enable
+$> percona-scheduler-admin --config-file=config.toml --enable
 ```
 
 You can combine some options with other, optional options to modify the
@@ -36,14 +36,14 @@ statement’s behavior. Multiple options are separated by a space.
 You can combine options in any order.
 
 ```
-$> ./percona-scheduler-admin --config-file=config.toml --write-node=127.0.0.1:4130 --update-cluster
+$> percona-scheduler-admin --config-file=config.toml --write-node=127.0.0.1:4130 --update-cluster
 ```
 
 Certain options must be combined with a
 required option to return a result.
 
 ```
-$> ./percona-scheduler-admin --config-file=config.toml --force -e
+$> percona-scheduler-admin --config-file=config.toml --force -e
 ```
 
 If you do not combine the
@@ -51,7 +51,7 @@ option with the required option, the statement does not run and returns an
 error.
 
 ```
-$> ./percona-scheduler-admin --config-file=tests/testsuite.toml  --update-write-weight="127.0.0.1:33,112"
+$> percona-scheduler-admin --config-file=tests/testsuite.toml  --update-write-weight="127.0.0.1:33,112"
 
 ERROR : --update-write-weight requires --update-cluster.
 ```
@@ -59,7 +59,7 @@ ERROR : --update-write-weight requires --update-cluster.
 Specific options, such as –write-node or –server, require a value.
 
 ```
-$> ./percona-scheduler-admin --config-file=config.toml --server=192.168.56.32:3306
+$> percona-scheduler-admin --config-file=config.toml --server=192.168.56.32:3306
 ```
 
 ## Option Reference

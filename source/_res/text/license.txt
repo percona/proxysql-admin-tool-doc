@@ -1,3 +1,0 @@
-
-*ProxySQL* is available under Open Source license GPLv3.
-
