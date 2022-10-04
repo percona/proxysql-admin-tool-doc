@@ -2,15 +2,17 @@
 
 ![Percona logo](source/percona-logo.jpg)
 
-For more information about ProxySQL and the ProxySQL Admin tool, see the [ProxySQL and ProxySQL Admin documentation](https://www.percona.com/doc/proxysql/index.html).
+For more information about ProxySQL and the ProxySQL Admin tools, see the [ProxySQL Admin Utilities documentation](https://docs.percona.com/proxysql/index.html).
 
 ## Installation
 
-You can install ProxySQL and the ProxySQL Admin tool with either of the following methods:
+You can install ProxySQL and the ProxySQL Admin utilities with either of the following methods:
+
 - Use the Percona repository
+
 - Building from the [source code](https://github.com/percona/proxysql-admin-tool)
 
-The ProxySQL and ProxySQL Admin tool documentation source is [here](https://github.com/percona/proxysql-admin-tool-doc).
+The ProxySQL and ProxySQL Admin utilities documentation source is located in the [proxysql-admin-tool-doc repository] (https://github.com/percona/proxysql-admin-tool-doc).
 
 ## ProxySQL Information
 
