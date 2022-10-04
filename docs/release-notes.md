@@ -2,6 +2,8 @@
 
 ## Version 2.x release notes
 
+[ProxySQL 2.4.4 and ProxySQL admin tools (2022-10-04)](2.4.4.md)
+
 [ProxySQL 2.4.3 and ProxySQL admin tools (2022-08-31)](2.4.3.md)
 
 [ProxySQL 2.4.2 and ProxySQL admin tools (2022-08-10)](2.4.2.md)
