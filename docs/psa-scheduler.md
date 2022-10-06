@@ -4,7 +4,9 @@ Implemented in *ProxySQL* 2.3.2-1.2, the Percona Scheduler Admin
 (percona-scheduler-admin) tool configures **Percona XtraDB Cluster** nodes into
 *ProxySQL*.
 
-**Important**: The Percona Scheduler Admin tool has been tested with ProxySQL 2.3.0 and 2.3.2-1.2
+!!! note
+
+    The Percona Scheduler Admin tool has been tested with ProxySQL 2.3.0, 2.3.2-1.2, and later versions.
 
 This tool has a segment-aware failover mechanism and can automatically perform a failover due to node failures,
 service degradation, or maintenance requirements. The external
@@ -33,15 +35,14 @@ the [proxy-admin](v2-config.md) tool. You cannot use the options from one tool i
 
   Starting with **ProxySQL 2.4.2**, on startup, ``pxc_scheduler_handler`` does the following:
 
-   * reads the Process identifier (PID), 
+   * Reads the Process identifier (PID)
 
-   * reads the timestamp from the lock file, 
+   * Reads the timestamp from the lock file
    
-   * checks if PID is running on startup.
+   * Checks if PID is running on startup
  
   If PID is still running, the newly launched ``pxc_scheduler_handler`` exits. If the PID is not running, ``pxc_scheduler_handler`` checks whether the timeout specified in `lockFileTimeout` exceeds. If the timeout exceeds, ``pxc_scheduler_handler`` removes the lock file and performs the operations.
 
-<!-- _prerequisites -->
 ## Prerequisites
 
 The following are the prerequisites for using the Percona Scheduler Admin:
@@ -50,4 +51,4 @@ The following are the prerequisites for using the Percona Scheduler Admin:
 
 * The ProxySQL and Percona XtraDB Cluster should be up and running.
 
-For information on how to install the Percona Scheduler Admin tool, see [Build the Percona Scheduler admin tool](psa-build.md).
+For information on the Percona Scheduler Admin tool installation, see [Installing ProxySQL 2.x.x and the admin utilities](/install-v2.md) or [Build the Percona Scheduler admin tool](psa-build.md).
