@@ -113,6 +113,7 @@ nav:
       - tarball-v1.md
       - configuring.md
   - Install ProxySQL 2.x.x and admin tools:
+      - where-to-download-proxysql.md
       - install-v2.md
       - installing-tarball.md
       - psa-build.md
