@@ -6,44 +6,43 @@ The standard percona-scheduler-admin statement includes
 `percona-scheduler-admin --config-file=<configuration file name and
 extension>`. A Percona Scheduler Admin example statement has the following syntax:
 
-```
+```text
 percona-scheduler-admin --config-file=config.toml [option] [option]
 ```
 
-If you do not include the configuration file, the result is an error and nothing happens.
+If you do not include the configuration file in the command, the result is an error and nothing happens.
 
-```
-$> percona-scheduler-admin --debug
-
+```text
+$ percona-scheduler-admin --debug
 ERROR : The --config-file option is required but is missing from the command.
 ```
 
-Options determine what the statement does. The percona-scheduler-admin statement must include at least one option. If you do not include at least one option, the tool returns an error and nothing happens.
+[Options](/psa-options.md) determine what the statement does. The percona-scheduler-admin statement must include at least one option. A command without an option returns an error and nothing happens.
 
-Two hyphens (–) precede an option name. The options
-disable and enable can also be selected with one hyphen (-) and an abbreviation.
+For most options, two hyphens (–) precede an option name. The [disable](/psa-options#–disable---d) and [enable](/psa-options#–enable---e) can be selected with one hyphen (-) and the appropriate abbreviation.
 
-The following examples return the same result:
+For example, the following commands return the same result:
 
-```
-$> percona-scheduler-admin --config-file=config.toml -e
+```shell
+$ percona-scheduler-admin --config-file=config.toml -e
 
-$> percona-scheduler-admin --config-file=config.toml --enable
-```
-
-You can combine some options with other, optional options to modify the
-statement’s behavior. Multiple options are separated by a space.
-You can combine options in any order.
-
-```
-$> percona-scheduler-admin --config-file=config.toml --write-node=127.0.0.1:4130 --update-cluster
+$ percona-scheduler-admin --config-file=config.toml --enable
 ```
 
-Certain options must be combined with a
-required option to return a result.
+You can combine some options with other, optional options to modify the statement’s behavior. Multiple options are separated by a space. You can combine the options in any order.
 
+An example of combining options in one statement:
+
+```shell
+$ percona-scheduler-admin --config-file=config.toml --write-node=127.0.0.1:4130 --update-cluster
 ```
-$> percona-scheduler-admin --config-file=config.toml --force -e
+
+For some options, they must be combined with a required option to return a result.
+
+An example of an option combined with a required option:
+
+```shell
+$ percona-scheduler-admin --config-file=config.toml --force -e
 ```
 
 If you do not combine the
@@ -51,7 +50,7 @@ option with the required option, the statement does not run and returns an
 error.
 
 ```
-$> percona-scheduler-admin --config-file=tests/testsuite.toml  --update-write-weight="127.0.0.1:33,112"
+$ percona-scheduler-admin --config-file=tests/testsuite.toml  --update-write-weight="127.0.0.1:33,112"
 
 ERROR : --update-write-weight requires --update-cluster.
 ```

@@ -1,4 +1,4 @@
-# Option Details
+# Percona Scheduler Admin option details
 
 The Percona Scheduler Admin script lists the available options in Percona Scheduler Admin configuration file. The following options are described in more detail:
 
@@ -21,20 +21,22 @@ The Percona Scheduler Admin script lists the available options in Percona Schedu
 | [--update-write-weight](#update-write-weight)           |
 | [--write-node](#write-node)                             |
 
-## <a name="add-query-rule"></a> --add-query-rule
+## -add-query-rule
 
-This option creates query rules for a synced mysql user and applies only to the
+This option creates query rules for a synced MySQL user and applies only to the
 `singlewrite` mode.
 
-### Requires
+### -add-query-rule requires
 
 Either the –syncusers or –sync-multi-cluster-users options.
+
+### -add-query-rule example
 
 ```shell
 $ percona-scheduler-admin --config-file=config.toml --syncusers
 ```
 
-The output should be similar to the following:
+The following is an example of the output:
 
 ```text
 --add-query-rule
@@ -55,12 +57,15 @@ Synced PXC users to the ProxySQL database!
 
 This option adds the cluster application user account to the ProxySQL database.
 
-```shell
-$> percona-scheduler-admin --config-file=config.toml --adduser
-```
-The output should be similar to the following:
+### –adduser example
 
-```text 
+```shell
+$ percona-scheduler-admin --config-file=config.toml --adduser
+```
+
+The following is an example of the output:
+
+```text
 Adding PXC application user to the ProxySQL database
 Enter the PXC application user name: cluster_one
 Enter the PXC application user password:
@@ -76,7 +81,7 @@ Added PXC application user to the ProxySQL database!
 ## –auto-assign-weights
 
 ProxySQL uses weights for defining the failover procedure in `singlewrite` mode
-and handling load balancing loadbal mode.
+and handling load balancing `loadbal` mode.
 
 For the failover procedure, this option with the
 [--update-cluster](#update-cluster) option assigns weights to the PXC nodes when the cluster is
@@ -95,8 +100,7 @@ For example, in a three-node cluster, assign a `900` to the writer node and
 
 This option does these operations automatically without any manual intervention.
 
-**WARNING**: See Do not combine the following options for information on options that should not be
-in the same statement.
+Review [do not combine the following options in the same statement](/psa-known-limitations.md#do-not-combine-the-following-options).
 
 The following example is a default configuration when the
 `percona-scheduler-admin` sets up proxysql.
@@ -120,12 +124,15 @@ Cluster node info
 
 Cluster membership updated in the ProxySQL database!
 ```
-An example of the command:
+
+### -auto-assign-weights example
 
 ```shell
-$> percona-scheduler-admin --config-file=config.toml --update-cluster --auto-assign-weights
+$ percona-scheduler-admin --config-file=config.toml --update-cluster --auto-assign-weights
 ```
-The output should be similar to the following:
+
+The following is an example of the output:
+
 ```text
 No new nodes detected.
 Cluster node info
@@ -152,10 +159,13 @@ Cluster membership updated in the ProxySQL database!
 This option removes Percona XtraDB Cluster nodes from ProxySQL and stops the
 ProxySQL monitoring daemon.
 
+### -disable example
+
 ```shell
 $ percona-scheduler-admin --config-file=config.toml --disable
 ```
-The output should be similar to the following:
+
+The following is an example of the output:
 
 ```text
 Removing cluster application users from the ProxySQL database.
@@ -188,13 +198,15 @@ privilege. The users have the following tasks:
 
 * Connect to the PXC Cluster node through the ProxySQL console.
 
-**NOTE**: You must have `super` user credentials from Percona XtraDB Cluster
-to set up the default users.
+You must have [`super`](https://dev.mysql.com/doc/refman/8.0/en/privileges-provided.html#priv_super) user credentials from Percona XtraDB Cluster to set up the default users.
+
+### -enable example
 
 ```shell
 $ percona-scheduler-admin --config-file=config.toml --enable
 ```
-The output should be similar to the following:
+
+The following is an example of the output:
 
 ```text
  Configuring using mode: singlewrite
@@ -236,41 +248,180 @@ ProxySQL configuration completed!
 ```
 
 ProxySQL has been successfully configured to use with Percona XtraDB Cluster
-```
 
-You can verify the success with the following command:
+### Verify -enable example
 
-Run the following MySQL command to verify:
+You can verify the successful configuration with the following command:
 
 ```sql
 mysql> select * from runtime_mysql_servers;
 ```
-The output should be similar to the following:
 
-```text
-+--------------+---------------+------+-----------+--------+--------+-------------+-----------------+---------------------+---------+----------------+---------+
-| hostgroup_id | hostname      | port | gtid_port | status | weight | compression | max_connections | max_replication_lag | use_ssl | max_latency_ms | comment |
-+--------------+---------------+------+-----------+--------+--------+-------------+-----------------+---------------------+---------+----------------+---------+
-| 100          | 192.168.56.32 | 3306 | 0         | ONLINE | 1000   | 0           | 1000            | 0                   | 0       | 0              |         |
-| 8101         | 192.168.56.33 | 3306 | 0         | ONLINE | 1000   | 0           | 1000            | 0                   | 0       | 0              |         |
-| 8101         | 192.168.56.34 | 3306 | 0         | ONLINE | 1000   | 0           | 1000            | 0                   | 0       | 0              |         |
-| 8101         | 192.168.56.32 | 3306 | 0         | ONLINE | 1000   | 0           | 1000            | 0                   | 0       | 0              |         |
-| 8100         | 192.168.56.33 | 3306 | 0         | ONLINE | 1000   | 0           | 1000            | 0                   | 0       | 0              |         |
-| 8100         | 192.168.56.34 | 3306 | 0         | ONLINE | 1000   | 0           | 1000            | 0                   | 0       | 0              |         |
-| 8100         | 192.168.56.32 | 3306 | 0         | ONLINE | 1000   | 0           | 1000            | 0                   | 0       | 0              |         |
-| 101          | 192.168.56.33 | 3306 | 0         | ONLINE | 1000   | 0           | 1000            | 0                   | 0       | 0              |         |
-| 101          | 192.168.56.34 | 3306 | 0         | ONLINE | 1000   | 0           | 1000            | 0                   | 0       | 0              |         |
-| 101          | 192.168.56.32 | 3306 | 0         | ONLINE | 1000   | 0           | 1000            | 0                   | 0       | 0              |         |
-+--------------+---------------+------+-----------+--------+--------+-------------+-----------------+---------------------+---------+----------------+---------+
-10 rows in set (0.01 sec)
-```
+The following is an example of the output:
 
-Verify the scheduler with the following command:
+<table>
+    <tr>
+        <td>hostgroup_id</td>
+        <td>hostname</td>
+        <td>port</td>
+        <td>gtid_port</td>
+        <td>status</td>
+        <td>weight</td>
+        <td>compression</td>
+        <td>max_connections</td>
+        <td>max_replication_lag</td>
+        <td>use_ssl</td>
+        <td>max_latency_ms</td>
+        <td>comment</td>
+    </tr>
+    <tr>
+        <td>100</td>
+        <td>192.168.56.32</td>
+        <td>3306</td>
+        <td>0</td>
+        <td>ONLINE</td>
+        <td>1000</td>
+        <td>0</td>
+        <td>1000</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>8101</td>
+        <td>192.168.56.33</td>
+        <td>3306</td>
+        <td>0</td>
+        <td>ONLINE</td>
+        <td>1000</td>
+        <td>0</td>
+        <td>1000</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>8101</td>
+        <td>192.168.56.34</td>
+        <td>3306</td>
+        <td>0</td>
+        <td>ONLINE</td>
+        <td>1000</td>
+        <td>0</td>
+        <td>1000</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>8101</td>
+        <td>192.168.56.32</td>
+        <td>3306</td>
+        <td>0</td>
+        <td>ONLINE</td>
+        <td>1000</td>
+        <td>0</td>
+        <td>1000</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>8100</td>
+        <td>192.168.56.33</td>
+        <td>3306</td>
+        <td>0</td>
+        <td>ONLINE</td>
+        <td>1000</td>
+        <td>0</td>
+        <td>1000</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>8100</td>
+        <td>192.168.56.34</td>
+        <td>3306</td>
+        <td>0</td>
+        <td>ONLINE</td>
+        <td>1000</td>
+        <td>0</td>
+        <td>1000</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>8100</td>
+        <td>192.168.56.32</td>
+        <td>3306</td>
+        <td>0</td>
+        <td>ONLINE</td>
+        <td>1000</td>
+        <td>0</td>
+        <td>1000</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>101</td>
+        <td>192.168.56.33</td>
+        <td>3306</td>
+        <td>0</td>
+        <td>ONLINE</td>
+        <td>1000</td>
+        <td>0</td>
+        <td>1000</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>101</td>
+        <td>192.168.56.34</td>
+        <td>3306</td>
+        <td>0</td>
+        <td>ONLINE</td>
+        <td>1000</td>
+        <td>0</td>
+        <td>1000</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>101</td>
+        <td>192.168.56.32</td>
+        <td>3306</td>
+        <td>0</td>
+        <td>ONLINE</td>
+        <td>1000</td>
+        <td>0</td>
+        <td>1000</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td></td>
+    </tr>
+</table>
+
+Verify the scheduler settings with the following command:
 
 ```sql
 mysql> select * from scheduler\G
 ```
-The output should be similar to the following:
+The following is an example of the output:
 
 ```text
 *************************** 1. row ***************************
@@ -289,10 +440,10 @@ interval_ms: 5000
 
 ## –force
 
-This option must be combined with either –enable / -e or 
-–update-cluster. This option skips any `mysql_servers` table, 
+This option must be combined with either [–enable / -e](#enable---e) or 
+[–update-cluster](#update-cluster). This option skips any `mysql_servers` table, 
 `mysql_users` table, and `mysql_galera_hostgroups` table configuration 
-checks. Certain checks issue warnings instead of errors which allow the option to continue processing.
+checks. Certain checks issue warnings, instead of errors, which allows the option to continue processing.
 
 ## –is-enabled
 
@@ -302,33 +453,43 @@ Returns a zero (0) if an entry corresponds to the writer hostgroup and is set to
 
 Returns a one (1) if an entry does not correspond to the writer hostgroup.
 
+### is-enabled example
+
 ```shell
-$> percona-scheduler-admin --config-file=config.toml --is-enabled
+$ percona-scheduler-admin --config-file=config.toml --is-enabled
 ```
-The output should be similar to the following:
+
+The following is an example of the output:
 
 ```text
 The current configuration has been enabled and is active
 ```
+
+### is-enabled verification example
+
 Verify if `percona-scheduler-admin` configured the hostgroups in ProxySQL.
 
 ```shell
-$> echo $?
+$ echo $?
 ```
-The output should be similar to the following:
+
+The following is an example of the output:
 
 ```text
 0
 ```
 
-Disabling the cluster configuration causes the [--is-enabled](#–is-enabled)
-option to throw an error.
+### -is-enabled example with cluster disabled
 
-Disabling the cluster
+Disabling the cluster configuration and then calling the option creates an error.
+
+Disabling the cluster:
+
 ```shell
 $ percona-scheduler-admin --config-file=config.toml --disable
 ```
-The output should be similar to the following:
+
+The following is an example of the output:
 
 ```text
 Removing cluster application users from the ProxySQL database.
@@ -336,46 +497,53 @@ Removing cluster nodes from the ProxySQL database.
 Removing query rules from the ProxySQL database if any.
 ProxySQL configuration removed!
 ```
+
 Check if the cluster is enabled:
+
 ```bash
-$> percona-scheduler-admin --config-file=config.toml --is-enabled
+$ percona-scheduler-admin --config-file=config.toml --is-enabled
 ```
-The output should be similar to the following:
+
+The following is an example of the output:
 
 ```text
 ERROR (line:2450) : The current configuration has not been enabled
 ```
+
 ## –remove-all-servers
 
 When used with [--update-cluster](#update-cluster) this option removes 
-all servers belonging to the current cluster before running the 
-[--update-cluster](#update-cluster) option.
+all servers belonging to the current cluster before running the [--update-cluster](#update-cluster) option.
+
+### -remove-all-server example
 
 ```shell
-$> percona-scheduler-admin --config-file=config.toml 
+$ percona-scheduler-admin --config-file=config.toml 
 --remove-all-servers --udpate-cluster
 ```
+
 ## –server
 
 Selects a server by the IP address and port. This option can be 
-combined with --syncusers or –sync-multi-cluster-users to sync a single 
-non-cluster server. The option does not require that the server 
-belong to a PXC cluster.
+combined with [--syncusers](#syncusers) or [–sync-multi-cluster-users](#sync-multi-cluster-users) to sync a single non-cluster server. The option does not require that the server belong to a *Percona XtraDB Cluster*.
 
-Usage:
+### -server example
 
 ```shell
-$> percona-scheduler-admin --config-file=config.toml --server=192.168.56.32:3306
+$ percona-scheduler-admin --config-file=config.toml --server=192.168.56.32:3306
 ```
 
 ## –status
 
 This option displays information about all Galera hostgroups and their servers supported by this ProxySQL instance.
 
+### -status example
+
 ```shell
-$> percona-scheduler-admin --config-file=config.toml --status
+$ percona-scheduler-admin --config-file=config.toml --status
 ```
-The output should be similar to the following:
+
+The following is an example of the output:
 
 ```text
 mysql_servers rows for this configuration
@@ -397,14 +565,11 @@ mysql_servers rows for this configuration
 
 ## –sync-multi-cluster-users
 
-Use this option to sync proxysql instances that manage multiple
-clusters.
+Use this option to sync proxysql instances that manage multiple clusters.
 
 This option does the following:
 
-
 * Syncs the currently configured *Percona XtraDB Cluster* user accounts with the ProxySQL database except for user accounts without a password and admin user accounts.
-
 
 * Keeps ProxySQL users that are not present in the Percona XtraDB Cluster
 
@@ -423,10 +588,13 @@ To sync a specific server combine this option with the [--server](#server)  opti
 Review the user accounts in the ProxySQL database as root from ProxySQL 
 database.
 
+### -syncusers example
+
 ```sql
 proxysql admin#> SELECT DISTINCT username FROM mysql_users;
 ```
-The output should be similar to the following:
+
+The following is an example of the output:
 
 ```text
 +----------+
@@ -437,13 +605,13 @@ The output should be similar to the following:
 1 row in set (0.00 sec)
 ```
 
-On a Percona XtraDB Cluster node, verify if a user account is already added.
+On a *Percona XtraDB Cluster* node, verify if a user account is already added.
 
 ```sql
 mysql> SELECT user FROM mysql.user WHERE user LIKE 'test%';
 ```
 
-The output should be similar to the following:
+The following is an example of the output:
 
 ```text
 Empty set (0.00 sec)
@@ -454,18 +622,20 @@ On the node, add a new user.
 ```sql
 mysql> CREATE USER 'test_user'@'localhost' IDENTIFIED WITH 'mysql_native_password' by 'passw0Rd';
 ```
-The output should be similar to the following:
+
+The following is an example of the output:
 
 ```text
 Query OK, 0 rows affected (0.04 sec)
 ```
 
-Run percona-scheduler-admin with the `--syncusers` option
+Run `percona-scheduler-admin` with the `--syncusers` option:
 
-```bash
-$ ./percona-scheduler-admin --config-file=config.toml --syncusers
+```shell
+$ percona-scheduler-admin --config-file=config.toml --syncusers
 ```
-The output should be similar to the following:
+
+The following is an example of the output:
 
 ```text
 Syncing user accounts from PXC(192.168.56.32:3306) to ProxySQL
@@ -478,10 +648,10 @@ Synced PXC users to the ProxySQL database!
 Verify, in the ProxySQL database, that the user account has been added.
 
 ```sql
-proxysql admin> SELECT DISTINCT username FROM mysql_users;
+proxysql-admin> SELECT DISTINCT username FROM mysql_users;
 ```
 
-The output should be similar to the following:
+The following is an example of the output:
 
 ```text
 +-----------+
@@ -505,10 +675,10 @@ server list and is `ONLINE`, then this command makes that node the
 writer node by assigning a larger weight to that node. Only use this combination if the mode is `singlewrite`.
  
 ```shell
-$> percona-scheduler-admin --config-file=config.toml --write-node=127.0.0.1:4130 --update-cluster
+$ percona-scheduler-admin --config-file=config.toml --write-node=127.0.0.1:4130 --update-cluster
 ```
 
-The output should be similar to the following:
+The following is an example of the output:
 
 ```text
 No new nodes detected.
@@ -537,11 +707,13 @@ Cluster membership updated in the ProxySQL database!
 
 This option updates the mysql server version in the proxysql db based on the online writer node.
 
+### -update-mysql-version example
+
 ```shell
-$> percona-scheduler-admin --config-file=config.toml --update-mysql-version
+$ percona-scheduler-admin --config-file=config.toml --update-mysql-version
 ```
 
-The output should be similar to the following:
+The following is an example of the output:
 
 ```text
 ProxySQL MySQL version changed to 8.0.27
@@ -552,21 +724,20 @@ ProxySQL MySQL version changed to 8.0.27
 Combining –update-cluster with this option assigns the specified read
 weight to a node.
 
-Usage:
-
 The syntax for the arguments are: <IP_ADDRESS:PORT> and <New Weight>. The
 <IP_ADDRESS> format can be either Internet Protocol version 4 (IPv4)
 or Internet Protocol version 6 (IPv6).
 
+### -update-read-weight example
+
 ```shell
-$> percona-scheduler-admin --config-file=config.toml --update-cluster --update-read-weight="<IP_ADDRESS:PORT>, <New Weight>"
+$ percona-scheduler-admin --config-file=config.toml --update-cluster --update-read-weight="<IP_ADDRESS:PORT>, <New Weight>"
 ```
 
-
-The following is the `percona-scheduler-admin` default configuration for 
+The following table displays the `percona-scheduler-admin` default configuration for 
 *ProxySQL*.
 
-```sql
+```text
 Cluster node info
 +---------------+-------+---------------+------+--------+--------+
 | hostgroup     | hg_id | hostname      | port | status | weight |
@@ -590,10 +761,10 @@ The following command assigns the weight value of `1111` to the
 `192.168.56.32:3306` node in the reader and reader-config hostgroups.
 
 ```shell
-$> percona-scheduler-admin --config-file=config.toml --update-cluster --update-read-weight="192.168.56.32:3306,1111"
+$ percona-scheduler-admin --config-file=config.toml --update-cluster --update-read-weight="192.168.56.32:3306,1111"
 ```
 
-The output should be similar to the following:
+The following is an example of the output:
 
 ```text
 No new nodes detected.
@@ -623,21 +794,20 @@ Cluster membership updated in the ProxySQL database!
 Combining this option with [--update-cluster](#update-cluster)  assigns the
 specified write weight to a node.
 
-Usage:
-
 The syntax for the arguments are: <IP_ADDRESS:PORT> and <New Weight>. The
 <IP_ADDRESS> format can be either Internet Protocol version 4 (IPv4)
 or Internet Protocol version 6 (IPv6).
 
+### -update-write-weight example
+
 ```sql
-$> percona-scheduler-admin --config-file=config.toml --update-cluster --update-write-weight="<IP_ADDRESS:PORT>, <New Weight>"
+$ percona-scheduler-admin --config-file=config.toml --update-cluster --update-write-weight="<IP_ADDRESS:PORT>, <New Weight>"
 ```
 
-
-The following is the `percona-scheduler-admin` default configuration for 
+The following table displays the `percona-scheduler-admin` default configuration for 
 *ProxySQL*.
 
-```sql
+```text
 Cluster node info
 +---------------+-------+---------------+------+--------+--------+
 | hostgroup     | hg_id | hostname      | port | status | weight |
@@ -664,7 +834,7 @@ The following command assigns the weight value of `1111` to the
 $ percona-scheduler-admin --config-file=config.toml --update-cluster --update-write-weight="192.168.56.33:3306,1111"
 ```
 
-The output should be similar to the following:
+The following is an example of the output:
 
 ```text
 No new nodes detected.
@@ -698,10 +868,10 @@ The option requires only a single IP address and port combination.
 
 Assigning a node with [--write-node](#write-node) gives the writer node a weight of 1000000. The default weight is 1000.
 
-Usage:
-
-```sql
-$> percona-scheduler-admin --config-file=config.toml --write-node=192.168.56.32:3306
-```
+### -write-node example
 
 The argument syntax is a single IP address and port combination.
+
+```sql
+$ percona-scheduler-admin --config-file=config.toml --write-node=192.168.56.32:3306
+```

@@ -1,15 +1,20 @@
-# Where to download ProxySQL 2.x.x and ProxySQL Admin utilities
+# Download locations for ProxySQL 2.x.x and ProxySQL admin utilities
 
-The binaries, packages, and tarballs are available at [Percona Download ProxySQL 2](https://www.percona.com/downloads/proxysql2/). 
+The binaries, packages, and tarballs are available at [Percona Download ProxySQL 2](https://www.percona.com/downloads/proxysql2/).
 
 On the **Download ProxySQL 2** page, select the following:
 
 * *Version* - the version of ProxySQL2
 * *Software* - the Linux distribution
 
-You can either copy all of the available packages in a single tar file or copy the appropriate DEB package or RPM package.
+The available software platforms are based on the selected version. 
+You can either download all packages together in a single tar file or download the packages separately. Select **Linux - Generic** to download [binary tarballs](installing-tarball.md).
 
-## Finding the source code
+!!! note
+
+    You must download ProxySQL 2.4.2 or later to install the Percona Scheduler Admin tool.
+
+## Find the source code
 
 The source code is located at [Percona/proxysql-admin-tool](https://github.com/percona/proxysql-admin-tool). The documentation source code is located at [Percona/proxysql-admin-tool-doc](https://github.com/percona/proxysql-admin-tool-doc).
 
