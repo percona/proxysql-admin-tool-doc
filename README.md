@@ -1,6 +1,6 @@
 # ProxySQL Admin Documentation
 
-![Percona logo](source/percona-logo.jpg)
+![Percona logo](docs/_images/percona-logo.jpg)
 
 For more information about ProxySQL and the ProxySQL Admin tools, see the [ProxySQL Admin Utilities documentation](https://docs.percona.com/proxysql/index.html).
 
@@ -36,7 +36,7 @@ ProxySQL Admin Copyright (c) Percona LLC and/or its affiliates 2015-2022
 
 We encourage contributions and are always looking for new members that are as dedicated to serving the community as we are. 
 
-The [Contributing Guide for Documentation](https://github.com/percona/proxysql-admin-tool-doc/blob/main/source/contributing.md) contains the guidelines on how you can contribute.
+The [Contributing Guide for Documentation](https://github.com/percona/proxysql-admin-tool-doc/blob/main/contributing.md) contains the guidelines on how you can contribute.
 
 ## Contact 
 
