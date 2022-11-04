@@ -1,6 +1,6 @@
 # ProxySQL 2.x.x and Percona Scheduler Admin tool
 
-[*ProxySQL* 2.3.2-1.2](/release-notes-2.3.2-1.md) adds the Percona Scheduler Admin (percona-scheduler-admin) tool. This tool has a segment-aware failover mechanism and can automatically perform a failover due to node failures, service degradation, or maintenance requirements. The external scheduler has the following qualities:
+[*ProxySQL* 2.3.2-1.2](release-notes-2.3.2-1.md) adds the Percona Scheduler Admin (percona-scheduler-admin) tool. This tool has a segment-aware failover mechanism and can automatically perform a failover due to node failures, service degradation, or maintenance requirements. The external scheduler has the following qualities:
 
 * Capable of parallel query execution on nodes which results in faster failover or fallback
 
@@ -22,7 +22,7 @@
 
 The Percona Scheduler Admin tool has been tested with ProxySQL 2.3.0, 2.3.2-1.2, and later versions.
 
-[*ProxySQL* 2.4.2](/2.4.2.md) add the following checks:
+[*ProxySQL* 2.4.2](2.4.2.md) add the following checks:
 
   When `pxc_scheduler_handler` launches, the application creates a lock file to prevent the running of multiple instances. Prior to *ProxySQL* 2.4.2, the lock file remained in the file system and prevented the handler script from running. 
 
@@ -46,7 +46,7 @@ The following are the prerequisites for using the Percona Scheduler Admin:
 
 * *ProxySQL* and *Percona XtraDB Cluster* are running.
 
-For information on the Percona Scheduler Admin tool installation, see [Install ProxySQL 2.x.x and the admin utilities](/install-v2.md) or [Build the Percona Scheduler admin tool](/build-percona-scheduler-admin.md).
+For information on the Percona Scheduler Admin tool installation, see [Install ProxySQL 2.x.x and the admin utilities](install-v2.md) or [Build the Percona Scheduler admin tool](build-percona-scheduler-admin.md).
 
 ## Add an issue
 

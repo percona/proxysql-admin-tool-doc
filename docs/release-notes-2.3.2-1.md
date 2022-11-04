@@ -29,4 +29,5 @@ The ProxySQL Admin tool adds support for Percona XtraDB Cluster 5.5 and MariaDB 
 
 * The [ProxySQL and proxysql-admin GitHub location](https://github.com/percona/proxysql-admin-tool)
 
-* To contribute to the documentation, review the [Documentation Contribution Guide](https://github.com/percona/proxysql-admin-tool-doc/blob/main/source/contributing.md)
+* To contribute to the documentation, review the [Documentation Contribution Guide](https://github.com/percona/proxysql-admin-tool-doc/blob/main/contributing.md)
+

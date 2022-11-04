@@ -25,7 +25,7 @@ configuration contains different *ProxySQL* READ/WRITE hostgroup and different
 application user for each cluster. Currently multiple clusters support is not
 compatible with host priority feature, which works only with a single cluster.
 
-* [81](https://jira.percona.com/browse/81): The new version substantially increases the number of test cases
+* [PSQLADM-81](https://jira.percona.com/browse/PSQLADM-81): The new version substantially increases the number of test cases
 in the ProxySQL Admin test-suite.
 
 ## Bug fixes

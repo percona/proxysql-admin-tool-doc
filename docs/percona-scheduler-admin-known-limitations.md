@@ -2,7 +2,7 @@
 
 This document lists the known issues in the Percona Scheduler Admin.
 
-## Do not combine the certain options
+## Do not combine certain options
 
 The following options are mutually exclusive. An attempt to combine these options in a command creates in an error and no action is taken.
 
