@@ -1,4 +1,4 @@
-# Percona Scheduler Admin configuration file
+# Percona Scheduler Admin configuration file example
 
 *ProxySQL* with the `percona-scheduler-admin` stores the parameters in a
 configuration file that uses the toml format. This file defines
@@ -6,11 +6,15 @@ the server credentials and other settings.
 
 Use the `--config-file` option to run the *percona-scheduler-admin* script.
 
-**NOTE**: It is not recommended to store the scheduler config file in the Home directory.
+!!! warning
+
+    We do not recommend storing the scheduler configuration file in the Home directory.
 
 ## Example of a configuration file
 
-```
+A configuration file is used to control the Percona Scheduler Admin operations. The file can be changed as needed. The administrator controls what protected resources the tool can access. 
+
+```text
 # For the detailed manual, see
 # https://github.com/percona/pxc_scheduler_handler#how-to-configure-pxc-scheduler-handler
 

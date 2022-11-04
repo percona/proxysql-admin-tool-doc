@@ -111,53 +111,51 @@ nav:
       - proxysql-v1.md
       - installing-v1.md
       - tarball-v1.md
-      - configuring.md
+      - configure-proxysql1.md
   - Install ProxySQL 2.x.x and admin tools:
       - where-to-download-proxysql.md
       - install-v2.md
-      - installing-tarball.md
-      - psa-build.md
-  - Start and Stop ProxySQL 2.x.x:
-      - psql-process.md
+      - install-proxysql2-tarball.md
+      - build-percona-scheduler-admin.md
+  - Start, stop, upgrade or uninstall ProxySQL 2.x.x:
+      - start-or-stop-proxysql2.md
+      - upgrade-proxysql2.md
+      - uninstall-proxysql2.md
   - Use the ProxySQL 2.x.x and proxysql-admin tool:
-      - proxysql-changes.md
-      - v2-config.md
-      - psql-functions.md
+      - proxysql-admin-tool-changes.md
+      - proxysql-admin-tool-v2-config.md
+      - proxysql-admin-tool-functions.md
   - Use the ProxySQL 2.x.x and Percona Scheduler Admin tool:
-      - psa-scheduler.md
-      - psa-config.md
-      - psa-ref.md
-      - psa-options.md
-      - psa-known-limitations.md
-  - Upgrade:
-      - upgrade-psql.md
-  - Uninstall:
-      - uninstall-psql.md
+      - percona-scheduler-admin.md
+      - percona-scheduler-admin-configuration.md
+      - percona-scheduler-admin-statements-options.md
+      - percona-scheduler-admin-options-detail.md
+      - percona-scheduler-admin-known-limitations.md
   - Release Notes:
       - release-notes.md
-      - release-notes-1.4.4.md
-      - release-notes-1.4.5.md
-      - release-notes-1.4.6.md
-      - release-notes-1.4.7.md
-      - release-notes-1.4.8.md
-      - release-notes-1.4.12.md
-      - release-notes-1.4.16.md
-      - release-notes-2.0.3.md
-      - release-notes-2.0.4.md
-      - release-notes-2.0.5.md
-      - release-notes-2.0.6.md
-      - release-notes-2.0.7.md
-      - release-notes-2.0.12.md
-      - release-notes-2.0.13.md
-      - release-notes-2.0.14.md
-      - release-notes-2.0.15.md
-      - release-notes-2.0.17.md
-      - release-notes-2.0.18.md
-      - release-notes-2.1.1.md
-      - release-notes-2.2.0.md
-      - release-notes-2.3.2.md
-      - release-notes-2.3.2-1.md
-      - 2.4.2.md
-      - 2.4.3.md
       - 2.4.4.md
+      - 2.4.3.md
+      - 2.4.2.md
+      - release-notes-2.3.2-1.md
+      - release-notes-2.3.2.md
+      - release-notes-2.2.0.md
+      - release-notes-2.1.1.md
+      - release-notes-2.0.18.md
+      - release-notes-2.0.17.md
+      - release-notes-2.0.15.md
+      - release-notes-2.0.14.md
+      - release-notes-2.0.13.md
+      - release-notes-2.0.12.md
+      - release-notes-2.0.7.md
+      - release-notes-2.0.6.md
+      - release-notes-2.0.5.md
+      - release-notes-2.0.4.md
+      - release-notes-2.0.3.md
+      - release-notes-1.4.16.md
+      - release-notes-1.4.12.md
+      - release-notes-1.4.8.md
+      - release-notes-1.4.7.md
+      - release-notes-1.4.6.md
+      - release-notes-1.4.5.md
+      - release-notes-1.4.4.md
 # - Version Selector: "../"

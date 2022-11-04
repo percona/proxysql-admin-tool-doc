@@ -1,4 +1,4 @@
-# Installing ProxySQL 1.x.x
+# Install ProxySQL 1.x.x
 
 If that is what you used to [install PXC](https://www.percona.com/doc/percona-xtradb-cluster/5.7/install/index.html) or
 any other **Percona** software, run the corresponding command:
@@ -23,5 +23,8 @@ $ sudo service proxysql start
 
 ## Do not use the default credentials
 
-**WARNING**: **Do not run ProxySQL with default credentials in production.** Before starting the proxysql service, you can change the defaults
-in `/etc/proxysql.cnf` by changing the `admin_credentials` variable.  For more information, see [ProxySQL global variables](https://github.com/sysown/proxysql/blob/master/doc/global_variables.md).
+!!! warning
+
+    Do not run ProxySQL with default credentials in production. 
+     
+Before starting the proxysql service, you can change the defaults in `/etc/proxysql.cnf` by changing the `admin_credentials` variable.  For more information, see [ProxySQL global variables](https://github.com/sysown/proxysql/blob/master/doc/global_variables.md).

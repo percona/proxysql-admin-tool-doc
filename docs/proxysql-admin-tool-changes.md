@@ -1,4 +1,4 @@
-# Summary of ProxySQL 2.x changes in the proxysql-admin tool
+# ProxySQL Admin tool changes
 
 ## Added Features
 
