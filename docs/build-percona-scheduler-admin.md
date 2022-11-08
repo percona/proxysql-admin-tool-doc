@@ -51,5 +51,5 @@ by 'admin';
 mysql> GRANT ALL PRIVILEGES ON *.* TO 'admin'@'192.%' WITH GRANT OPTION;
 ```
 
-See [Log file or lock file locations](/docs/psa-known-limitations.md)
+See [Log file or lock file locations](percona-scheduler-admin-known-limitations.md#do-not-place-the-log-file-or-lock-file-in-the-home-directory)
 

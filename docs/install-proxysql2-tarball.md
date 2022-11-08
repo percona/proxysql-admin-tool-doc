@@ -2,7 +2,7 @@
 
 If installing [*ProxySQL 2* with a package manager](install-v2.md) is not an option in your environment, you can install from a binary tarball. The difference between versions is the available tar files or the command to extract the file.
 
-Starting with [*ProxySQL 2.3.2-1.2*](/release-notes-2.3.2-1.md), Percona no longer provides a tarball for CentOS 6. For more information, see [Spring Cleaning: Discontinuing RHEL 6/CentOS 6 (glibc2.12) and 32-bit Binary Builds of Percona Software](https://www.percona.com/blog/spring-cleaning-discontinuing-rhel-6-centos-6-glibc-2-12-and-32-bit-binary-builds-of-percona-software/)
+Starting with [*ProxySQL 2.3.2-1.2*](release-notes-2.3.2-1.md), Percona no longer provides a tarball for CentOS 6. For more information, see [Spring Cleaning: Discontinuing RHEL 6/CentOS 6 (glibc2.12) and 32-bit Binary Builds of Percona Software](https://www.percona.com/blog/spring-cleaning-discontinuing-rhel-6-centos-6-glibc-2-12-and-32-bit-binary-builds-of-percona-software/)
 
 The password-based file encryption requires OpenSSL 1.1.1, but Ubuntu 16.04 does not support this OpenSSL version. A special statically linked OpenSSL 1.1.1 binary is packaged with the executable. This packaged binary avoids conflicts with the system OpenSSL and any shared libraries. Each new release rebuilds the binary.
 

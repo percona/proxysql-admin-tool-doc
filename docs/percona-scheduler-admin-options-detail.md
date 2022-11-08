@@ -7,10 +7,10 @@ The Percona Scheduler Admin script lists the available options in Percona Schedu
 | [--add-query-rule](#add-query-rule)                     |
 | [--adduser](#adduser)                                   |
 | [--auto-assign-weights](#auto-assign-weights)           |
-| [--disable/-d](#-disable---d)                           |
-| [--enable/-e](#–enable---e)                             |
-| [--force](#–force)                                      |
-| [--is-enabled](#–is-enabled)                            |
+| [--disable/-d](#disable-d)                           |
+| [--enable/-e](#enable-e)                             |
+| [--force](#force)                                      |
+| [--is-enabled](#is-enabled)                            |
 | [--server](#server)                                     |
 | [--status](#status)                                     |
 | [--sync-multi-cluster-users](#sync-multi-cluster-users) |
@@ -21,7 +21,7 @@ The Percona Scheduler Admin script lists the available options in Percona Schedu
 | [--update-write-weight](#update-write-weight)           |
 | [--write-node](#write-node)                             |
 
-## -add-query-rule
+## –add-query-rule
 
 This option creates query rules for a synced MySQL user and applies only to the
 `singlewrite` mode.
@@ -100,7 +100,7 @@ For example, in a three-node cluster, assign a `900` to the writer node and
 
 This option does these operations automatically without any manual intervention.
 
-Review [do not combine the following options in the same statement](/psa-known-limitations.md#do-not-combine-the-following-options).
+Review [do not combine certain options](./percona-scheduler-admin-known-limitations.md#do-not-combine-certain-options).
 
 The following example is a default configuration when the
 `percona-scheduler-admin` sets up proxysql.

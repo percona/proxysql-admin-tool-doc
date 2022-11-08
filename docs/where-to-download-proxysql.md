@@ -8,7 +8,7 @@ On the **Download ProxySQL 2** page, select the following:
 * *Software* - the Linux distribution
 
 The available software platforms are based on the selected version. 
-You can either download all packages together in a single tar file or download the packages separately. Select **Linux - Generic** to download [binary tarballs](installing-tarball.md).
+You can either download all packages together in a single tar file or download the packages separately. Select **Linux - Generic** to download [binary tarballs](install-proxysql2-tarball.md).
 
 !!! note
 

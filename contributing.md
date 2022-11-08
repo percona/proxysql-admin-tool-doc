@@ -49,7 +49,7 @@ Using either the [Edit documentation online with GitHub](#edit-documentation-onl
  
 ### What you should know
 
-Most of the document is in plain text, but you may use [Markdown] (https://www.markdownguide.org/) to add syntax elements (notes, tables, and so on) to the documentation. 
+Most of the document is in plain text, but you may use [Markdown](https://www.markdownguide.org/) to add syntax elements (notes, tables, and so on) to the documentation. 
 
 ### What happens after you create the pull request
 
@@ -63,7 +63,7 @@ A core developer reviews your request and either comments or approves the reques
 
 In the upper right corner, select the pencil icon to open the source file in the GitHub editor. In this editor, you can make the changes, view the changes in the Preview tab, and create a pull request. The source `.md` file of the page opens in a GitHub editor in your browser. If you haven't worked with the repository before, GitHub creates a [fork](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo).
 
-Edit the page using the [Markdown] (https://www.markdownguide.org/) syntax.
+Edit the page using the [Markdown](https://www.markdownguide.org/) syntax.
 
 You should review your changes on the **Preview** tab.
 
@@ -83,11 +83,11 @@ GitHub creates a branch and a commit for your changes. The operation loads a pag
 
 Review the information and click **Create pull request**.
 
-For more information, see [Editing files in GitHub](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files) 
+For more information, see [Editing files in GitHub](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files)
 
 ### Edit documentation locally
 
-This option is for users are comfortable with [git] ([https://](https://git-scm.com/)) commands. 
+This option is for users are comfortable with [git]([https://](https://git-scm.com/)) commands. 
 
 The steps are the following:
 

@@ -436,7 +436,7 @@ Sysbench is designed to run CPU, memory and I/O test and has the option to run O
     [root@proxysql ~]#> yum install sysbench
     ```
 
-`Sysbench` requires the ProxySQL client user credentials from [Creating a ProxySQL client user](#creating-a-proxysql-client-user).
+`Sysbench` requires the ProxySQL client user credentials from [Create a ProxySQL client user](#create-a-proxysql-client-user).
 
 1. Create a database on one of the *Percona XtraDB Cluster* nodes. Use this database for testing.
 
