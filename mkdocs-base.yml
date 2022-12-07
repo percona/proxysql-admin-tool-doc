@@ -14,12 +14,14 @@ edit_uri: edit/main/docs/
 
 use_directory_urls: false
 
-# Theme for settings
+# Theme setup
 theme:
   name: material
   logo: _images/percona-logo.svg
   favicon: _images/percona-favicon.ico
   custom_dir: _resources/overrides/
+  font:
+    text: Chivo, Colfax, Franziska
   palette:
 
     # Light mode
@@ -47,10 +49,10 @@ extra_css:
   - https://unicons.iconscout.com/release/v3.0.3/css/line.css
   - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css
   - css/percona.css
-  - css/version-select.css
+  - css/nocopy.css
 
 extra_javascript:
-  - js/version-select.js
+  - js/promptremover.js
 
 markdown_extensions:
   attr_list: {}
@@ -74,6 +76,10 @@ markdown_extensions:
   pymdownx.highlight:
       linenums: false
   pymdownx.inlinehilite: {}
+  pymdownx.snippets: {}
+  pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
 
 
 plugins:
@@ -106,7 +112,7 @@ extra:
     provider: mike
 
 nav:
-  - index.md
+  - Home: index.md
   - ProxySQL 1.x.x and the proxysql-admin tool :
       - proxysql-v1.md
       - installing-v1.md
@@ -131,8 +137,8 @@ nav:
       - percona-scheduler-admin-statements-options.md
       - percona-scheduler-admin-options-detail.md
       - percona-scheduler-admin-known-limitations.md
-  - Release Notes:
-      - release-notes.md
+  - Release notes:
+      - Release notes index: release-notes.md
       - 2.4.4-1.2.md
       - 2.4.4.md
       - 2.4.3.md

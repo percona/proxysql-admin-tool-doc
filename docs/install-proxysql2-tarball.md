@@ -37,7 +37,7 @@ Follow these steps:
 
     ??? "Extract ProxySQL 2.0.14 or higher"
 
-        ```sh
+        ```{.bash data-prompt="$"}
         $ # Extract the files to the download destination directory
         $ tar xzf proxysql-2.X.X-<PLATFORM-ARCHITECTURE*>.tar.gz
         $ # Change to the directory that contains the extracted files
@@ -47,7 +47,7 @@ Follow these steps:
     ??? "Extract ProxySQL 2.0.13 or lower"
 
 
-        ```sh
+        ```{.bash data-prompt="$"}
         # Extract the files (assumes you have changed to the download destination directory)
         $ tar xzf proxysql-<VERSION>-<Linux-PLATFORM-ARCHITECTURE*>.tar.gz
         # Change to the directory that contains the extracted files
@@ -56,14 +56,14 @@ Follow these steps:
 
 6. Create a directory to store the *ProxySQL* data.
 
-    ```shell
+    ```{.bash data-prompt="$"}
     $ mkdir /home/user/data
     ```
 
 7. In the configuration file, update the `datadir` value to point
 to the created data directory.
 
-    ```text
+    ```{.text .no-copy}
     datadir="/home/user/data"
     ```
 

@@ -22,13 +22,13 @@ Cloning a git project that contains submodules does not automatically check out 
 
 You can perform the submodule initialization by running the following statement:
 
-```bash
+```{.bash data-prompt="$>"}
 $> git submodule update --init
 ```
 
 Run the following command to build the scheduler submodule.
 
-```bash
+```{.bash data-prompt="$>"}
 $> build_scheduler.sh
 ```
 
@@ -45,11 +45,13 @@ We do not recommend running multiple instances of the same binary. If you start 
 
 Create an `admin` user account. Use this account for communication through *ProxySQL* and pxc_scheduler_handler.
 
-```sql
+```{.bash data-prompt="mysql>"}
 mysql> CREATE USER 'admin'@'192.%' IDENTIFIED WITH 'mysql_native_password'
 by 'admin';
 mysql> GRANT ALL PRIVILEGES ON *.* TO 'admin'@'192.%' WITH GRANT OPTION;
 ```
 
-See [Log file or lock file locations](percona-scheduler-admin-known-limitations.md#do-not-place-the-log-file-or-lock-file-in-the-home-directory)
+!!! admonition "See also"
+    
+    [Log file or lock file locations](percona-scheduler-admin-known-limitations.md#do-not-place-the-log-file-or-lock-file-in-the-home-directory)
 

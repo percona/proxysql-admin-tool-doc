@@ -1,6 +1,6 @@
 # ProxySQL Admin tool changes
 
-## Added Features
+## Added features
 
 * New option `--use-ssl` to use SSL for connections between ProxySQL and the backend database servers
 
@@ -27,10 +27,7 @@
   used to search the mysql_galera_hostgroups table.
 
 * New command `--status` to display Galera hostgroup information. This command
-  lists all rows in the current `mysql_galera_hostgroups` table as well as all
-  servers that belong to these hostgroups.  With the `--writer-hg` option,
-  only the information for the Galera hostgroup with that writer hostgroup is
-  displayed.
+  lists all rows in the current `mysql_galera_hostgroups` table as well as all servers that belong to these hostgroups.  With the `--writer-hg` option, only the information for the Galera hostgroup with that writer hostgroup is displayed.
 
 * New option `--login-file` reads login credentials from an encrypted file.
   If the `--login-password` or `login-password-file` options are not
@@ -42,7 +39,7 @@
 * New option `--login-password-file` reads the key from a file using the
   specified path. You cannot use the option with `login-password`.
 
-## Changed Features
+## Changed features
 
 * Setting `--node-check-interval` changes the ProxySQL global variable
   `mysql-monitor_galera_healthcheck_interval`. Note that this is a global
@@ -72,7 +69,7 @@
     Galera cluster associated with that hostgroup overriding the value specified
     in the configuration file.
 
-## Removed Features
+## Removed features
 
 * Asynchronous slave reader support has been removed: the `--include-slaves`
     option is not supported.
@@ -92,5 +89,4 @@
 
 ## Limitations
 
-* With `--writers-as-readers=backup` read-only nodes are not allowed. This is a limitation of ProxySQL 2.x. Note that backup is the default value of
-    `--writers-as-readers` when `--mode=singlewrite`
+* With `--writers-as-readers=backup` read-only nodes are not allowed. This is a limitation of ProxySQL 2.x. Note that backup is the default value of `--writers-as-readers` when `--mode=singlewrite`

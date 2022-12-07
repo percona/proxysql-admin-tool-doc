@@ -6,13 +6,13 @@ You can uninstall *ProxySQL 2.x.x* using the command line.
 
     To find information before uninstalling or removing the `ProxySQL2` package, run the following command:
 
-    ```shell
+    ```{.bash data-prompt="$"}
     $ apt search proxysql2
     ```
 
     ??? example "Expected output"
 
-        ```text
+        ```{.text .no-copy}
         Sorting... Done
         Full Text Search... Done
         proxysql2/unknown,now 2.4.4-1.1.focal amd64 [installed]
@@ -25,13 +25,13 @@ You can uninstall *ProxySQL 2.x.x* using the command line.
 
     To display package information, use the following command:
 
-    ```shell
+    ```{.bash data-prompt="$"}
     $ sudo yum info proxysql2
     ```
 
     ??? example "Expected output"
 
-        ```text
+        ```{.text .no-copy}
         Last metadata expiration check: 0:07:36 ago on Wed Oct  5 14:42:00 2022.
         Installed Packages
         Name         : proxysql2
@@ -57,13 +57,13 @@ To uninstall ProxySQL 2, the following instructions are based on the package man
 
     You can uninstall `ProxySQL 2.x.x` with the following command:
 
-    ```shell
+    ```{.bash data-prompt="$"}
     $ sudo apt remove proxysql2
     ```
 
     The `apt purge` removes the packages and any configuration files and data. You can also use `apt purge` to remove packages for an uninstalled application.
 
-    ```shell
+    ```{.bash data-prompt="$"}
     $ sudo apt purge proxysql2
     ```
 
@@ -71,7 +71,7 @@ To uninstall ProxySQL 2, the following instructions are based on the package man
 
     To remove them, run the following command:
 
-    ```shell
+    ```{.bash data-prompt="$"}
     $ sudo apt autoremove
     ```
 
@@ -79,12 +79,12 @@ To uninstall ProxySQL 2, the following instructions are based on the package man
 
     To uninstall *ProxySQL 2.x.x*, use the following command:
 
-    ```shell
+    ```{.bash data-prompt="$"}
     $ sudo yum remove proxysql2
     ```
 
     To uninstall *ProxySQL 2.x.x* along with unused dependencies, use the following command:
 
-    ```shell
+    ```{.bash data-prompt="$"}
     $ sudo yum autoremove proxysql2
     ```

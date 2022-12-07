@@ -1,4 +1,4 @@
-# Release notes of ProxySQL, ProxySQL-admin, and percona-scheduler-admin
+# ProxySQL, ProxySQL-admin, and percona-scheduler-admin release notes index
 
 ## Version 2.x release notes
 
