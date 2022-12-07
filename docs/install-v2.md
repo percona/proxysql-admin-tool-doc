@@ -6,12 +6,12 @@ Select the same package installer used to install [Percona XtraDB Cluster](https
 
     If you used APT to install Percona software, run the following command as sudo or as root:
 
-    ```shell
+    ```{.bash data-prompt="$"}
     $ sudo apt install proxysql2
     ```
     ??? example "Expected output" 
 
-        ```text
+        ```{.text .no-copy}
         Reading package lists... Done
         Building dependency tree
         Reading state information... Done
@@ -28,13 +28,13 @@ Select the same package installer used to install [Percona XtraDB Cluster](https
 
     If you used YUM to install Percona software, run the following command:
 
-    ```shell
+    ```{.bash data-prompt="$"}
     $ sudo yum install proxysql2
     ```
 
     ??? example "Expected output"
 
-        ```text
+        ```{.text .no-copy}
         Last metadata expiration check: 0:01:47 ago on Wed Oct  5 14:42:00 2022.
         Dependencies resolved.
         =========================================================================================================================
@@ -64,7 +64,7 @@ Select the same package installer used to install [Percona XtraDB Cluster](https
 
 If you have installed [ProxySQL 2.3.2-2.1](release-notes-2.3.2-1.md) or later, verify the Percona_Scheduler_Admin installation with the following command:
 
-```shell
+```{.bash data-prompt="$"}
 $ percona-scheduler-admin --debug
 ```
 
@@ -72,6 +72,6 @@ Running this command without the [Percona Scheduler configuration file](percona-
 
 ??? example "Error message"
 
-    ```text
+    ```{.text .no-copy}
     ERROR : The --config-file option is required but is missing from the command.
     ```

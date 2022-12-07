@@ -156,13 +156,13 @@ mysql> select user,host from mysql.user where authentication_string!='' and user
 4 rows in set (0.00 sec)
 ```
 
-## –sync-multi-cluster-users
+## –-sync-multi-cluster-users
 
 This option works in the same way as –syncusers but does not delete ProxySQL
 users that are not present in the Percona XtraDB Cluster. Used this option when
 syncing proxysql instances that manage multiple clusters.
 
-## –add-query-rule
+## –-add-query-rule
 
 Create query rules for synced mysql user. This is applicable only for
 singlewrite mode and works only with [--syncusers](#--syncusers)
@@ -179,7 +179,7 @@ Added query rule for user: test_query_rule
 Synced PXC users to the ProxySQL database!
 ```
 
-## –quick-demo
+## –-quick-demo
 
 This option configures a dummy proxysql configuration.
 
@@ -269,7 +269,7 @@ Cluster node info
 Cluster membership updated in the ProxySQL database!
 ```
 
-## –is-enabled
+## –-is-enabled
 
 This option checks if a Galera cluster (specified by the writer hostgroup,
 either from `--writer-hg` or from the config file) has any active entries
@@ -321,7 +321,7 @@ mysql_servers rows for this configuration
 Skips the existing configuration checks with the `--enable` option in
 mysql_servers, mysql_users, and mysql_galera_hostgroups tables.
 
-## –update-mysql-version
+## –-update-mysql-version
 
 This option updates the mysql server version (specified by the writer
 hostgroup, either from `--writer-hg` or the config file) in proxysql db-based
@@ -334,7 +334,7 @@ ProxySQL MySQL version changed to 5.7.26
 
 ### Extra options
 
-## –mode
+## –-mode
 
 This option allows you to set up the read/write mode for PXC cluster nodes in
 the ProxySQL database based on the hostgroup. For now, the only supported modes
@@ -399,7 +399,7 @@ mysql> select hostgroup_id,hostname,port,status from runtime_mysql_servers;
 3 rows in set (0.01 sec)
 ```
 
-## –node-check-interval
+## –-node-check-interval
 
 This option configures the interval for the cluster node health monitoring by
 ProxySQL (in milliseconds). This is a global variable and is used by all
@@ -410,7 +410,7 @@ used with `--enable`.
 $ proxysql-admin --config-file=/etc/proxysql-admin.cnf --node-check-interval=5000 --enable
 ```
 
-## –write-node
+## –-write-node
 
 This option is used to choose which node will be the writer node when the mode
 is singlewrite. This option can be used with –enable and –update-cluster.
@@ -418,17 +418,16 @@ is singlewrite. This option can be used with –enable and –update-cluster.
 A single IP address and port combination is expected. For example,
 “–write-node=127.0.0.1:3306”
 
-### The *proxysql-status* script
+### The proxysql-status script
 
 The *proxysql-status* is a simple script to dump the ProxySQL configuration
 and statistics.
 
-```bash
+```{.bash data-prompt="$"}
 $ proxysql-status admin admin 127.0.0.1 6032
 ```
 
-The default behavior is to display all tables and files. By using the following
-options, you can retrieve more specific information:
+The default behavior is to display all tables and files. By using the following options, you can retrieve more specific information:
 
 |Option|Use to display|
 |--- |--- |
@@ -440,5 +439,7 @@ options, you can retrieve more specific information:
 |–table=<table_name>|Only tables that contain the table name (a case-sensitive match)|
 |–with-stats-reset|_reset tables, by default _reset tables will not be queried.|
 
-**NOTE**: If no credentials are specified, the credentials in
-`/etc/proxysql-admin.cnf` are used.
+!!! note
+
+    If no credentials are specified, the credentials in
+    `/etc/proxysql-admin.cnf` are used.

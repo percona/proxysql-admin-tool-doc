@@ -2,3 +2,6 @@
 build
 __pycache__
 percona-theme
+**/.DS_Store
+COMMIT_MESSAGE
+site/

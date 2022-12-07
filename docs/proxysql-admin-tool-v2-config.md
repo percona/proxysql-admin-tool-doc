@@ -6,7 +6,9 @@ Before using the proxysql-admin tool, ensure that ProxySQL and **Percona XtraDB 
 
 Implemented in ProxySQL 2.3.2-1, the psqladm-scheduler tool configures Percona XtraDB cluster nodes into ProxySQL.
 
-**NOTE**: The Percona Scheduler Admin tool has different options than the proxysql-admin tool. Do not use the options from one tool in the other tool. Mixing the options may cause unintended results.
+!!! note
+
+    The Percona Scheduler Admin tool has different options than the proxysql-admin tool. Do not use the options from one tool in the other tool. Mixing the options may cause unintended results.
 
 Command line options override configuration file options.
 
@@ -14,7 +16,7 @@ Command line options override configuration file options.
 
 To view the usage information, run `proxysql-admin` without any options:
 
-```text
+```{.text .no-copy}
 Usage: proxysql-admin [ options ]
 Options:
 
@@ -178,7 +180,7 @@ specify this information on the command line.
 
 By default, the configuration file contains the following:
 
-```sql
+```{.text .no-copy}
 # proxysql admin interface credentials.
 export PROXYSQL_DATADIR='/var/lib/proxysql'
 export PROXYSQL_USERNAME='admin'
@@ -243,7 +245,7 @@ If no credentials are specified, either on the command line or in the login-file
 
 The following is an example of the unencrypted data:
 
-```text
+```{.text .no-copy}
 # --------------------------------
 # This file is constructed as a set of "name=value" pairs.
 # Notes:
@@ -299,7 +301,7 @@ The following steps encrypt the login:
 
 3. Use the login-file with proxysql-admin
 
-```text
+```{.text .no-copy}
 # create the file as shown above
  $ echo "monitor.user=monitor" > data.cnf
  $ echo "monitor.password=password" >> data.cnf
@@ -339,7 +341,7 @@ The following steps encrypt the login:
 
 You can decrypt the login-file with the proxysql-login-file-script
 
-```text
+```{.text .no-copy}
 # Decrypt the login-file with the --decrypt option
 # If --in is not used, the input data will be read from stdin
 # If --out is not used, the unencrypted data will be written to stdout

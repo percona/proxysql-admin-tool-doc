@@ -6,7 +6,7 @@ Installing *ProxySQL* from a tarball is an alternative method if the recommended
 
 2. Extract the files from the archive and change to the directory that contains the extracted files.
 
-    ```bash
+    ```{.bash data-prompt="$"}
     # Extract the files (assuming you have changed to the download destination directory)
     $ tar xzf proxysql-VERSION-Linux-PLATFORM-ARCHITECTURE*.tar.gz
     # Change to the directory that contains the extracted files
@@ -15,7 +15,7 @@ Installing *ProxySQL* from a tarball is an alternative method if the recommended
 
 3. Create a directory to store the *ProxySQL* data:
 
-    ```bash
+    ```{.bash data-prompt="$"}
     $ mkdir /home/user/data
     ```
 
@@ -29,7 +29,7 @@ Installing *ProxySQL* from a tarball is an alternative method if the recommended
 
 6. Start *ProxySQL* with the `-c` option to pass the configuration file you have updated:
 
-    ```bash
+    ```{.bash data-prompt="$"}
     $ /home/user/path-to-extracted-dir/usr/bin/proxysql \
     -c /home/user/path-to-extracted-dir/etc/proxysql.cnf
     ```

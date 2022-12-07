@@ -43,7 +43,7 @@ root@proxysql:~# mysql -u admin -padmin -h 127.0.0.1 -P 6032
 
 ??? example "Expected output"
 
-    ```text
+    ```{.text .no-copy}
     Welcome to the MySQL monitor. Commands end with ; or \g.
     Your MySQL connection id is 8
     Server version: 5.1.30 (ProxySQL Admin Module)
@@ -62,13 +62,13 @@ root@proxysql:~# mysql -u admin -padmin -h 127.0.0.1 -P 6032
 
 To see the *ProxySQL* databases and tables use the following commands:
 
-```mysql
+```{.bash data-prompt="mysql@proxysql>"}
 mysql@proxysql> SHOW DATABASES;
 ```
 
 ??? example "Expected output"
 
-    ```text
+    ```{.text .no-copy}
     +-----+---------+-------------------------------+
     | seq | name    | file                          |
     +-----+---------+-------------------------------+
@@ -80,13 +80,13 @@ mysql@proxysql> SHOW DATABASES;
     4 rows in set (0.00 sec)
     ```
 
-```mysql
+```{.bash data-prompt="mysql@proxysql>"}
 mysql@proxysql> SHOW TABLES;
 ```
 
 ??? example "Expected output"
 
-    ```text
+    ```{.text .no-copy}
     +--------------------------------------+
     | tables                               |
     +--------------------------------------+
@@ -132,7 +132,7 @@ be a member of multiple hostgroups.
 This example adds three *Percona XtraDB Cluster* nodes to the default hostgroup (`0`),
 which receives both write and read traffic:
 
-```mysql
+```{.bash data-prompt="mysql@proxysql>"}
 mysql@proxysql> INSERT INTO mysql_servers(hostgroup_id, hostname, port) VALUES (0,'192.168.70.61',3306);
 mysql@proxysql> INSERT INTO mysql_servers(hostgroup_id, hostname, port) VALUES (0,'192.168.70.62',3306);
 mysql@proxysql> INSERT INTO mysql_servers(hostgroup_id, hostname, port) VALUES (0,'192.168.70.63',3306);
@@ -140,7 +140,7 @@ mysql@proxysql> INSERT INTO mysql_servers(hostgroup_id, hostname, port) VALUES (
 
 To see the nodes:
 
-```text
+```{.bash data-prompt="mysql@proxysql>"}
 mysql@proxysql> SELECT * FROM mysql_servers;
 ```
 
@@ -160,14 +160,14 @@ and configure the user in ProxySQL.
 
 The following example shows how to add a monitoring user on Node 2:
 
-```sql
+```{.bash data-prompt="mysql@pxc2>"}
 mysql@pxc2> CREATE USER 'proxysql'@'%' IDENTIFIED BY 'ProxySQLPa55';
 mysql@pxc2> GRANT USAGE ON *.* TO 'proxysql'@'%';
 ```
 
 The following example shows how to configure this user on the ProxySQL node:
 
-```sql
+```{.bash data-prompt="mysql@proxysql>"}
 mysql@proxysql> UPDATE global_variables SET variable_value='proxysql'
               WHERE variable_name='mysql-monitor_username';
 mysql@proxysql> UPDATE global_variables SET variable_value='ProxySQLPa55'
@@ -177,20 +177,20 @@ mysql@proxysql> UPDATE global_variables SET variable_value='ProxySQLPa55'
 To load this configuration at runtime, issue a `LOAD` command.
 Issue a `SAVE` command to save these changes to disk, this operation ensures that the changes persist after ProxySQL shuts down.
 
-```sql
+```{.bash data-prompt="mysql@proxysql>"}
 mysql@proxysql> LOAD MYSQL VARIABLES TO RUNTIME;
 mysql@proxysql> SAVE MYSQL VARIABLES TO DISK;
 ```
 
 Check the monitoring logs to ensure that monitoring is enabled:
 
-```sql
+```{.bash data-prompt="mysql@proxysql>"}
 mysql@proxysql> SELECT * FROM monitor.mysql_server_connect_log ORDER BY time_start_us DESC LIMIT 6;
 ```
 
 ??? example "Expected output"
 
-    ```text
+    ```{.text .no-copy}
     +---------------+------+------------------+----------------------+---------------+
     | hostname      | port | time_start_us    | connect_success_time | connect_error |
     +---------------+------+------------------+----------------------+---------------+
@@ -204,13 +204,13 @@ mysql@proxysql> SELECT * FROM monitor.mysql_server_connect_log ORDER BY time_sta
     6 rows in set (0.00 sec)
     ```
 
-```mysql
+```{.bash data-prompt="mysql>"}
 mysql> SELECT * FROM monitor.mysql_server_ping_log ORDER BY time_start_us DESC LIMIT 6;
 ```
 
 ??? example "Expected output"
 
-    ```text
+    ```{.text .no-copy}
     +---------------+------+------------------+-------------------+------------+
     | hostname      | port | time_start_us    | ping_success_time | ping_error |
     +---------------+------+------------------+-------------------+------------+
@@ -229,7 +229,7 @@ and ping the nodes you added.
 
 To enable monitoring of these nodes, load them at runtime:
 
-```mysql
+```{.bash data-prompt="mysql@proxysql>"}
 mysql@proxysql> LOAD MYSQL SERVERS TO RUNTIME;
 ```
 
@@ -240,13 +240,13 @@ to manage connections.
 
 To add a user, insert credentials into `mysql_users` table:
 
-```sql
+```{.bash data-prompt="mysql@proxysql>"}
 mysql@proxysql> INSERT INTO mysql_users (username,password) VALUES ('sbuser','sbpass');
 ```
 
 ??? example "Expected output"
 
-    ```text
+    ```{.text .no-copy}
     Query OK, 1 row affected (0.00 sec)
     ```
 
@@ -256,7 +256,7 @@ mysql@proxysql> INSERT INTO mysql_users (username,password) VALUES ('sbuser','sb
 
 Load the user into runtime space and save these changes to disk to ensure that the user account persists after ProxySQL shuts down:
 
-```sql
+```{.bash data-prompt="mysql@proxysql>"}
 mysql@proxysql> LOAD MYSQL USERS TO RUNTIME;
 mysql@proxysql> SAVE MYSQL USERS TO DISK;
 ```
@@ -269,7 +269,7 @@ root@proxysql:~# mysql -u sbuser -psbpass -h 127.0.0.1 -P 6033
 
 ??? example "Expected output"
 
-    ```text
+    ```{.text .no-copy}
 
     Welcome to the MySQL monitor. Commands end with ; or \g.
     Your MySQL connection id is 1491
@@ -285,26 +285,25 @@ root@proxysql:~# mysql -u sbuser -psbpass -h 127.0.0.1 -P 6033
     Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
     ```
 
-To provide read/write access to the cluster for ProxySQL, add this user on one
-of the *Percona XtraDB Cluster* nodes:
+To provide read/write access to the cluster for ProxySQL, add this user on one of the *Percona XtraDB Cluster* nodes:
 
-```mysql
+```{.bash data-prompt="mysql@pxc3>"}
 mysql@pxc3> CREATE USER 'sbuser'@'192.168.70.64' IDENTIFIED BY 'sbpass';
 ```
 
 ??? example "Expected output"
 
-    ```text
+    ```{.text .no-copy}
     Query OK, 0 rows affected (0.01 sec)
     ```
 
-```sql
+```{.bash data-prompt="mysql@pxc3>"}
 mysql@pxc3> GRANT ALL ON *.* TO 'sbuser'@'192.168.70.64';
 ```
 
 ??? example "Expected output"
 
-    ```text
+    ```{.text .no-copy}
     Query OK, 0 rows affected (0.00 sec)
     ```
 
@@ -319,7 +318,7 @@ To use this script, load it into [ProxySQL scheduler](https://github.com/sysown/
 The following example shows how you can load the script for default
 ProxySQL 1.x.x configuration:
 
-```sql
+```{.bash data-prompt="mysql>"}
 mysql> INSERT INTO scheduler (active,interval_ms,filename,arg1,comment)
 VALUES (1,10000,'/usr/bin/proxysql_galera_checker','--config-file=/etc/proxysql-admin.cnf
 --write-hg=10 --read-hg=11 --writer-count=1 --mode=singlewrite
@@ -345,20 +344,20 @@ This scheduler script accepts the following options in the `arg1` argument:
 
 To load the scheduler changes into the runtime space:
 
-```mysql
+```{.bash data-prompt="mysql@proxysql>"}
 mysql@proxysql> LOAD SCHEDULER TO RUNTIME;
 ```
 
 To make sure that the script has been loaded,
 review the runtime_scheduler table:
 
-```mysql
+```{.bash data-prompt="mysql@proxysql>"}
 mysql@proxysql> SELECT * FROM scheduler\G
 ```
 
 ??? example "Expected output"
 
-    ```text
+    ```{.text .no-copy}
     *************************** 1. row ***************************
             id: 1
         active: 1
@@ -378,13 +377,13 @@ mysql@proxysql> SELECT * FROM scheduler\G
 
 Review the status of available nodes:
 
-```mysql
+```{.bash data-prompt="mysql@proxysql>"}
 mysql@proxysql> SELECT hostgroup_id,hostname,port,status FROM mysql_servers;
 ```
 
 ??? example "Expected output"
 
-    ```text
+    ```{.text .no-copy}
     +--------------+---------------+------+--------+
     | hostgroup_id | hostname      | port | status |
     +--------------+---------------+------+--------+
@@ -440,7 +439,7 @@ Sysbench is designed to run CPU, memory and I/O test and has the option to run O
 
 1. Create a database on one of the *Percona XtraDB Cluster* nodes. Use this database for testing.
 
-    ```sql
+    ```{.bash data-prompt="mysql@pxc1>"}
     mysql@pxc1> CREATE DATABASE sbtest;
     ```
 
@@ -468,13 +467,13 @@ Sysbench is designed to run CPU, memory and I/O test and has the option to run O
 
 ProxySQL stores collected data in the `stats` schema:
 
-```mysql
+```{.bash data-prompt="mysql@proxysql>"}
 mysql@proxysql> SHOW TABLES FROM stats;
 ```
 
 ??? example "Expected output"
 
-    ```text
+    ```{.text .no-copy}
     +--------------------------------+
     | tables                         |
     +--------------------------------+
@@ -490,19 +489,19 @@ mysql@proxysql> SHOW TABLES FROM stats;
 
 For example, to see the number of commands that run on the cluster:
 
-## Automatic Fail-over
+## Automatic fail-over
 
 *ProxySQL* automatically detects if a node isn't available or if the node isn't synced with the cluster.
 
 You can check the status of all available nodes by running:
 
-```mysql
+```{.bash data-prompt="mysql@proxysql>"}
 mysql@proxysql> SELECT hostgroup_id,hostname,port,status FROM mysql_servers;
 ```
 
 ??? example "Expected output"
 
-    ```text
+    ```{.text .no-copy}
     +--------------+---------------+------+--------+
     | hostgroup_id | hostname      | port | status |
     +--------------+---------------+------+--------+
@@ -521,13 +520,13 @@ root@pxc3:~# service mysql stop
 
 *ProxySQL* detects that the node is down and updates the node's status to `OFFLINE_SOFT`:
 
-```mysql
+```{.bash data-prompt="mysql@proxysql>"}
 mysql@proxysql> SELECT hostgroup_id,hostname,port,status FROM mysql_servers;
 ```
 
 ??? example "Expected output"
 
-    ```text
+    ```{.text .no-copy}
     +--------------+---------------+------+--------------+
     | hostgroup_id | hostname      | port | status       |
     +--------------+---------------+------+--------------+
@@ -546,13 +545,13 @@ root@pxc3:~#> service mysql start
 
 The script detects the change and marks the node as `ONLINE`:
 
-```mysql
+```{.bash data-prompt="mysql@proxysql>"}
 mysql@proxysql> SELECT hostgroup_id,hostname,port,status FROM mysql_servers;
 ```
 
 ??? example "Expected output"
 
-    ```text
+    ```{.text .no-copy}
     +--------------+---------------+------+--------+
     | hostgroup_id | hostname      | port | status |
     +--------------+---------------+------+--------+
@@ -563,7 +562,7 @@ mysql@proxysql> SELECT hostgroup_id,hostname,port,status FROM mysql_servers;
     3 rows in set (0.00 sec)
     ```
 
-## Assisted Maintenance mode
+## Assisted maintenance mode
 
 For maintenance, identify that node, update its status in ProxySQL to `OFFLINE_SOFT`, wait for ProxySQL to divert
 traffic from this node, and then initiate the shutdown or perform maintenance

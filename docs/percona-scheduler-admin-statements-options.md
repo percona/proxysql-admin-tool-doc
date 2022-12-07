@@ -1,4 +1,4 @@
-# Percona Scheduler Admin Statements and Options
+# Percona Scheduler Admin statements and options
 
 ## Statement reference
 
@@ -6,13 +6,13 @@ The standard percona-scheduler-admin statement includes
 `percona-scheduler-admin --config-file=<configuration file name and
 extension>`. A Percona Scheduler Admin example statement has the following syntax:
 
-```text
+```{.text .no-copy}
 percona-scheduler-admin --config-file=config.toml [option] [option]
 ```
 
 If you do not include the configuration file in the command, the result is an error and nothing happens.
 
-```text
+```{.text .no-copy}
 $ percona-scheduler-admin --debug
 ERROR : The --config-file option is required but is missing from the command.
 ```
@@ -23,7 +23,7 @@ For most options, two hyphens (–) precede an option name. The [disable](percon
 
 For example, the following commands return the same result:
 
-```shell
+```{.bash data-prompt="$"}
 $ percona-scheduler-admin --config-file=config.toml -e
 
 $ percona-scheduler-admin --config-file=config.toml --enable
@@ -33,7 +33,7 @@ You can combine some options with other, optional options to modify the statemen
 
 An example of combining options in one statement:
 
-```shell
+```{.bash data-prompt="$"}
 $ percona-scheduler-admin --config-file=config.toml --write-node=127.0.0.1:4130 --update-cluster
 ```
 
@@ -41,27 +41,29 @@ For some options, they must be combined with a required option to return a resul
 
 An example of an option combined with a required option:
 
-```shell
+```{.bash data-prompt="$"}
 $ percona-scheduler-admin --config-file=config.toml --force -e
 ```
 
-If you do not combine the
-option with the required option, the statement does not run and returns an
-error.
+If you do not combine the option with the required option, the statement does not run and returns an error.
 
-```
+```{.bash data-prompt="$"}
 $ percona-scheduler-admin --config-file=tests/testsuite.toml  --update-write-weight="127.0.0.1:33,112"
-
-ERROR : --update-write-weight requires --update-cluster.
 ```
 
-Specific options, such as –write-node or –server, require a value.
+??? example "Expected output"
 
-```
+    ```{.text .no-copy}
+    ERROR : --update-write-weight requires --update-cluster.
+    ```
+
+Specific options, such as -–write-node or –-server, require a value.
+
+```{.bash data-prompt="$>"}
 $> percona-scheduler-admin --config-file=config.toml --server=192.168.56.32:3306
 ```
 
-## Option Reference
+## Option reference
 
 |Option name|Acceptable values|Other options|Mode|Description|
 |--- |--- |--- |--- |--- |

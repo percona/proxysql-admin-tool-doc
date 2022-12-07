@@ -5,19 +5,19 @@ any other **Percona** software, run the corresponding command:
 
 On Debian or Ubuntu:
 
-```sh
+```{.bash data-prompt="$"}
 $ sudo apt install proxysql
 ```
 
 On Red Hat Enterprise Linux or CentOS:
 
-```sh
+```{.bash data-prompt="$"}
 $ sudo yum install proxysql
 ```
 
 To start *ProxySQL*, run the following command:
 
-```sh
+```{.bash data-prompt="$"}
 $ sudo service proxysql start
 ```
 
