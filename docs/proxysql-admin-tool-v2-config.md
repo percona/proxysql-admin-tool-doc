@@ -195,12 +195,12 @@ export CLUSTER_HOSTNAME='localhost'
 export CLUSTER_PORT='3306'
 
 # proxysql monitoring user. proxysql admin script will create this user in pxc to monitor pxc-nodes.
-export MONITOR_USERNAME="monitor"
-export MONITOR_PASSWORD="monit0r"
+export MONITOR_USERNAME='monitor'
+export MONITOR_PASSWORD='monit0r'
 
 # Application user to connect to pxc-node through proxysql
-export CLUSTER_APP_USERNAME="proxysql_user"
-export CLUSTER_APP_PASSWORD="passw0rd"
+export CLUSTER_APP_USERNAME='proxysql_user'
+export CLUSTER_APP_PASSWORD='passw0rd'
 
 # ProxySQL hostgroup IDs
 export WRITER_HOSTGROUP_ID='10'
@@ -212,14 +212,14 @@ export OFFLINE_HOSTGROUP_ID='13'
 export MODE="singlewrite"
 
 # max_connections default (used only when INSERTing a new mysql_servers entry)
-export MAX_CONNECTIONS="1000"
+export MAX_CONNECTIONS='1000'
 
 # Determines the maximum number of writesets a node can have queued
 # before the node is SHUNNED to avoid stale reads.
 export MAX_TRANSACTIONS_BEHIND=100
 
 # Connections to the backend servers (from ProxySQL) will use SSL
-export USE_SSL="no"
+export USE_SSL='no'
 
 # Determines if a node should be added to the reader hostgroup if it has
 # been promoted to the writer hostgroup.
@@ -228,7 +228,7 @@ export USE_SSL="no"
 # If set to 'no', then none of the writers (including backup-writers) are added.
 # If set to 'backup', then only the backup-writers will be added to
 # the read hostgroup.
-export WRITERS_ARE_READERS="backup"
+export WRITERS_ARE_READERS='backup'
 ```
 
 ## Configuring the proxysql-admin login
@@ -247,7 +247,7 @@ The following is an example of the unencrypted data:
 
 ```{.text .no-copy}
 # --------------------------------
-# This file is constructed as a set of "name=value" pairs.
+# This file is constructed as a set of 'name=value' pairs.
 # Notes:
 # (1) Comment lines start with '#' and must be on separate lines
 # (2) the name part
