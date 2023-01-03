@@ -1,36 +1,42 @@
-# Percona Scheduler Admin option details
+# Percona Scheduler Admin options
 
-The Percona Scheduler Admin script lists the available options in Percona Scheduler Admin configuration file. The following options are described in more detail:
+The Percona Scheduler Admin script lists the available options in the Percona Scheduler Admin configuration file. The following options are described in more detail:
 
 | Option Name                                             |
 |---------------------------------------------------------|
-| [--add-query-rule](#add-query-rule)                     |
-| [--adduser](#adduser)                                   |
-| [--auto-assign-weights](#auto-assign-weights)           |
-| [--disable/-d](#disable-d)                           |
-| [--enable/-e](#enable-e)                             |
-| [--force](#force)                                      |
-| [--is-enabled](#is-enabled)                            |
-| [--server](#server)                                     |
-| [--status](#status)                                     |
-| [--sync-multi-cluster-users](#sync-multi-cluster-users) |
-| [--syncusers](#syncusers)                               |
-| [--update-cluster](#update-cluster)                     |
-| [--update-mysql-version](#update-mysql-version)         |
-| [--update-read-weight](#update-read-weight)             |
-| [--update-write-weight](#update-write-weight)           |
-| [--write-node](#write-node)                             |
+| [--add-query-rule](#-add-query-rule)                     |
+| [--adduser](#-adduser)                                   |
+| [--auto-assign-weights](#-auto-assign-weights)           |
+| [--config-file](#-config-file) |
+| [--debug](#-debug) |
+| [--disable/-d](#-disable-d)                           |
+| [--enable/-e](#-enable-e)                             |
+| [--force](#-force)                                      |
+| [--help](#-help)|
+| [--is-enabled](#-is-enabled)                            |
+| [--server](#-server)                                     |
+| [--status](#-status)                                     |
+| [--sync-multi-cluster-users](#-sync-multi-cluster-users) |
+| [--syncusers](#-syncusers)                               |
+| [--trace][trace] |
+| [--update-cluster](#-update-cluster)                     |
+| [--update-mysql-version](#-update-mysql-version)         |
+| [--update-read-weight](#-update-read-weight)             |
+| [--update-write-weight](#-update-write-weight)           |
+| [--use-stdin-for-credentials](#-use-stdin-for-credentials) |
+| [--version](#-version) |
+| [--write-node](#-write-node)                             |
 
-## –add-query-rule
+## -–add-query-rule
 
 This option creates query rules for a synced MySQL user and applies only to the
 `singlewrite` mode.
 
-### -add-query-rule requires
+### --add-query-rule requires
 
 Either the –syncusers or –sync-multi-cluster-users options.
 
-### -add-query-rule example
+### --add-query-rule example
 
 ```{.bash data-prompt="$"}
 $ percona-scheduler-admin --config-file=config.toml --syncusers
@@ -53,11 +59,11 @@ $ percona-scheduler-admin --config-file=config.toml --syncusers
     Synced PXC users to the ProxySQL database!
     ```
 
-## –adduser
+## –-adduser
 
 This option adds the cluster application user account to the ProxySQL database.
 
-### –adduser example
+### –-adduser example
 
 ```{.bash data-prompt="$"}
 $ percona-scheduler-admin --config-file=config.toml --adduser
@@ -78,7 +84,7 @@ $ percona-scheduler-admin --config-file=config.toml --adduser
     Added PXC application user to the ProxySQL database!
     ```
 
-## –auto-assign-weights
+## –-auto-assign-weights
 
 ProxySQL uses weights for defining the failover procedure in `singlewrite` mode
 and handling load balancing `loadbal` mode.
@@ -127,7 +133,7 @@ The following example is a default configuration when the
     Cluster membership updated in the ProxySQL database!
     ```
 
-### -auto-assign-weights example
+### --auto-assign-weights example
 
 ```{.bash data-prompt="$"}
 $ percona-scheduler-admin --config-file=config.toml --update-cluster --auto-assign-weights
@@ -156,11 +162,19 @@ $ percona-scheduler-admin --config-file=config.toml --update-cluster --auto-assi
     Cluster membership updated in the ProxySQL database!
     ```
 
-## –disable / -d
+## --config-file
+
+This option reads the login credentials from a configuration file. Command-line options override configuration file values. For more information, see [Percona Scheduler Admin configuration](./percona-scheduler-admin-configuration.md).
+
+## --debug
+
+This option enables additional debug logging.
+
+## –-disable / -d
 
 This option removes Percona XtraDB Cluster nodes from ProxySQL and stops the ProxySQL monitoring daemon.
 
-### -disable example
+### --disable example
 
 ```{.bash data-prompt="$"}
 $ percona-scheduler-admin --config-file=config.toml --disable
@@ -187,7 +201,7 @@ Specifying this option sets the following values to `false`:
 * admin-checksum_mysql_servers
 * admin_checksum_mysql_users
 
-## –enable / -e
+## –-enable / -e
 
 This option creates the entries for the Galera hostgroups and adds the 
 Percona XtraDB Cluster nodes into ProxySQL’s `mysql_servers` table.
@@ -201,7 +215,7 @@ privilege. The users have the following tasks:
 
 You must have [`super`](https://dev.mysql.com/doc/refman/8.0/en/privileges-provided.html#priv_super) user credentials from Percona XtraDB Cluster to set up the default users.
 
-### -enable example
+### --enable example
 
 ```{.bash data-prompt="$"}
 $ percona-scheduler-admin --config-file=config.toml --enable
@@ -439,14 +453,18 @@ mysql> select * from scheduler\G
     1 row in set (0.00 sec)
     ```
 
-## –force
+## –-force
 
 This option must be combined with either [–enable / -e](#enable---e) or 
 [–update-cluster](#update-cluster). This option skips any `mysql_servers` table, 
 `mysql_users` table, and `mysql_galera_hostgroups` table configuration 
 checks. Certain checks issue warnings, instead of errors, which allows the option to continue processing.
 
-## –is-enabled
+## --help
+
+This option displays the help text.
+
+## –-is-enabled
 
 This option checks if `percona-scheduler-admin` configured the hostgroups in ProxySQL.
 
@@ -454,7 +472,7 @@ Returns a zero (0) if an entry corresponds to the writer hostgroup and is set to
 
 Returns a one (1) if an entry does not correspond to the writer hostgroup.
 
-### is-enabled example
+### --is-enabled example
 
 ```{.bash data-prompt="$"}
 $ percona-scheduler-admin --config-file=config.toml --is-enabled
@@ -466,7 +484,7 @@ $ percona-scheduler-admin --config-file=config.toml --is-enabled
     The current configuration has been enabled and is active
     ```
 
-### is-enabled verification example
+### --is-enabled verification example
 
 Verify if `percona-scheduler-admin` configured the hostgroups in ProxySQL.
 
@@ -480,7 +498,7 @@ $ echo $?
     0
     ```
 
-### -is-enabled example with cluster disabled
+### --is-enabled example with cluster disabled
 
 Disabling the cluster configuration and then calling the option creates an error.
 
@@ -511,19 +529,19 @@ $ percona-scheduler-admin --config-file=config.toml --is-enabled
     ERROR (line:2450) : The current configuration has not been enabled
     ```
 
-## –remove-all-servers
+## –-remove-all-servers
 
 When used with [--update-cluster](#update-cluster) this option removes 
 all servers belonging to the current cluster before running the [--update-cluster](#update-cluster) option.
 
-### -remove-all-server example
+### --remove-all-server example
 
 ```{.bash data-prompt="$"}
 $ percona-scheduler-admin --config-file=config.toml 
 --remove-all-servers --udpate-cluster
 ```
 
-## –server
+## –-server
 
 Selects a server by the IP address and port. This option can be 
 combined with [--syncusers](#syncusers) or [–sync-multi-cluster-users](#sync-multi-cluster-users) to sync a single non-cluster server. The option does not require that the server belong to a *Percona XtraDB Cluster*.
@@ -534,11 +552,11 @@ combined with [--syncusers](#syncusers) or [–sync-multi-cluster-users](#sync-m
 $ percona-scheduler-admin --config-file=config.toml --server=192.168.56.32:3306
 ```
 
-## –status
+## –-status
 
 This option displays information about all Galera hostgroups and their servers supported by this ProxySQL instance.
 
-### -status example
+### --status example
 
 ```{.bash data-prompt="$"}
 $ percona-scheduler-admin --config-file=config.toml --status
@@ -564,7 +582,7 @@ $ percona-scheduler-admin --config-file=config.toml --status
     +---------------+-------+---------------+------+--------+--------+----------+---------+-----------+
     ```
 
-## –sync-multi-cluster-users
+## –-sync-multi-cluster-users
 
 Use this option to sync proxysql instances that manage multiple clusters.
 
@@ -576,7 +594,7 @@ This option does the following:
 
 To sync a specific server combine this option with the [--server](#server)  option.
 
-## –syncusers
+## –-syncusers
 
 This option does the following:
 
@@ -589,7 +607,7 @@ To sync a specific server combine this option with the [--server](#server)  opti
 Review the user accounts in the ProxySQL database as root from ProxySQL 
 database.
 
-### -syncusers example
+### --syncusers example
 
 ```sql
 proxysql admin#> SELECT DISTINCT username FROM mysql_users;
@@ -664,7 +682,11 @@ proxysql-admin> SELECT DISTINCT username FROM mysql_users;
     2 rows in set (0.00 sec)
     ```
 
-## –update-cluster
+## --trace
+
+This option enables shell-level tracing for this shell script.
+
+## –-update-cluster
 
 This option checks the *Percona XtraDB Cluster* for new nodes. If nodes are found, they are added to ProxySQL. By default, offline nodes are not removed from the cluster.
 
@@ -704,11 +726,11 @@ $ percona-scheduler-admin --config-file=config.toml --write-node=127.0.0.1:4130 
     Cluster membership updated in the ProxySQL database!
     ```
 
-## –update-mysql-version
+## –-update-mysql-version
 
 This option updates the mysql server version in the proxysql db based on the online writer node.
 
-### -update-mysql-version example
+### --update-mysql-version example
 
 ```{.bash data-prompt="$"}
 $ percona-scheduler-admin --config-file=config.toml --update-mysql-version
@@ -720,7 +742,7 @@ $ percona-scheduler-admin --config-file=config.toml --update-mysql-version
     ProxySQL MySQL version changed to 8.0.27
     ```
 
-## –update-read-weight
+## –-update-read-weight
 
 Combining –update-cluster with this option assigns the specified read
 weight to a node.
@@ -729,7 +751,7 @@ The syntax for the arguments are: <IP_ADDRESS:PORT> and <New Weight>. The
 <IP_ADDRESS> format can be either Internet Protocol version 4 (IPv4)
 or Internet Protocol version 6 (IPv6).
 
-### -update-read-weight example
+### --update-read-weight example
 
 ```{.bash data-prompt="$"}
 $ percona-scheduler-admin --config-file=config.toml --update-cluster --update-read-weight="<IP_ADDRESS:PORT>, <New Weight>"
@@ -789,7 +811,7 @@ $ percona-scheduler-admin --config-file=config.toml --update-cluster --update-re
     Cluster membership updated in the ProxySQL database!
     ```
 
-## –update-write-weight
+## –-update-write-weight
 
 Combining this option with [--update-cluster](#update-cluster)  assigns the
 specified write weight to a node.
@@ -798,7 +820,7 @@ The syntax for the arguments are: <IP_ADDRESS:PORT> and <New Weight>. The
 <IP_ADDRESS> format can be either Internet Protocol version 4 (IPv4)
 or Internet Protocol version 6 (IPv6).
 
-### -update-write-weight example
+### --update-write-weight example
 
 ```sql
 $ percona-scheduler-admin --config-file=config.toml --update-cluster --update-write-weight="<IP_ADDRESS:PORT>, <New Weight>"
@@ -858,7 +880,15 @@ $ percona-scheduler-admin --config-file=config.toml --update-cluster --update-wr
     Cluster membership updated in the ProxySQL database!
     ```
 
-## –write-node
+## --use-stdin-for-credentials
+
+This option uses `stdin` to send credentials to the MySQL client instead of process substitution. The default setting disables the option and uses process substitution.
+
+## --version
+
+This option prints the version information.
+
+## –-write-node
 
 This option chooses which Percona XtraDB Cluster node is the writer 
 node when the mode is `singlewrite`. You can combine this option with –enable / -e and –update-cluster.
@@ -867,10 +897,12 @@ The option requires only a single IP address and port combination.
 
 Assigning a node with [--write-node](#write-node) gives the writer node a weight of 1000000. The default weight is 1000.
 
-### -write-node example
+### --write-node example
 
 The argument syntax is a single IP address and port combination.
 
 ```sql
 $ percona-scheduler-admin --config-file=config.toml --write-node=192.168.56.32:3306
 ```
+
+[trace]: #-trace

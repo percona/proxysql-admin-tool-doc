@@ -1,4 +1,4 @@
-# Percona Scheduler Admin configuration file example
+# Percona Scheduler Admin configuration
 
 *ProxySQL* with the `percona-scheduler-admin` stores the parameters in a
 configuration file that uses the toml format. This file defines
