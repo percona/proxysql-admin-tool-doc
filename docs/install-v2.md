@@ -1,6 +1,15 @@
 # Install ProxySQL 2.x.x and the admin utilities
 
+
 Select the same package installer used to install [Percona XtraDB Cluster](https://www.percona.com/doc/percona-xtradb-cluster/8.0/install/index.html) or other Percona software.
+
+
+```
+
+    docker inspect --format='{{ '{{ range .NetworkSettings.Networks }}{{ .IPAddress}}{{end}}' }} psmdb
+    
+```
+
 
 === "On a Debian-derived distribution"
 
@@ -75,3 +84,5 @@ Running this command without the [Percona Scheduler configuration file](percona-
     ```{.text .no-copy}
     ERROR : The --config-file option is required but is missing from the command.
     ```
+
+[tp]: https://github.com/patrickbirch/snips/blob/main/tech-preview.md
