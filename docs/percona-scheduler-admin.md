@@ -42,7 +42,7 @@ The Percona Scheduler Admin tool has been tested with ProxySQL 2.3.0, 2.3.2-1.2,
 
 The following are the prerequisites for using the Percona Scheduler Admin:
 
-* The [mysql command-line client](https://dev.mysql.com/doc/refman/8.0/en/mysql.html) and [my_print_defaults](https://dev.mysql.com/doc/refman/8.0/en/my-print-defaults.html) must be installed on the system.
+* The [mysql command-line client](https://dev.mysql.com/doc/refman/8.0/en/mysql.html) and [my_print_defaults](https://dev.mysql.com/doc/refman/8.0/en/my-print-defaults.html) must be installed on the system. Install the server packages on the system to add these tools.
 
 * *ProxySQL* and *Percona XtraDB Cluster* are running.
 
