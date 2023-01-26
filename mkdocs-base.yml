@@ -44,6 +44,9 @@ theme:
     - search.highlight
     - navigation.top
     - content.tabs.link
+    - content.action.edit
+    - content.action.view
+    - content.code.copy   
 
 extra_css:
   - https://unicons.iconscout.com/release/v3.0.3/css/line.css
@@ -84,12 +87,13 @@ markdown_extensions:
 
 
 plugins:
-    search: {}
+    search: 
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
     git-revision-date: {}
 #  - htmlproofer # Uncomment to check links - but extends build time significantly
     macros:
         include_yaml:
-#        - 'variables.yml' # Use in markdown as '{{ VAR }}'
+        - 'variables.yml' # Use in markdown as '{{ VAR }}'
 # exclude: # Don't process these files
 #      glob:
 #         - file.md
