@@ -1,12 +1,12 @@
-# Build the Percona Scheduler admin tool
+# Build the pxc_scheduler_handler tool
 
-The Percona Scheduler Admin has two main files: the `pxc_scheduler_handler` binary and the `percona_scheduler_admin` script.
+The pxc_scheduler_handler tool has two main files: the `pxc_scheduler_handler` binary and the `percona_scheduler_admin` script.
 
 The `pxc_scheduler_handler` does the following tasks:
 
-* Monitors the cluster’s health
+* Monitors the cluster health
 
-* Processes the cluster’s state and evaluates the scenario
+* Processes the cluster state and evaluates the scenario
 
 * Performs actions, such as failover in case of an incident
 
@@ -53,5 +53,5 @@ mysql> GRANT ALL PRIVILEGES ON *.* TO 'admin'@'192.%' WITH GRANT OPTION;
 
 !!! admonition "See also"
     
-    [Log file or lock file locations](percona-scheduler-admin-known-limitations.md#do-not-place-the-log-file-or-lock-file-in-the-home-directory)
+    [Log file or lock file locations](psh-known-limitations.md#do-not-place-the-log-file-or-lock-file-in-the-home-directory)
 

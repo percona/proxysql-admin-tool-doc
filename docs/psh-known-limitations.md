@@ -1,16 +1,16 @@
-# Known issues in Percona Scheduler Admin
+# Known issues in pxc_scheduler_handler
 
-This document lists the known issues in the Percona Scheduler Admin.
+This document lists the known issues in the pxc_scheduler_handler.
 
 ## Do not combine certain options
 
 The following options are mutually exclusive. An attempt to combine these options in a command creates in an error and no action is taken.
 
-* [-–update-write-weight](./percona-scheduler-admin-options-detail.md#-update-write-weight) and [-–auto-assign-weights](./percona-scheduler-admin-options-detail.md#-auto-assign-weights)
+* [-–update-write-weight](./psh-detailed-options.md#-update-write-weight) and [-–auto-assign-weights](./psh-detailed-options.md#-auto-assign-weights)
 
-* [-–write-node](./percona-scheduler-admin-options-detail.md#-write-node) and [-–auto-assign-weights](./percona-scheduler-admin-options-detail.md#-auto-assign-weights)
+* [-–write-node](./psh-detailed-options.md#-write-node) and [-–auto-assign-weights](./psh-detailed-options.md#-auto-assign-weights)
 
-* [-–write-node](./percona-scheduler-admin-options-detail.md#-write-node) and [-–update-write-weight](./percona-scheduler-admin-options-detail.md#-update-write-weight)
+* [-–write-node](./psh-detailed-options.md#-write-node) and [-–update-write-weight](./psh-detailed-options.md#-update-write-weight)
 
 ## Do not place the log file or lock file in the Home directory
 

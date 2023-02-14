@@ -1,10 +1,10 @@
-# Percona Scheduler Admin statements
+# pxc_scheduler_handler statements
 
 ## Statement reference
 
-The standard percona-scheduler-admin statement includes
+The standard pxc_scheduler_handler statement includes
 `percona-scheduler-admin --config-file=<configuration file name and
-extension>`. A Percona Scheduler Admin example statement has the following syntax:
+extension>`. A pxc_scheduler_handler example statement has the following syntax:
 
 ```{.text .no-copy}
 percona-scheduler-admin --config-file=config.toml [option] [option]
@@ -17,9 +17,9 @@ $ percona-scheduler-admin --debug
 ERROR : The --config-file option is required but is missing from the command.
 ```
 
-The options determine what the statement does. The percona-scheduler-admin statement must include at least one option. A command without an option returns an error and nothing happens.
+The options determine what the statement does. The pxc_scheduler_handler statement must include at least one option. A command without an option returns an error and nothing happens.
 
-For most options, two hyphens (--) precede an option name. The [disable](./percona-scheduler-admin-options-detail.md#-disable---d) and the [enable](./percona-scheduler-admin-options-detail.md#–enable---e) option can be selected with one hyphen (-) and the appropriate abbreviation.
+For most options, two hyphens (--) precede an option name. The [disable](./psh-detailed-options.md#-disable---d) and the [enable](./psh-detailed-options.md#–enable---e) option can be selected with one hyphen (-) and the appropriate abbreviation.
 
 For example, the following commands return the same result:
 
@@ -29,7 +29,7 @@ $ percona-scheduler-admin --config-file=config.toml -e
 $ percona-scheduler-admin --config-file=config.toml --enable
 ```
 
-You can combine some options with other, optional options to modify the statement’s behavior. Multiple options are separated by a space. You can combine the options in any order.
+You can combine some options with other, optional options to modify the statement behavior. Multiple options are separated by a space. You can combine the options in any order.
 
 An example of combining options in one statement:
 
@@ -63,4 +63,4 @@ Specific options, such as -–write-node or –-server, require a value.
 $> percona-scheduler-admin --config-file=config.toml --server=192.168.56.32:3306
 ```
 
-For the available options, see [Percona Scheduler Admin options](percona-scheduler-admin-options-detail.md)
+For the available options, see [pxc_scheduler_handler options](psh-detailed-options.md)

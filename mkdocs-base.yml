@@ -128,7 +128,7 @@ extra:
 
 nav:
   - Home: index.md
-  - ProxySQL 1.x.x and the proxysql-admin tool:
+  - ProxySQL 1.x.x and the proxysql-admin:
       - proxysql-v1.md
       - installing-v1.md
       - tarball-v1.md
@@ -138,23 +138,23 @@ nav:
         - where-to-download-proxysql.md
         - install-v2.md
         - install-proxysql2-tarball.md
-        - build-percona-scheduler-admin.md
+        - build-psh.md
       - Deploy:
         - start-or-stop-proxysql2.md
         - upgrade-proxysql2.md
         - uninstall-proxysql2.md
-      - proxysql-admin tool:
+      - proxysql-admin:
         - Manage:
           - proxysql-admin-tool-changes.md
           - proxysql-admin-tool-v2-config.md
           - proxysql-admin-tool-functions.md
-      - pxc_scheduler_handler tool:
+      - pxc_scheduler_handler:
         - Manage:
-          - percona-scheduler-admin.md
-          - percona-scheduler-admin-configuration.md
-          - percona-scheduler-admin-statements-options.md
-          - percona-scheduler-admin-options-detail.md
-          - percona-scheduler-admin-known-limitations.md
+          - psh-overview.md
+          - psh-configuration.md
+          - psh-options.md
+          - psh-detailed-options.md
+          - psh-known-limitations.md
   - Release notes:
       - Release notes index: release-notes.md
       - 2.4.7.md
