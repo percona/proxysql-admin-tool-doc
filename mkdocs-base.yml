@@ -1,6 +1,6 @@
 # MkDocs base configuration that other conf files will inherit
 
-site_name: Percona ProxySQL Admin tool
+site_name: Percona ProxySQL Admin tools
 site_description: Documentation
 site_author: Percona LLC
 copyright: Percona LLC and/or its affiliates, &#169; 2009-2023
@@ -128,30 +128,33 @@ extra:
 
 nav:
   - Home: index.md
-  - ProxySQL 1.x.x and the proxysql-admin tool :
+  - ProxySQL 1.x.x and the proxysql-admin tool:
       - proxysql-v1.md
       - installing-v1.md
       - tarball-v1.md
       - configure-proxysql1.md
-  - Install ProxySQL 2.x.x and admin tools:
-      - where-to-download-proxysql.md
-      - install-v2.md
-      - install-proxysql2-tarball.md
-      - build-percona-scheduler-admin.md
-  - Start, stop, upgrade or uninstall ProxySQL 2.x.x:
-      - start-or-stop-proxysql2.md
-      - upgrade-proxysql2.md
-      - uninstall-proxysql2.md
-  - Use the ProxySQL 2.x.x and proxysql-admin tool:
-      - proxysql-admin-tool-changes.md
-      - proxysql-admin-tool-v2-config.md
-      - proxysql-admin-tool-functions.md
-  - Use the ProxySQL 2.x.x and Percona Scheduler Admin tool:
-      - percona-scheduler-admin.md
-      - percona-scheduler-admin-configuration.md
-      - percona-scheduler-admin-statements-options.md
-      - percona-scheduler-admin-options-detail.md
-      - percona-scheduler-admin-known-limitations.md
+  - ProxySQL 2.x.x and admin tools:
+      - Install:
+        - where-to-download-proxysql.md
+        - install-v2.md
+        - install-proxysql2-tarball.md
+        - build-percona-scheduler-admin.md
+      - Deploy:
+        - start-or-stop-proxysql2.md
+        - upgrade-proxysql2.md
+        - uninstall-proxysql2.md
+      - proxysql-admin tool:
+        - Manage:
+          - proxysql-admin-tool-changes.md
+          - proxysql-admin-tool-v2-config.md
+          - proxysql-admin-tool-functions.md
+      - Percona Scheduler Admin tool:
+        - Manage:
+          - percona-scheduler-admin.md
+          - percona-scheduler-admin-configuration.md
+          - percona-scheduler-admin-statements-options.md
+          - percona-scheduler-admin-options-detail.md
+          - percona-scheduler-admin-known-limitations.md
   - Release notes:
       - Release notes index: release-notes.md
       - 2.4.7.md
