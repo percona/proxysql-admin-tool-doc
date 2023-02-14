@@ -1,6 +1,6 @@
 # ProxySQL Admin Documentation
 
-![Percona logo](docs/_images/percona-logo.jpg)
+![Percona logo](docs/_images/Percona_Logo_Color.png)
 
 For more information about ProxySQL and the ProxySQL Admin tools, see the [ProxySQL Admin Utilities documentation](https://docs.percona.com/proxysql/index.html).
 
