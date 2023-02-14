@@ -148,7 +148,7 @@ nav:
           - proxysql-admin-tool-changes.md
           - proxysql-admin-tool-v2-config.md
           - proxysql-admin-tool-functions.md
-      - Percona Scheduler Admin tool:
+      - pxc_scheduler_handler tool:
         - Manage:
           - percona-scheduler-admin.md
           - percona-scheduler-admin-configuration.md
