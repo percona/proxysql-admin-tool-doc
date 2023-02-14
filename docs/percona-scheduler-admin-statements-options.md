@@ -19,7 +19,7 @@ ERROR : The --config-file option is required but is missing from the command.
 
 The options determine what the statement does. The percona-scheduler-admin statement must include at least one option. A command without an option returns an error and nothing happens.
 
-For most options, two hyphens (--) precede an option name. The [disable](percona-scheduler-admin-options-detail.html#-disable-d) and the [enable](percona-scheduler-admin-options-detail.html#-enable-e) option can be selected with one hyphen (-) and the appropriate abbreviation.
+For most options, two hyphens (--) precede an option name. The [disable](./percona-scheduler-admin-options-detail.md#-disable---d) and the [enable](./percona-scheduler-admin-options-detail.md#–enable---e) option can be selected with one hyphen (-) and the appropriate abbreviation.
 
 For example, the following commands return the same result:
 
