@@ -75,3 +75,7 @@ Running this command without the [Percona Scheduler configuration file](percona-
     ```{.text .no-copy}
     ERROR : The --config-file option is required but is missing from the command.
     ```
+
+## Run Docker
+
+To run ProxySQL2 in Docker, download the latest image at [percona/proxysql2](https://hub.docker.com/r/percona/proxysql2).
