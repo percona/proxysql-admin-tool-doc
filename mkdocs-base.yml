@@ -1,6 +1,6 @@
 # MkDocs base configuration that other conf files will inherit
 
-site_name: Percona ProxySQL Admin tools
+site_name: Percona ProxySQL admin tools
 site_description: Documentation
 site_author: Percona LLC
 copyright: Percona LLC and/or its affiliates, &#169; 2009-2023
