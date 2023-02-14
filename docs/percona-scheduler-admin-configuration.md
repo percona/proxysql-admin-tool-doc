@@ -23,6 +23,7 @@ A configuration file is used to control the Percona Scheduler Admin operations. 
 activeFailover = 1
 failBack = false
 checkTimeOut = 2000
+pingTimeout = 1000
 mainSegment = 0
 sslClient = "client-cert.pem"
 sslKey = "client-key.pem"
@@ -89,6 +90,7 @@ password = "<password>"
 clustered = false
 lockfilepath ="/var/run/pxc_scheduler_handler"
 respectManualOfflineSoft=false
+pingTimeout = 1000
 
 
 
