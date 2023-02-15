@@ -23,5 +23,5 @@ ProxySQL is available from the Percona software repositories with the following:
 
     * [ProxySQL Admin (proxysql-admin)](proxysql-admin-tool-v2-config.md) simplifies the configuration of *Percona XtraDB Cluster* nodes with ProxySQL.
 
-    * [Percona Scheduler Admin (percona-scheduler-admin)](build-percona-scheduler-admin.md) can automatically perform a failover due to node failures, service degradation, or maintenance. This utility is available from [ProxySQL 2.3.2-1.2](./release-notes-2.3.2-1.md) and higher.
+    * [pxc_scheduler_handler](build-psh.md) can automatically perform a failover due to node failures, service degradation, or maintenance. This utility is available from [ProxySQL 2.3.2-1.2](./release-notes-2.3.2-1.md) and higher.
 

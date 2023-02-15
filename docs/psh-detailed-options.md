@@ -1,6 +1,6 @@
-# Percona Scheduler Admin options
+# pxc-scheduler-handler options
 
-The Percona Scheduler Admin script lists the available options in the Percona Scheduler Admin configuration file. The following options are described in more detail:
+The pxc_scheduler_handler script lists the available options in the pxc_scheduler_handler configuration file. The following options are described in more detail:
 
 | Option Name                                             |
 |---------------------------------------------------------|
@@ -106,10 +106,10 @@ For example, in a three-node cluster, assign a `900` to the writer node and
 
 This option does these operations automatically without any manual intervention.
 
-Review [do not combine certain options](./percona-scheduler-admin-known-limitations.md#do-not-combine-certain-options).
+Review [do not combine certain options](./psh-known-limitations.md#do-not-combine-certain-options).
 
 The following example is a default configuration when the
-`percona-scheduler-admin` sets up proxysql.
+`pxc_scheduler_handler` sets up proxysql.
 
 ??? example "Expected output"
 
@@ -164,7 +164,7 @@ $ percona-scheduler-admin --config-file=config.toml --update-cluster --auto-assi
 
 ## --config-file
 
-This option reads the login credentials from a configuration file. Command-line options override configuration file values. For more information, see [Percona Scheduler Admin configuration](./percona-scheduler-admin-configuration.md).
+This option reads the login credentials from a configuration file. Command-line options override configuration file values. For more information, see [pxc_scheduler_handler configuration](./psh-configuration.md).
 
 ## --debug
 
@@ -191,7 +191,7 @@ $ percona-scheduler-admin --config-file=config.toml --disable
 ## --disable_updates
 
 This option can be used with any command to disable updating the 
-Percona Scheduler admin checksum for the `mysql_query_rules`, 
+pxc_scheduler_handler checksum for the `mysql_query_rules`, 
 `mysql_server` and `mysql_users` tables. The option avoids updates in 
 those tables for one node from being propagated to the cluster.
 
@@ -466,7 +466,7 @@ This option displays the help text.
 
 ## –-is-enabled
 
-This option checks if `percona-scheduler-admin` configured the hostgroups in ProxySQL.
+This option checks if `pxc_scheduler_handler` configured the hostgroups in ProxySQL.
 
 Returns a zero (0) if an entry corresponds to the writer hostgroup and is set to active in ProxySQL.
 
@@ -486,7 +486,7 @@ $ percona-scheduler-admin --config-file=config.toml --is-enabled
 
 ### --is-enabled verification example
 
-Verify if `percona-scheduler-admin` configured the hostgroups in ProxySQL.
+Verify if `pxc_scheduler_handler` configured the hostgroups in ProxySQL.
 
 ```{.bash data-prompt="$"}
 $ echo $?
@@ -538,7 +538,7 @@ all servers belonging to the current cluster before running the [--update-cluste
 
 ```{.bash data-prompt="$"}
 $ percona-scheduler-admin --config-file=config.toml 
---remove-all-servers --udpate-cluster
+--remove-all-servers --update-cluster
 ```
 
 ## –-server
@@ -757,7 +757,7 @@ or Internet Protocol version 6 (IPv6).
 $ percona-scheduler-admin --config-file=config.toml --update-cluster --update-read-weight="<IP_ADDRESS:PORT>, <New Weight>"
 ```
 
-The following table displays the `percona-scheduler-admin` default configuration for *ProxySQL*.
+The following table displays the `pxc_scheduler_handler` default configuration for *ProxySQL*.
 
 ```{.text .no-copy}
 Cluster node info
@@ -826,7 +826,7 @@ or Internet Protocol version 6 (IPv6).
 $ percona-scheduler-admin --config-file=config.toml --update-cluster --update-write-weight="<IP_ADDRESS:PORT>, <New Weight>"
 ```
 
-The following table displays the `percona-scheduler-admin` default configuration for  *ProxySQL*.
+The following table displays the `pxc-scheduler-handler` default configuration for  *ProxySQL*.
 
 ```{.text .no-copy}
 Cluster node info

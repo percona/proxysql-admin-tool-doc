@@ -60,7 +60,7 @@ Select the same package installer used to install [Percona XtraDB Cluster](https
         ...
         ```
 
-## Verify the Percona_Scheduler_Admin utility installation
+## Verify the pxc_scheduler_handler installation
 
 If you have installed [ProxySQL 2.3.2-2.1](release-notes-2.3.2-1.md) or later, verify the Percona_Scheduler_Admin installation with the following command:
 
@@ -68,7 +68,7 @@ If you have installed [ProxySQL 2.3.2-2.1](release-notes-2.3.2-1.md) or later, v
 $ percona-scheduler-admin --debug
 ```
 
-Running this command without the [Percona Scheduler configuration file](percona-scheduler-admin-configuration.md) generates an error.
+Running this command without the [pxc_scheduler_handler configuration file](psh-configuration.md) generates an error.
 
 ??? example "Error message"
 

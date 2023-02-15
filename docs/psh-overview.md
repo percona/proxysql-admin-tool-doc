@@ -1,6 +1,6 @@
-# ProxySQL 2.x.x and Percona Scheduler Admin tool
+# ProxySQL 2.x.x and pxc_scheduler_handler tool
 
-[*ProxySQL* 2.3.2-1.2](release-notes-2.3.2-1.md) adds the Percona Scheduler Admin (percona-scheduler-admin) tool. This tool has a segment-aware failover mechanism and can automatically perform a failover due to node failures, service degradation, or maintenance requirements. The external scheduler has the following qualities:
+[*ProxySQL* 2.3.2-1.2](release-notes-2.3.2-1.md) adds the pxc_scheduler_handler tool. This tool has a segment-aware failover mechanism and can automatically perform a failover due to node failures, service degradation, or maintenance requirements. The external scheduler has the following qualities:
 
 * Capable of parallel query execution on nodes which results in faster failover or fallback
 
@@ -16,11 +16,11 @@
 
 !!! important
 
-    Percona Scheduler Admin was built for a different purpose and has different features than [proxy-admin](proxysql-admin-tool-v2-config.md). You cannot use the options from one admin tool in the other admin tool. Combining the options causes unintended results.
+    pxc_scheduler_handler was built for a different purpose and has different features than [proxy-admin](proxysql-admin-tool-v2-config.md). You cannot use the options from one admin tool in the other admin tool. Combining the options causes unintended results.
 
 ## Version changes
 
-The Percona Scheduler Admin tool has been tested with ProxySQL 2.3.0, 2.3.2-1.2, and later versions.
+The pxc_scheduler_handler tool has been tested with ProxySQL 2.3.0, 2.3.2-1.2, and later versions.
 
 [*ProxySQL* 2.4.2](2.4.2.md) add the following checks:
 
@@ -40,15 +40,15 @@ The Percona Scheduler Admin tool has been tested with ProxySQL 2.3.0, 2.3.2-1.2,
 
 ## Prerequisites
 
-The following are the prerequisites for using the Percona Scheduler Admin:
+The following are the prerequisites for using the pxc_scheduler_handler:
 
 * The [mysql command-line client](https://dev.mysql.com/doc/refman/8.0/en/mysql.html) and [my_print_defaults](https://dev.mysql.com/doc/refman/8.0/en/my-print-defaults.html) must be installed on the system. Install the server packages on the system to add these tools.
 
 * *ProxySQL* and *Percona XtraDB Cluster* are running.
 
-For information on the Percona Scheduler Admin tool installation, see [Install ProxySQL 2.x.x and the admin utilities](install-v2.md) or [Build the Percona Scheduler admin tool](build-percona-scheduler-admin.md).
+For information on the pxc_scheduler_handler tool installation, see [Install ProxySQL 2.x.x and the admin utilities](install-v2.md) or [Build the pxc_scheduler_handler tool](build-psh.md).
 
 ## Add an issue
 
-If you find a Percona Scheduler Admin bug, add a bug report in the [PSQLADM project](https://jira.percona.com/projects/PSQLADM).
+If you find a pxc_scheduler_handler bug, add a bug report in the [PSQLADM project](https://jira.percona.com/projects/PSQLADM).
 
