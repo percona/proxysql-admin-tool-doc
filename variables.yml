@@ -1,0 +1,6 @@
+# variables for HTML output
+
+release: '2.4.8'
+version: '2.x.x'
+release_date: 'March 15, 2023'
+title_date: '2023-03-15'
