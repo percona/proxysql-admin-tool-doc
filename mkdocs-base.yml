@@ -157,6 +157,7 @@ nav:
           - psh-known-limitations.md
   - Release notes:
       - Release notes index: release-notes.md
+      - 2.4.8.md
       - 2.4.7.md
       - 2.4.4-1.2.md
       - 2.4.4.md
