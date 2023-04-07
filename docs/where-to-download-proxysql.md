@@ -1,11 +1,12 @@
 # Download locations for ProxySQL 2.x.x and ProxySQL admin utilities
 
-The binaries, packages, and tarballs are available at [Percona Download ProxySQL 2](https://www.percona.com/downloads/proxysql2/).
+The binaries, packages, and tarballs are available at [Percona Download ProxySQL](https://www.percona.com/download-proxysql).
 
-On the **Download ProxySQL 2** page, select the following:
+On the **Download ProxySQL** page, select the following:
 
-* *Version* - the version of ProxySQL2
-* *Software* - the Linux distribution
+* *Product* - ProxySQL 2
+* *Product Version* - the version of ProxySQL2
+* *Platform* - the Linux distribution
 
 The available software platforms are based on the selected version. 
 You can either download all packages together in a single tar file or download the packages separately. Select **Linux - Generic** to download [binary tarballs](install-proxysql2-tarball.md).
