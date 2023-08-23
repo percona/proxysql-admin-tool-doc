@@ -135,6 +135,7 @@ nav:
   - Home: index.md
   - Release notes:
       - Release notes index: release-notes.md
+      - 2.5.5.md
       - 2.5.4.md
       - 2.5.3.md
       - 2.5.2.md
