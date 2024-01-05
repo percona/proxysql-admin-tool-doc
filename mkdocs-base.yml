@@ -3,7 +3,6 @@
 site_name: Percona ProxySQL admin tools
 site_description: Documentation
 site_author: Percona LLC
-copyright: Percona LLC and/or its affiliates, &#169; 2009-2023
 
 repo_name: percona/proxysql-admin-tool-doc
 repo_url: https://github.com/percona/proxysql-admin-tool-doc
@@ -53,6 +52,10 @@ extra_css:
   - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css
   - css/percona.css
   - css/nocopy.css
+
+#Copyright
+copyright: >
+  "<a href='https://www.percona.com/about'>Percona LLC</a> and/or its affiliates &copy; 2009-<script>document.write(new Date().getFullYear())</script> — <a href='#__consent'>Cookie Consent</a>"
 
 extra_javascript:
   - js/promptremover.js
