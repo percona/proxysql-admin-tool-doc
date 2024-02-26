@@ -14,6 +14,7 @@ The pxc_scheduler_handler script lists the available options in the pxc_schedule
 | [--force](#-force)                                      |
 | [--help](#-help)|
 | [--is-enabled](#-is-enabled)                            |
+| [--LockRefreshTime](#-lockrefreshtime) |
 | [--server](#-server)                                     |
 | [--status](#-status)                                     |
 | [--sync-multi-cluster-users](#-sync-multi-cluster-users) |
@@ -190,9 +191,9 @@ $ percona-scheduler-admin --config-file=config.toml --disable
 
 ## --disable_updates
 
-This option can be used with any command to disable updating the 
-pxc_scheduler_handler checksum for the `mysql_query_rules`, 
-`mysql_server` and `mysql_users` tables. The option avoids updates in 
+This option can be used with any command to disable updating the
+pxc_scheduler_handler checksum for the `mysql_query_rules`,
+`mysql_server` and `mysql_users` tables. The option avoids updates in
 those tables for one node from being propagated to the cluster.
 
 Specifying this option sets the following values to `false`:
@@ -203,7 +204,7 @@ Specifying this option sets the following values to `false`:
 
 ## –-enable / -e
 
-This option creates the entries for the Galera hostgroups and adds the 
+This option creates the entries for the Galera hostgroups and adds the
 Percona XtraDB Cluster nodes into ProxySQL’s `mysql_servers` table.
 
 The option adds two users into the Percona XtraDB Cluster with the `USAGE`
@@ -229,7 +230,7 @@ $ percona-scheduler-admin --config-file=config.toml --enable
     The ClusterApp User or Password was unspecified and will not be configured.
 
      This script will assist with configuring ProxySQL for use with
-     Percona XtraDB Cluster (PXC) (currently only PXC in combination with 
+     Percona XtraDB Cluster (PXC) (currently only PXC in combination with
      ProxySQL is supported)
 
     The ProxySQL read/write configuration mode is singlewrite
@@ -455,9 +456,9 @@ mysql> select * from scheduler\G
 
 ## –-force
 
-This option must be combined with either [–enable / -e](#enable---e) or 
-[–update-cluster](#update-cluster). This option skips any `mysql_servers` table, 
-`mysql_users` table, and `mysql_galera_hostgroups` table configuration 
+This option must be combined with either [–enable / -e](#enable---e) or
+[–update-cluster](#update-cluster). This option skips any `mysql_servers` table,
+`mysql_users` table, and `mysql_galera_hostgroups` table configuration
 checks. Certain checks issue warnings, instead of errors, which allows the option to continue processing.
 
 ## --help
@@ -529,21 +530,27 @@ $ percona-scheduler-admin --config-file=config.toml --is-enabled
     ERROR (line:2450) : The current configuration has not been enabled
     ```
 
+## --LockRefreshTime
+
+Implemented in [ProxySQL 2.5.5-1.2].
+
+The time, measured in seconds, after which the scheduler refreshes the epoch inside the ProxySQL server table. This parameter reduces the frequency of ProxySQL updates.
+
 ## –-remove-all-servers
 
-When used with [--update-cluster](#update-cluster) this option removes 
+When used with [--update-cluster](#update-cluster) this option removes
 all servers belonging to the current cluster before running the [--update-cluster](#update-cluster) option.
 
 ### --remove-all-server example
 
 ```{.bash data-prompt="$"}
-$ percona-scheduler-admin --config-file=config.toml 
+$ percona-scheduler-admin --config-file=config.toml
 --remove-all-servers --update-cluster
 ```
 
 ## –-server
 
-Selects a server by the IP address and port. This option can be 
+Selects a server by the IP address and port. This option can be
 combined with [--syncusers](#syncusers) or [–sync-multi-cluster-users](#sync-multi-cluster-users) to sync a single non-cluster server. The option does not require that the server belong to a *Percona XtraDB Cluster*.
 
 ### -server example
@@ -604,7 +611,7 @@ This option does the following:
 
 To sync a specific server combine this option with the [--server](#server)  option.
 
-Review the user accounts in the ProxySQL database as root from ProxySQL 
+Review the user accounts in the ProxySQL database as root from ProxySQL
 database.
 
 ### --syncusers example
@@ -693,10 +700,10 @@ This option checks the *Percona XtraDB Cluster* for new nodes. If nodes are foun
 Combining `--remove-all-servers` with this option removes the server list
 for the configuration before the update runs.
 
-Combining `--write-node` with this option, and if the node is in the 
-server list and is `ONLINE`, then this command makes that node the 
+Combining `--write-node` with this option, and if the node is in the
+server list and is `ONLINE`, then this command makes that node the
 writer node by assigning a larger weight to that node. Only use this combination if the mode is `singlewrite`.
- 
+
 ```{.bash data-prompt="$"}
 $ percona-scheduler-admin --config-file=config.toml --write-node=127.0.0.1:4130 --update-cluster
 ```
@@ -890,7 +897,7 @@ This option prints the version information.
 
 ## –-write-node
 
-This option chooses which Percona XtraDB Cluster node is the writer 
+This option chooses which Percona XtraDB Cluster node is the writer
 node when the mode is `singlewrite`. You can combine this option with –enable / -e and –update-cluster.
 
 The option requires only a single IP address and port combination.
@@ -906,3 +913,5 @@ $ percona-scheduler-admin --config-file=config.toml --write-node=192.168.56.32:3
 ```
 
 [trace]: #-trace
+
+[ProxySQL 2.5.5-1.2]: 2.5.5-1.2.md
