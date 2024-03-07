@@ -146,8 +146,9 @@ extra:
 
 nav:
   - Home: index.md
-  - Release notes:
+  - ProxySQL 2.x.x Release notes:
       - Release notes index: release-notes.md
+      - 2.6.2.md
       - 2.5.5-1.2.md
       - 2.5.5.md
       - 2.5.4.md
@@ -175,18 +176,6 @@ nav:
       - release-notes-2.0.5.md
       - release-notes-2.0.4.md
       - release-notes-2.0.3.md
-      - release-notes-1.4.16.md
-      - release-notes-1.4.12.md
-      - release-notes-1.4.8.md
-      - release-notes-1.4.7.md
-      - release-notes-1.4.6.md
-      - release-notes-1.4.5.md
-      - release-notes-1.4.4.md
-  - ProxySQL 1.x.x and the proxysql-admin:
-      - proxysql-v1.md
-      - installing-v1.md
-      - tarball-v1.md
-      - configure-proxysql1.md
   - ProxySQL 2.x.x and admin tools:
       - Install:
         - where-to-download-proxysql.md
@@ -209,6 +198,12 @@ nav:
           - psh-options.md
           - psh-detailed-options.md
           - psh-known-limitations.md
+  - ProxySQL 1.x.x and the proxysql-admin:
+      - proxysql-v1.md
+      - Release notes for ProxySQL 1.x.x: release-notes-index-v1.md
+      - installing-v1.md
+      - tarball-v1.md
+      - configure-proxysql1.md
   - Reference:
       - trademark-policy.md
       - copyright-and-licensing-information.md
