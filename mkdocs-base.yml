@@ -60,10 +60,6 @@ extra_css:
   - css/osano.css
   - css/design.css
 
-#Copyright
-copyright: >
-  "<a href='https://www.percona.com/about'>Percona LLC</a> and/or its affiliates &copy; 2009-<script>document.write(new Date().getFullYear())</script> — <a href='#__consent'>Cookie Consent</a>"
-
 extra_javascript:
   - js/promptremover.js
   - js/consent.js
