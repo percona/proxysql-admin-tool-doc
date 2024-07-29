@@ -1,16 +1,31 @@
 # ProxySQL 2.x and proxysql-admin utility
 
-The `proxysql2.x` package from **Percona** includes the `proxysql-admin` tool for configuring **Percona XtraDB Cluster** nodes with ProxySQL.
+The `proxysql2.x` package from Percona includes the `proxysql-admin` tool for configuring Percona XtraDB Cluster nodes with ProxySQL.
 
-Before using the proxysql-admin tool, ensure that ProxySQL and **Percona XtraDB Cluster** nodes you want to add are running. For security purposes, change the default user settings in the Proxysql configuration file.
+Before using the `proxysql-admin` tool, ensure that ProxySQL and Percona XtraDB Cluster nodes you want to add are running. For security purposes, change the default user settings in the Proxysql configuration file.
 
 Implemented in ProxySQL 2.3.2-1, the psqladm-scheduler tool configures Percona XtraDB cluster nodes into ProxySQL.
 
 !!! note
 
-    The Percona Scheduler Admin tool has different options than the proxysql-admin tool. Do not use the options from one tool in the other tool. Mixing the options may cause unintended results.
+    The pxc_scheduler_handler tool has different options than the proxysql-admin tool. Do not use the options from one tool in the other tool. Mixing the options may cause unintended results.
 
 Command line options override configuration file options.
+
+The `proxysql-admin.cnf` file is only read when proxysql-admin is invoked. After that process, changing the configuration file does not update settings. For example, you cannot change the `--mode` option dynamically. 
+
+If you must change this option, you can run the following commands. 
+
+!!! warning
+
+    These commands may also remove all `proxysql-admin` entries from the proxysql tables.
+
+1. `proxysql --disable`
+
+2. Modify the `proxysql-admin.cnf` file with the desired changes.
+
+2. `proxysql --enable`
+
 
 ## The proxysql-admin options
 
