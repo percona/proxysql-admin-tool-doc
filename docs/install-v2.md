@@ -62,7 +62,7 @@ Select the same package installer used to install [Percona XtraDB Cluster](https
 
 ## Verify the pxc_scheduler_handler installation
 
-If you have installed [ProxySQL 2.3.2-2.1](release-notes-2.3.2-1.md) or later, verify the Percona_Scheduler_Admin installation with the following command:
+If you have installed [ProxySQL 2.3.2-2.1](release-notes-2.3.2-1.md) or later, verify the pxc_scheduler_handler installation with the following command:
 
 ```{.bash data-prompt="$"}
 $ percona-scheduler-admin --debug
