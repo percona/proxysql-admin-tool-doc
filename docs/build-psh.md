@@ -22,14 +22,14 @@ Cloning a git project that contains submodules does not automatically check out 
 
 You can perform the submodule initialization by running the following statement:
 
-```{.bash data-prompt="$>"}
-$> git submodule update --init
+```{.bash data-prompt="$"}
+$ git submodule update --init
 ```
 
 Run the following command to build the scheduler submodule.
 
-```{.bash data-prompt="$>"}
-$> build_scheduler.sh
+```{.bash data-prompt="$"}
+$ build_scheduler.sh
 ```
 
 The `pxc_scheduler_handler` binary is located in the base directory.
@@ -39,15 +39,28 @@ We do not recommend running multiple instances of the same binary. If you start 
 
 * Consumes network and system resources
 
-* Returns the same results since the multiple versions use the same configuration file
+* Returns the same results since multiple versions use the same configuration file
 
 ## Create an account
 
-Create an `admin` user account. Use this account for communication through *ProxySQL* and pxc_scheduler_handler.
+Create an `admin` user account. Use this account for communication through ProxySQL and pxc_scheduler_handler.
+
+The following example uses the `mysql_native_password` authentication method to create an admin user account:
 
 ```{.bash data-prompt="mysql>"}
 mysql> CREATE USER 'admin'@'192.%' IDENTIFIED WITH 'mysql_native_password'
 by 'admin';
+```
+
+If you are using a [ProxySQL version 2.6.2](2.6.2.md) or later, you can use the `caching_sha2_password` authentication method. The following example creates an admin user account using that method:
+
+```{.bash data-prompt="mysql>"}
+mysql> CREATE USER 'admin'@'192.%' IDENTIFIED WITH 'caching_sha2_password' BY 'admin';
+```
+
+Grant privileges to the `admin` user account:
+
+```{.bash data-prompt="mysql>"}
 mysql> GRANT ALL PRIVILEGES ON *.* TO 'admin'@'192.%' WITH GRANT OPTION;
 ```
 
