@@ -1,5 +1,7 @@
 # ProxySQL, ProxySQL-admin, and percona-scheduler-admin release notes index
 
+[ProxySQL 2.7.0 and ProxySQL admin tools (2024-09-)](2.7.0.md)
+
 [ProxySQL 2.6.5 and ProxySQL admin tools (2024-09-12)](2.6.5.md)
 
 [ProxySQL 2.6.3 and ProxySQL admin tools (2024-06-11)](2.6.3.md)
