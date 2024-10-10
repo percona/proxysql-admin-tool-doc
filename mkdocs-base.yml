@@ -146,6 +146,7 @@ nav:
   - Home: index.md
   - ProxySQL 2.x.x Release notes:
       - Release notes index: release-notes.md
+      - 2.7.1.md
       - 2.6.5.md
       - 2.6.3.md
       - 2.6.2.md
