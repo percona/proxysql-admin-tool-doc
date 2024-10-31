@@ -1,5 +1,10 @@
 # Install ProxySQL 2.x.x binary tarball
 
+In an MySQL 8.4 or Percona Server for MySQL 8.4 environment, you may have the following issues:
+
+* ProxySQL contains counters that have not been updated to use the new terminology. Unexpected results may occur
+* The binlog reader errors out during initialization due to the use of the old terminology, such as SHOW MASTER STATUS command.
+
 If installing [_ProxySQL 2_ with a package manager](install-v2.md) is not an option in your environment, you can install from a binary tarball. The difference between versions is the available tar files or the command to extract the file.
 
 Starting with [_ProxySQL 2.3.2-1.2_](release-notes-2.3.2-1.md), Percona no longer provides a tarball for CentOS 6. For more information, see [Spring Cleaning: Discontinuing RHEL 6/CentOS 6 (glibc2.12) and 32-bit Binary Builds of Percona Software](https://www.percona.com/blog/spring-cleaning-discontinuing-rhel-6-centos-6-glibc-2-12-and-32-bit-binary-builds-of-percona-software/)
