@@ -1,16 +1,21 @@
 # Install ProxySQL 2.x.x and the admin utilities
 
+In an MySQL 8.4 or Percona Server for MySQL 8.4 environment, you may have the following issues:
+
+* ProxySQL contains counters that have not been updated to use the new terminology. Unexpected results may occur
+* The binlog reader errors out during initialization due to the use of the old terminology, such as SHOW MASTER STATUS command.
+
 Select the same package installer used to install [Percona XtraDB Cluster](https://www.percona.com/doc/percona-xtradb-cluster/8.0/install/index.html) or other Percona software.
 
 === "On a Debian-derived distribution"
 
     If you used APT to install Percona software, run the following command as sudo or as root:
-
+    
     ```{.bash data-prompt="$"}
     $ sudo apt install proxysql2
     ```
     ??? example "Expected output" 
-
+    
         ```{.text .no-copy}
         Reading package lists... Done
         Building dependency tree
@@ -27,13 +32,13 @@ Select the same package installer used to install [Percona XtraDB Cluster](https
 === "On a Red Hat-derived distribution"
 
     If you used YUM to install Percona software, run the following command:
-
+    
     ```{.bash data-prompt="$"}
     $ sudo yum install proxysql2
     ```
-
+    
     ??? example "Expected output"
-
+    
         ```{.text .no-copy}
         Last metadata expiration check: 0:01:47 ago on Wed Oct  5 14:42:00 2022.
         Dependencies resolved.
@@ -44,11 +49,11 @@ Select the same package installer used to install [Percona XtraDB Cluster](https
         proxysql2                x86_64                2.4.4-1.1.el8                  tools-release-x86_64                 21 M
         Installing dependencies:
         logrotate                x86_64                3.14.0-4.el8                   baseos                               85 k
-
+    
         Transaction Summary
         =========================================================================================================================
         Install  2 Packages
-
+    
         Total download size: 21 M
         Installed size: 88 M
         Is this ok [y/N]: y
