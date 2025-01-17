@@ -95,8 +95,8 @@ markdown_extensions:
     custom_checkbox: true
   pymdownx.snippets:
       base_path: ["snippets"]
-      auto_append:
-        - services-banner.md
+#      auto_append:
+#        - services-banner.md
   pymdownx.highlight:
     use_pygments: true
   pymdownx.emoji:
@@ -144,6 +144,7 @@ extra:
 
 nav:
   - Home: index.md
+  - get-help.md
   - ProxySQL 2.x.x Release notes:
       - Release notes index: release-notes.md
       - 2.7.1-1.md
