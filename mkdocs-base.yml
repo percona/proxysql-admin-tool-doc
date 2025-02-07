@@ -123,15 +123,15 @@ plugins:
 # exclude: # Don't process these files
 #      glob:
 #         - file.md
-#    with-pdf: # https://github.com/orzih/mkdocs-with-pdf
-#          output_path: '_pdf/PerconaProxySQLAdmintool-2.4.4.pdf'
-#          cover_title: 'Percona ProxySQL Admin tool Documentation'
-#          cover_subtitle:
-#          author: 'Percona Technical Documentation Team'
-#          cover_logo: docs/_static/Percona_Logo_Color.png
-#          debug_html: false
-#          custom_template_path: _resource/templates
-#          enabled_if_env: ENABLE_PDF_EXPORT
+    with-pdf: # https://github.com/orzih/mkdocs-with-pdf
+          output_path: '_pdf/PerconaProxySQLAdmintool-2.4.4.pdf'
+          cover_title: 'Percona ProxySQL version 1 and Admin tool Documentation'
+          cover_subtitle:
+          author: 'Percona Technical Documentation Team'
+          cover_logo: docs/_static/Percona_Logo_Color.png
+          debug_html: false
+          custom_template_path: _resource/templates
+          enabled_if_env: ENABLE_PDF_EXPORT
 #    mike:
 #      version_selector: true
 #      css_dir: css
@@ -145,62 +145,6 @@ extra:
 nav:
   - Home: index.md
   - get-help.md
-  - ProxySQL 2.x.x Release notes:
-      - Release notes index: release-notes.md
-      - 2.7.1-1.md
-      - 2.7.1.md
-      - 2.6.5.md
-      - 2.6.3.md
-      - 2.6.2.md
-      - 2.5.5-1.2.md
-      - 2.5.5.md
-      - 2.5.4.md
-      - 2.5.3.md
-      - 2.5.2.md
-      - 2.5.1.md
-      - 2.4.8.md
-      - 2.4.7.md
-      - 2.4.4-1.2.md
-      - 2.4.4.md
-      - 2.4.3.md
-      - 2.4.2.md
-      - release-notes-2.3.2-1.md
-      - release-notes-2.3.2.md
-      - release-notes-2.2.0.md
-      - release-notes-2.1.1.md
-      - release-notes-2.0.18.md
-      - release-notes-2.0.17.md
-      - release-notes-2.0.15.md
-      - release-notes-2.0.14.md
-      - release-notes-2.0.13.md
-      - release-notes-2.0.12.md
-      - release-notes-2.0.7.md
-      - release-notes-2.0.6.md
-      - release-notes-2.0.5.md
-      - release-notes-2.0.4.md
-      - release-notes-2.0.3.md
-  - ProxySQL 2.x.x and admin tools:
-      - Install:
-        - where-to-download-proxysql.md
-        - install-v2.md
-        - install-proxysql2-tarball.md
-        - build-psh.md
-      - Deploy:
-        - start-or-stop-proxysql2.md
-        - upgrade-proxysql2.md
-        - uninstall-proxysql2.md
-      - proxysql-admin:
-        - Manage:
-          - proxysql-admin-tool-changes.md
-          - proxysql-admin-tool-v2-config.md
-          - proxysql-admin-tool-functions.md
-      - pxc_scheduler_handler:
-        - Manage:
-          - psh-overview.md
-          - psh-configuration.md
-          - psh-options.md
-          - psh-detailed-options.md
-          - psh-known-limitations.md
   - ProxySQL 1.x.x and the proxysql-admin:
       - proxysql-v1.md
       - Release notes for ProxySQL 1.x.x: release-notes-index-v1.md

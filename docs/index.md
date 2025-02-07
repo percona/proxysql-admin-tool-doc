@@ -23,13 +23,3 @@ ProxySQL is available from the Percona software repositories with the following:
 
     * [ProxySQL Admin 1.x.x](proxysql-v1.md) does not natively support *Percona XtraDB Cluster* and requires custom `Bash` scripts to track the status of a *Percona XtraDB Cluster*.
   
-* ProxySQL 2.x.x downloads include:
-
-    * [ProxySQL Admin (proxysql-admin)](proxysql-admin-tool-v2-config.md) simplifies the configuration of *Percona XtraDB Cluster* nodes with ProxySQL.
-
-    * [pxc_scheduler_handler](build-psh.md) can automatically perform a failover due to node failures, service degradation, or maintenance. This utility is available from [ProxySQL 2.3.2-1.2](./release-notes-2.3.2-1.md) and higher.
-
-In an MySQL 8.4 or Percona Server for MySQL 8.4 environment, you may have the following issues:
-
-* ProxySQL contains counters that have not been updated to use the new terminology. Unexpected results may occur
-* The binlog reader errors out during initialization due to the use of the old terminology, such as SHOW MASTER STATUS command.
