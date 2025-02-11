@@ -65,5 +65,3 @@
     [ProxySQL 2.0.4 and ProxySQL-admin (2019-05-28)](release-notes-2.0.4.md)
 
     [ProxySQL 2.0.3 and ProxySQL-admin (2019-05-07)](release-notes-2.0.3.md)
-
-See the [ProxySQL 1.x.x release notes](release-notes-index-v1.md)

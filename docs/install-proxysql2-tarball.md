@@ -69,16 +69,16 @@ Follow these steps:
 
 7.  Create a directory to store the _ProxySQL_ data.
 
-    ```{.bash data-prompt="$"}
-    $ mkdir /home/user/data
-    ```
+      ```{.bash data-prompt="$"}
+      $ mkdir /home/user/data
+      ```
 
 8.  In the configuration file, update the `datadir` value to point
     to the created data directory.
 
-        ```{.text .no-copy}
-        datadir="/home/user/data"
-        ```
+      ```{.text .no-copy}
+      datadir="/home/user/data"
+      ```
 
 9.  Set the other options, as needed.
 
