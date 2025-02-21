@@ -4,32 +4,45 @@
 
     This documentation is for the latest release: Percona ProxySQL admin tools {{release}} ([Release notes]({{release}}.md)).
 
-[ProxySQL](https://www.proxysql.com/) is a tool that performs like a proxy between *Percona XtraDB Cluster* and your client application. *ProxySQL* manages a connection pool, which caches your connections and keeps the connections open for future requests. *ProxySQL* is designed to run continuously without being restarted.
+[ProxySQL](https://www.proxysql.com/) acts as a proxy between Percona XtraDB Cluster 
+and your client application. It manages a connection pool, caching connections and 
+keeping them open for future requests. ProxySQL runs continuously without needing a 
+restart.
 
-Without a connection pool, each SQL request opens a connections to the remote node. When the SQL request is complete, the connection is closed. A new one is opened on the next SQL request.
+Without a connection pool, each SQL request opens a new connection to the remote 
+node and closes it after completion. ProxySQL keeps certain connections open and 
+reuses them or closes them if not reused within a specific time. You connect to the 
+proxy, and it forwards your requests to the cluster.
 
-ProxySQL maintains the connection pool. The pool allows a certain number of connections to remain open. A connection is reused or closed if not reused within a specific time. You connect to the proxy and the tool forwards your requests to the cluster.
+ProxySQL operates as a daemon monitored by a process that can restart it in case of 
+an unexpected exit, minimizing downtime. The daemon accepts traffic from MySQL 
+clients and forwards it to backend MySQL servers.
 
-*ProxySQL* runs as a daemon watched by a monitoring process which can restart *ProxySQL* in case of an unexpected exit to minimize downtime. The daemon accepts incoming traffic from *MySQL* clients and forwards the traffic to backend *MySQL* servers.
+Configuration options include runtime parameters, server grouping, and 
+traffic-related parameters, many of which can be set at runtime using SQL-like 
+queries.
 
-The configuration options include runtime parameters, server grouping, and traffic-related parameters. Many of the settings can be done at runtime using queries that are similar to SQL statements.
+The [ProxySQL 2 documentation](https://proxysql.com/documentation/) provides details 
+on installation, running ProxySQL, and using the ProxySQL admin tools. The maintained releases are listed on 
+[ProxySQL Installation](https://proxysql.com/documentation/installing-proxysql/).
 
-The [ProxySQL documentation](https://proxysql.com/documentation/) provides information on installing and running ProxySQL and the ProxySQL admin tools.
+You can [download ProxySQL 2.x.x](https://www.percona.com/download-proxysql). Note that 
+version 1 is no longer actively maintained.
 
+ProxySQL 2.x.x downloads include:
 
-ProxySQL is available from the Percona software repositories with the following:
+- [ProxySQL Admin (proxysql-admin)](proxysql-admin-tool-v2-config.md) simplifies 
+  the configuration of Percona XtraDB Cluster nodes with ProxySQL.
 
-* ProxySQL 1.x.x downloads include:
+- [pxc_scheduler_handler](build-psh.md) automatically performs failovers due to 
+  node failures, service degradation, or maintenance. Available from 
+  [ProxySQL 2.3.2-1.2](./release-notes-2.3.2-1.md) and higher.
 
-    * [ProxySQL Admin 1.x.x](proxysql-v1.md) does not natively support *Percona XtraDB Cluster* and requires custom `Bash` scripts to track the status of a *Percona XtraDB Cluster*.
-  
-* ProxySQL 2.x.x downloads include:
+In a MySQL 8.4 or Percona Server for MySQL 8.4 environment, you may face these 
+issues:
 
-    * [ProxySQL Admin (proxysql-admin)](proxysql-admin-tool-v2-config.md) simplifies the configuration of *Percona XtraDB Cluster* nodes with ProxySQL.
+- ProxySQL contains counters that have not been updated to use the new terminology, 
+  leading to unexpected results.
 
-    * [pxc_scheduler_handler](build-psh.md) can automatically perform a failover due to node failures, service degradation, or maintenance. This utility is available from [ProxySQL 2.3.2-1.2](./release-notes-2.3.2-1.md) and higher.
-
-In an MySQL 8.4 or Percona Server for MySQL 8.4 environment, you may have the following issues:
-
-* ProxySQL contains counters that have not been updated to use the new terminology. Unexpected results may occur
-* The binlog reader errors out during initialization due to the use of the old terminology, such as SHOW MASTER STATUS command.
+- The binlog reader errors out during initialization due to the use of old 
+  terminology, such as the the `SHOW MASTER STATUS` command

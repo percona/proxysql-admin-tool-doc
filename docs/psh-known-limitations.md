@@ -6,11 +6,11 @@ This document lists the known issues in the pxc_scheduler_handler.
 
 The following options are mutually exclusive. An attempt to combine these options in a command creates in an error and no action is taken.
 
-* [-–update-write-weight](./psh-detailed-options.md#-update-write-weight) and [-–auto-assign-weights](./psh-detailed-options.md#-auto-assign-weights)
+* [-–update-write-weight](psh-detailed-options.md#update-write-weight) and [-–auto-assign-weights](psh-detailed-options.md#auto-assign-weights)
 
-* [-–write-node](./psh-detailed-options.md#-write-node) and [-–auto-assign-weights](./psh-detailed-options.md#-auto-assign-weights)
+* [-–write-node](psh-detailed-options.md#write-node) and [-–auto-assign-weights](psh-detailed-options.md#auto-assign-weights)
 
-* [-–write-node](./psh-detailed-options.md#-write-node) and [-–update-write-weight](./psh-detailed-options.md#-update-write-weight)
+* [-–write-node](psh-detailed-options.md#write-node) and [-–update-write-weight](psh-detailed-options.md#update-write-weight)
 
 ## Do not place the log file or lock file in the Home directory
 

@@ -165,8 +165,8 @@ syncing proxysql instances that manage multiple clusters.
 ## –-add-query-rule
 
 Create query rules for synced mysql user. This is applicable only for
-singlewrite mode and works only with [--syncusers](#--syncusers)
-and [–sync-multi-cluster-users](#sync-multi-cluster-users) options.
+singlewrite mode and works only with `--syncusers`
+and `–-sync-multi-cluster-users` options.
 
 ```bash
 Syncing user accounts from PXC to ProxySQL
