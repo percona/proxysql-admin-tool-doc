@@ -19,7 +19,7 @@ ERROR : The --config-file option is required but is missing from the command.
 
 The options determine what the statement does. The pxc_scheduler_handler statement must include at least one option. A command without an option returns an error and nothing happens.
 
-For most options, two hyphens (--) precede an option name. The [disable](./psh-detailed-options.md#-disable---d) and the [enable](./psh-detailed-options.md#–enable---e) option can be selected with one hyphen (-) and the appropriate abbreviation.
+For most options, two hyphens (--) precede an option name. The [disable](psh-detailed-options.md#disable) and the [enable](psh-detailed-options.md#enable) option can be selected with one hyphen (-) and the appropriate abbreviation.
 
 For example, the following commands return the same result:
 
