@@ -147,25 +147,27 @@ nav:
   - get-help.md
   - Release notes:
       - Release notes index: release-notes.md
+      - 2.7.3.md
       - 2.7.1-1.md
       - 2.7.1.md
       - 2.6.5.md
       - 2.6.3.md
       - 2.6.2.md
       - 2.5.5-1.2.md
-      - 2.5.5.md
-      - 2.5.4.md
-      - 2.5.3.md
-      - 2.5.2.md
-      - 2.5.1.md
-      - 2.4.8.md
-      - 2.4.7.md
-      - 2.4.4-1.2.md
-      - 2.4.4.md
-      - 2.4.3.md
-      - 2.4.2.md
-      - release-notes-2.3.2-1.md
-      - release-notes-2.3.2-later.md
+      - 2023 (versions 2.5.5 - 2.4.7):
+        - 2.5.5.md
+        - 2.5.4.md
+        - 2.5.3.md
+        - 2.5.2.md
+        - 2.5.1.md
+        - 2.4.8.md
+        - 2.4.7.md
+      - 2022 - 2019 (versions 2.4.4-1.2 - 2.3.2-1):
+        - 2.4.4-1.2.md
+        - 2.4.4.md
+        - 2.4.3.md
+        - 2.4.2.md
+        - release-notes-2.3.2-1.md
   - ProxySQL and admin tools:
       - Install:
         - where-to-download-proxysql.md
