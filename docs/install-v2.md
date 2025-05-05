@@ -1,9 +1,5 @@
-# Install ProxySQL 2.x.x and the admin utilities
+# Install Percona's build of ProxySQL 2.x.x and the admin utilities
 
-In an MySQL 8.4 or Percona Server for MySQL 8.4 environment, you may have the following issues:
-
-* ProxySQL contains counters that have not been updated to use the new terminology. Unexpected results may occur
-* The binlog reader errors out during initialization due to the use of the old terminology, such as SHOW MASTER STATUS command.
 
 Select the same package installer used to install [Percona XtraDB Cluster](https://www.percona.com/doc/percona-xtradb-cluster/8.0/install/index.html) or other Percona software.
 
@@ -84,3 +80,7 @@ Running this command without the [pxc_scheduler_handler configuration file](psh-
 ## Run Docker
 
 To run ProxySQL2 in Docker, download the latest image at [percona/proxysql2](https://hub.docker.com/r/percona/proxysql2).
+
+## MySQL 8.4 and Percona Server for MySQL 8.4 considerations
+
+--8<--- "note-8.4.md"

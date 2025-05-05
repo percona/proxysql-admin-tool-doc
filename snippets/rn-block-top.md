@@ -2,7 +2,7 @@
 [Install](install-v2.md)<br>
 [View the GitHub repository for Percona's build of ProxySQL](https://github.com/percona/proxysql-admin-tool)
 
-[ProxySQL](https://proxysql.com/) is a high-performance proxy for MySQL and MySQL-compatible database servers such as Percona Server for MySQL and MariaDB. It acts as an intermediary for client requests seeking resources from the database. ProxySQL was created for the database administrator to solve complex replication topology issues.
+[ProxySQL](https://proxysql.com/) is a high-performance proxy for MySQL and MySQL-compatible database servers such as Percona Server for MySQL and MariaDB. It acts as an intermediary for client requests seeking resources from the database. ProxySQL was created for the database administrator to solve complex replication topology issues. Percona distributes ProxySQL as a repackaged version of the upstream release, without making any code modifications. 
 
 You can [download the original ProxySQL from GitHub](https://github.com/sysown/proxysql/releases). The [ProxySQL documentation](https://proxysql.com/documentation/) provides information on installing and running ProxySQL.
 
