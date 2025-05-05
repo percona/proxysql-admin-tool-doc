@@ -1,4 +1,4 @@
-# ProxySQL, proxysql-admin, and percona-scheduler-admin documentation
+# Percona build of ProxySQL, proxysql-admin, and percona-scheduler-handler documentation
 
 !!! note ""
 
