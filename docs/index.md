@@ -1,4 +1,4 @@
-# ProxySQL, proxysql-admin, and percona-scheduler-admin documentation
+# Percona build of ProxySQL, proxysql-admin, and percona-scheduler-handler documentation
 
 !!! note ""
 
@@ -32,3 +32,4 @@ issues:
 
 * The binlog reader errors out during initialization due to the use of old 
   terminology, such as the `SHOW MASTER STATUS` command
+
