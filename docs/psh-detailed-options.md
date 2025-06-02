@@ -1,6 +1,8 @@
 # pxc-scheduler-handler options
 
-The pxc_scheduler_handler script lists the available options in the pxc_scheduler_handler configuration file. The following options are described in more detail:
+The `pxc_scheduler_handler` script displays the available configuration options defined in its configuration file.
+
+The following options are described in more detail:
 
 | Option Name                                             |
 |---------------------------------------------------------|
@@ -33,11 +35,11 @@ The pxc_scheduler_handler script lists the available options in the pxc_schedule
 This option creates query rules for a synced MySQL user and applies only to the
 `singlewrite` mode.
 
-### add-query-rule requires
+### Requirements
 
-Either the [`syncusers`](#syncusers) or [`sync-multi-cluster-users`](#sync-multi-cluster-users) options.
+Use with either the [`syncusers`](#syncusers) or [`sync-multi-cluster-users`](#sync-multi-cluster-users) option.
 
-### add-query-rule example
+### Example
 
 ```{.bash data-prompt="$"}
 $ percona-scheduler-admin --config-file=config.toml --syncusers
@@ -87,25 +89,36 @@ $ percona-scheduler-admin --config-file=config.toml --adduser
 
 ## auto-assign-weights
 
-ProxySQL uses weights for defining the failover procedure in `singlewrite` mode
-and handling load balancing `loadbal` mode.
+ProxySQL uses weight values to manage failover behavior in `singlewrite` mode
+and to distribute load in `loadbal` mode.
 
-For the failover procedure, this option with the
-[update-cluster](#update-cluster) option assigns weights to the PXC nodes when the cluster is
-in `singlewrite` mode.
+In `singlewrite` mode, this option with the
+[update-cluster](#update-cluster) command automatically assigns weight values to the PXC nodes to determine the failover priority. 
 
-As a best practice, ensure that the writer node election operation returns the
-same result each time. For example, assign the value of `1000` to node one,
-`999` to node two, and `998` to the node three. This method sets a clear
-priority for the election.
+As a best practice, ensure that the writer node election is deterministic by assigning progressively lower weight values to fallback nodes. 
 
-For load balancing you want to reduce the reads on the writer node and, also,
-split the reads across all the reader nodes equally.
+For example, 
 
-For example, in a three-node cluster, assign a `900` to the writer node and
-`1000` and `1000` to the reader nodes.
+* Node 1:`1000` 
 
-This option does these operations automatically without any manual intervention.
+* Node 2: `999` 
+
+* Node 3: `998` 
+
+This setup establishes a clear election priority for the failover.
+
+In `loadbal` mode, use weight values  to reduce the read traffic on the writer node and balance it evenly across the reader nodes. .
+
+For example, 
+
+* Writer: `900` 
+
+* Reader 1: `1000` 
+
+* Reader 2: `1000` 
+
+ProxySQL automatically applies these weight values without requiring manual 
+configuration.
 
 Review [do not combine certain options](./psh-known-limitations.md#do-not-combine-certain-options).
 
@@ -605,7 +618,7 @@ This option does the following:
 
 To sync a specific server combine this option with the [server](#server)  option.
 
-Please note that When *caching_sha2_password* is used as an auth-plugin for a user, it is expected that *authentication_string* may differ across PXC DB nodes (because of salting). Consequently, after a failover or manual switch of the writer node, *syncusers* will detect these variations and trigger a DELETE and then CREATE operation for such users. This will not cause downtime nor affect connected clients, as the entire set of changes is committed in a single operation.
+When using caching_sha2_password as the authentication plugin, the authentication_string may differ across PXC nodes. This difference is because the plugin uses salting. This process adds random data to the password before hashing to ensure that even identical passwords result in unique hashes for improved security. Consequently, after a failover or manual switch of the writer node, the *syncusers* option detects these variations, triggers a DELETE, and then CREATE operation for these users. The changes are committed in a single operation and do not cause downtime or affect connected clients.
 
 ## syncusers
 
