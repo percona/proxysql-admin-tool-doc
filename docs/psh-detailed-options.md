@@ -605,6 +605,8 @@ This option does the following:
 
 To sync a specific server combine this option with the [server](#server)  option.
 
+Please note that When *caching_sha2_password* is used as an auth-plugin for a user, it is expected that *authentication_string* may differ across PXC DB nodes (because of salting). Consequently, after a failover or manual switch of the writer node, *syncusers* will detect these variations and trigger a DELETE and then CREATE operation for such users. This will not cause downtime nor affect connected clients, as the entire set of changes is committed in a single operation.
+
 ## syncusers
 
 This option does the following:
