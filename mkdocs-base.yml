@@ -144,9 +144,12 @@ extra:
 
 nav:
   - Home: index.md
+  - limitations.md
   - get-help.md
   - Release notes:
       - Release notes index: release-notes.md
+      
+      - 3.0.1.md
       - 2.7.3.md
       - 2.7.1-1.md
       - 2.7.1.md

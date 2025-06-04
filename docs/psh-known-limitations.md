@@ -15,3 +15,4 @@ The following options are mutually exclusive. An attempt to combine these option
 ## Do not place the log file or lock file in the Home directory
 
 Do not place the log file or the lock file in the Home directory. The scheduler script runs under the context of the user `proxysql:proxysql` and cannot access the Home directory. Any attempt causes permission denied errors. If needed, you can override this limitation by setting  `ProtectHome=no` in `/etc/systemd/system/multi-user.target.wants/proxysql.service`. In the toml configuration file, the values are `logFile` and `lockfilepath`.
+
