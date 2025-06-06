@@ -1,6 +1,6 @@
-# Uninstall ProxySQL 2.x.x
+# Uninstall Percona build of ProxySQL
 
-You can uninstall *ProxySQL 2.x.x* using the command line.
+You can uninstall ProxySQL using the command line. Make sure to use the correct package name for the version you installed, such as `proxysql2` or `proxysql3`.
 
 === "List package contents using APT"
 
@@ -8,6 +8,12 @@ You can uninstall *ProxySQL 2.x.x* using the command line.
 
     ```{.bash data-prompt="$"}
     $ apt search proxysql2
+    ```
+    
+    or 
+    
+    ```{.bash data-prompt="$"}
+    $ apt search proxysql3
     ```
 
     ??? example "Expected output"
@@ -29,6 +35,12 @@ You can uninstall *ProxySQL 2.x.x* using the command line.
     $ sudo yum info proxysql2
     ```
 
+    or
+
+    ```{.bash data-prompt="$"}
+    $ sudo yum info proxysql3
+    ```
+    
     ??? example "Expected output"
 
         ```{.text .no-copy}
@@ -47,7 +59,7 @@ You can uninstall *ProxySQL 2.x.x* using the command line.
         Description  : A high-performance MySQL proxy
         ```
 
-To uninstall ProxySQL 2, the following instructions are based on the package manager.
+To uninstall ProxySQL, the following instructions are based on the package manager.
 
 === "Uninstall in a Debian-based distribution"
 
@@ -55,16 +67,28 @@ To uninstall ProxySQL 2, the following instructions are based on the package man
 
     The `apt remove` removes the packages. Any configuration files, data, and dependencies remain in the system. If you reinstall *ProxySQL 2.x.x*, the software uses the same configuration files, data, and dependencies. The reinstallation may ask to override the existing files.
 
-    You can uninstall `ProxySQL 2.x.x` with the following command:
+    You can uninstall `ProxySQL` with the following command:
 
     ```{.bash data-prompt="$"}
     $ sudo apt remove proxysql2
+    ```
+    
+    or 
+    
+    ```{.bash data-prompt="$"}
+    $ sudo apt remove proxysql3
     ```
 
     The `apt purge` removes the packages and any configuration files and data. You can also use `apt purge` to remove packages for an uninstalled application.
 
     ```{.bash data-prompt="$"}
     $ sudo apt purge proxysql2
+    ```
+    
+    or 
+    
+    ```{.bash data-prompt="$"}
+    $ sudo apt purge proxysql3
     ```
 
     The `apt autoremove` removes the packages, configuration files, data, and any unused libraries or dependent packages that were installed when the application was installed.
@@ -82,9 +106,21 @@ To uninstall ProxySQL 2, the following instructions are based on the package man
     ```{.bash data-prompt="$"}
     $ sudo yum remove proxysql2
     ```
+    
+    or
+    
+    ```{.bash data-prompt="$"}
+    $ sudo yum remove proxysql3
+    ```
 
     To uninstall *ProxySQL 2.x.x* along with unused dependencies, use the following command:
 
     ```{.bash data-prompt="$"}
     $ sudo yum autoremove proxysql2
+    ```
+    
+    or 
+    
+    ```{.bash data-prompt="$"}
+    $ sudo yum autoremove proxysql3
     ```

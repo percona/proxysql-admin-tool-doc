@@ -1,6 +1,6 @@
-# ProxySQL 2.x and proxysql-admin utility
+# ProxySQL and proxysql-admin utility
 
-The `proxysql2.x` package from Percona includes the `proxysql-admin` tool for configuring Percona XtraDB Cluster nodes with ProxySQL.
+The Percona build of ProxySQL from Percona includes the `proxysql-admin` tool for configuring Percona XtraDB Cluster nodes with ProxySQL.
 
 Before using the `proxysql-admin` tool, ensure that ProxySQL and Percona XtraDB Cluster nodes you want to add are running. For security purposes, change the default user settings in the Proxysql configuration file.
 

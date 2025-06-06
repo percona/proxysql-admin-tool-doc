@@ -1,10 +1,5 @@
 # Build the pxc_scheduler_handler tool
 
-In an MySQL 8.4 or Percona Server for MySQL 8.4 environment, you may have the following issues:
-
-* ProxySQL contains counters that have not been updated to use the new terminology. Unexpected results may occur
-* The binlog reader errors out during initialization due to the use of the old terminology, such as SHOW MASTER STATUS command.
-
 The pxc_scheduler_handler tool has two main files: the `pxc_scheduler_handler` binary and the `percona_scheduler_admin` script.
 
 The `pxc_scheduler_handler` does the following tasks:
@@ -39,12 +34,12 @@ $ build_scheduler.sh
 
 The `pxc_scheduler_handler` binary is located in the base directory.
 
-We do not recommend running multiple instances of the same binary. If you start a new instance when an instance of
-`pxc_scheduler_handler` is already running, the binary runs, but the second instance does the following:
+Do not run multiple instances of this binary. If you start a new instance when an instance of
+`pxc_scheduler_handler` is already running, both instances execute, but the second instance:
 
-* Consumes network and system resources
+* Consumes additional network and system resources
 
-* Returns the same results since multiple versions use the same configuration file
+* Returns identical results because both use the same configuration file
 
 ## Create an account
 

@@ -1,26 +1,22 @@
-# Download locations for ProxySQL 2.x.x and ProxySQL admin utilities
+# Download locations for Percona build of ProxySQL and ProxySQL admin tools
 
-In an MySQL 8.4 or Percona Server for MySQL 8.4 environment, you may have the following issues:
+On the **Download ProxySQL** page, make the following selections:
 
-* ProxySQL contains counters that have not been updated to use the new terminology. Unexpected results may occur
-* The binlog reader errors out during initialization due to the use of the old terminology, such as SHOW MASTER STATUS command.
+* *Select Product* - Choose either ProxySQL 2 or ProxySQL 3
 
-The binaries, packages, and tarballs are available at [Percona Download ProxySQL](https://www.percona.com/download-proxysql).
+* *Select Product Version* - Select either ProxySQL2 or ProxySQL3
 
-On the **Download ProxySQL** page, select the following:
+* *Select Platform* - Choose your Linux distribution
 
-* *Product* - ProxySQL 2
-* *Product Version* - the version of ProxySQL2
-* *Platform* - the Linux distribution
-
-The available software platforms are based on the selected version. 
-You can either download all packages together in a single tar file or download the packages separately. Select **Linux - Generic** to download [binary tarballs](install-proxysql2-tarball.md).
+The available software platforms are determined by the selected version.
+You can download all required packages as a single tar archive or obtain them individually.
+To download tarball binaries, choose Select Platform – Linux – Generic. For details, see the [tarball installation guide.](install-proxysql2-tarball.md).
 
 !!! note
 
-    You must download ProxySQL 2.4.2 or later to install the Percona Scheduler Admin tool.
+    To install the [pxc_scheduler_handler tool](psh-overview.md), you must use ProxySQL version 2.4.2 or later.
 
 ## Find the source code
 
-The source code is located at [Percona/proxysql-admin-tool](https://github.com/percona/proxysql-admin-tool). The documentation source code is located at [Percona/proxysql-admin-tool-doc](https://github.com/percona/proxysql-admin-tool-doc).
+The source code for the tool is available in the [Percona/proxysql-admin-tool repository](https://github.com/percona/proxysql-admin-tool). The source for its documentation is maintained separately in the [Percona/proxysql-admin-tool-doc repository](https://github.com/percona/proxysql-admin-tool-doc).
 

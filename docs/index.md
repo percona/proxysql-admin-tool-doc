@@ -12,11 +12,15 @@ The ProxySQL service runs as a daemon and is monitored by a watchdog process cap
 
 Configuration is handled using SQL-like statements, including runtime options, server grouping, and query routing rules. Most settings can be changed dynamically without restarting the proxy.
 
-The [ProxySQL 2 documentation](https://proxysql.com/documentation/) includes detailed guidance on installation, operation, and the use of supporting tools. The maintained releases are listed on 
+!!! note
+
+    [ProxySQL 3.0.1 contains a PostgreSQL module in beta.](https://github.com/sysown/proxysql/releases) The Percona build of ProxySQL is only tested with Percona Server for MySQL.
+
+The [ProxySQL documentation](https://proxysql.com/documentation/) includes detailed guidance on installation, operation, and the use of supporting tools. The maintained releases are listed on 
 [ProxySQL Installation](https://proxysql.com/documentation/installing-proxysql/).
 
-[You can download Percona's build of ProxySQL 2.x.x](https://www.percona.com/download-proxysql). Note that 
-Version 1 is no longer actively maintained. The ProxySQL 2. x. x downloads may include:
+[You can download Percona build of ProxySQL](https://www.percona.com/download-proxysql). Note that 
+Version 1 is no longer actively maintained. The ProxySQL downloads may include:
 
 - [ProxySQL Admin (proxysql-admin)](proxysql-admin-tool-v2-config.md) simplifies the configuration of Percona XtraDB Cluster nodes with ProxySQL.
 

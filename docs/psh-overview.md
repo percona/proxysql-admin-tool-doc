@@ -1,4 +1,4 @@
-# ProxySQL 2.x.x and pxc_scheduler_handler tool
+# ProxySQL and pxc_scheduler_handler tool
 
 [*ProxySQL* 2.3.2-1.2](release-notes-2.3.2-1.md) adds the pxc_scheduler_handler tool. This tool has a segment-aware failover mechanism and can automatically perform a failover due to node failures, service degradation, or maintenance requirements. The external scheduler has the following qualities:
 

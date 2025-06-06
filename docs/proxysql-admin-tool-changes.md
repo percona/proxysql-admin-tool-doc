@@ -1,43 +1,68 @@
-# ProxySQL Admin tool changes
+# Percona build of ProxySQL Admin tool changes
 
 ## Added features
 
-* New option `--use-ssl` to use SSL for connections between ProxySQL and the backend database servers
+### `--use-ssl`
 
-* New option `--max-transactions-behind` to determine the maximum number of writesets 
-  that can be queued before the node is SHUNNED to avoid stale reads. The default value is 100
+Enables SSL connections between ProxySQL and the backend database servers
 
-* New operation `--update-cluster` to update the cluster membership by adding
-  server nodes as found. (Note that nodes are added but not removed).  The
-  `--writer-hg` option may be used to specify which Galera hostgroup to
-  update. The `--remove-all-servers` option instructs to remove all servers
-  from the mysql_servers table before updating the cluster.
+### `--max-transactions-behind` 
 
-* Hostgroups can be specified on the command-line: `--writer-hg`,
-  `--reader-hg`, `--backup-writer-hg`, and `--offline-hg`.  Previously,
-  these host groups were only read from the configuration file.
+Specifies the maximum number of writesets that can be queued before the node is SHUNNED to avoid stale reads. The default value is `100`.
 
-* The `--enable` and `--update-cluster` options used simultaneously have
-  special meaning. If the cluster has not been enabled, then `--enable` is
-  run. If the cluster has already been enabled, then `--update-cluster` is run.
+### `--update-cluster` 
 
-* New command `--is-enabled` to see if a cluster has been enabled. This
-  command checks for the existence of a row in the mysql_Galera_hostgroups
-  table. The `--writer-hg` option may be used to specify the writer hostgroup
-  used to search the mysql_galera_hostgroups table.
+Updates the cluster membership by adding newly discoveredserver nodes. Note: This operation adds nodes but does not remove them. Use [`--writer-hg`] option may be used to specify which Galera hostgroup to update. The `--remove-all-servers` option instructs to remove all servers from the mysql_servers table before updating the cluster.
 
-* New command `--status` to display Galera hostgroup information. This command
-  lists all rows in the current `mysql_galera_hostgroups` table as well as all servers that belong to these hostgroups.  With the `--writer-hg` option, only the information for the Galera hostgroup with that writer hostgroup is displayed.
+### Hostgroup options on the command-line
 
-* New option `--login-file` reads login credentials from an encrypted file.
-  If the `--login-password` or `login-password-file` options are not
-  specified, the user is prompted for the password.
+Hostgroups can now be set with command-line options:
 
-* New option `--login-password` is the key used to decrypt the encrypted
-  login-file. You cannot use the option with the `--login-password-file`.
+* `--writer-hg`
 
-* New option `--login-password-file` reads the key from a file using the
-  specified path. You cannot use the option with `login-password`.
+
+* `--reader-hg`
+
+* `--backup-writer-hg`
+
+* `--offline-hg`.  
+
+These options were previously only available through the configuration file.
+
+### Combined use of  `--enable` and `--update-cluster`
+
+When used together:
+
+* If the cluster is not yet enabled, then `--enable` is
+  executed. 
+  
+* If the cluster is already enabled, then `--update-cluster` is executed.
+
+### `--is-enabled` 
+
+Checks whether a cluster has been enabled by querying the `mysql_galera_hostgroups` table. Optionally, use the `--writer-hg` option to specify the writer hostgroup for the lookup.
+
+
+### `--status` 
+
+Displays the current Galera hostgroup configuration. This option lists all rows in the current `mysql_galera_hostgroups` table, along with the servers assigned to each hostgroup.  
+
+Use the `--writer-hg` option to limit the result to a specific hostgroup.
+
+### `--login-file`
+
+Reads login credentials from an encrypted file.  
+If neither `--login-password` nor `--login-password-file` is specified, the user is prompted to enter the decryption password interactively.
+
+### `--login-password`
+
+Specifies the decryption key used to unlock the credentials stored in the `--login-file`.  
+This option is mutually exclusive with `--login-password-file`.
+
+### `--login-password-file`
+
+Reads the decryption key from a file located at the specified path.  
+This option is mutually exclusive with `--login-password`.
 
 ## Changed features
 
@@ -69,24 +94,32 @@
     Galera cluster associated with that hostgroup overriding the value specified
     in the configuration file.
 
-## Removed features
+## Removed Features
 
-* Asynchronous slave reader support has been removed: the `--include-slaves`
-    option is not supported.
+### Asynchronous slave reader support
 
-* A list of nodes in the priority order is not supported in *ProxySQL* v2. Only
-    a single node is supported at this time.
+The `--include-slaves` option is no longer supported. Asynchronous slave reader support has been removed.
 
-* Since the galera_proxysql_checker and galera_node_monitor scripts are no
-    longer run in the scheduler, automatic cluster membership updates are not
-    supported.
+### Node priority lists
 
-* Checking the pxc_maint_mode variable is no longer supported
+ProxySQL v2 no longer supports specifying a list of nodes in priority order. Only a single node is supported.
 
-* Using desynced nodes if no other nodes are available is no longer supported.
+### Automatic cluster membership updates
 
-* The server status is no longer maintained in the mysql_servers table.
+Cluster membership is no longer updated automatically. The `galera_proxysql_checker` and `galera_node_monitor` scripts are no longer run in the scheduler.
+
+### `pxc_maint_mode` check
+
+The check for the `pxc_maint_mode` variable has been removed and is no longer supported.
+
+### Desynced node fallback
+
+Falling back to desynced nodes when no synced nodes are available is no longer supported.
+
+### Server status tracking in `mysql_servers`
+
+The `mysql_servers` table no longer maintains server status information.
 
 ## Limitations
 
-* With `--writers-as-readers=backup` read-only nodes are not allowed. This is a limitation of ProxySQL 2.x. Note that backup is the default value of `--writers-as-readers` when `--mode=singlewrite`
+* With `--writers-as-readers=backup` read-only nodes are not allowed. This is a limitation of ProxySQL. Note that backup is the default value of `--writers-as-readers` when `--mode=singlewrite`
