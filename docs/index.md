@@ -37,3 +37,37 @@ issues:
 * The binlog reader errors out during initialization due to the use of old 
   terminology, such as the `SHOW MASTER STATUS` command
 
+<div data-grid markdown><div data-banner markdown>
+
+### :material-progress-download: Installation guide { .title }
+
+Find the best installation solution with our step-by-step installation instructions.
+
+[Installation instructions](install-v2.md){ .md-button }
+
+</div><div data-banner markdown>
+
+## :material-progress-download: pxc_scheduler_handler tool { .title }
+
+Learn about the pxc_scheduler_handler tool.
+
+[pxc_scheduler_handler tool](psh-overview.md){ .md-button }
+
+</div><div data-banner markdown>
+
+### :material-backup-restore: proxysql-admin utility { .title }
+
+Learn about the proxysql-admin utility.
+
+[proxysql-admin utility](proxysql-admin-tool-v2-config.md){ .md-button }
+
+</div><div data-banner markdown>
+
+## :fontawesome-solid-gears: Start and stop ProxySQL { .title }
+
+Learn about how to start and stop ProxySQL.
+
+[Start and stop ProxySQL](start-or-stop-proxysql2.md){ .md-button}
+
+</div>
+</div>
