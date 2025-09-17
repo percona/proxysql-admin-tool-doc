@@ -1,8 +1,10 @@
-# Start and stop ProxySQL
+# Start and stop Percona build of ProxySQL
 
-There are several methods to start or stop ProxySQL 2. You can invoke the commands with either `systemctl` or `service`. Currently, both are supported.
+There are several methods to start or stop ProxySQL. You can invoke the commands with either `systemctl` or `service`. Currently, both are supported.
 
-## Start ProxySQL 2.x.x with a service manager
+Make sure to use the correct package name for the version you installed, such as `proxysql2` or `proxysql3`.
+
+## Start ProxySQL with a service manager
 
 === "service"
 
@@ -27,14 +29,14 @@ $ /home/user/<path-to-extracted-dir>/usr/bin/proxysql \
 
     [ProxySQL Documentation: Getting Started](https://proxysql.com/documentation/getting-started/).
 
-## Stop ProxySQL 2.x.x
+## Stop ProxySQL
 
-To stop ProxySQL 2.x, run any of the following commands:
+To stop ProxySQL, run any of the following commands:
 
-=== "service and proxysql"
+=== "service and proxysql3"
 
     ```{.bash data-prompt="$"}
-    $ sudo service proxysql stop
+    $ sudo service proxysql3 stop
     ```
 
 === "service and proxysql2"
@@ -43,10 +45,10 @@ To stop ProxySQL 2.x, run any of the following commands:
     $ sudo service proxysql2 stop
     ```
 
-=== "systemctl and proxysql"
+=== "systemctl and proxysql3"
 
     ```{.bash data-prompt="$"}
-    $ sudo systemctl stop proxysql 
+    $ sudo systemctl stop proxysql3 
     ```
 
 === "systemctl and proxysql2"
