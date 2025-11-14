@@ -41,21 +41,3 @@
     color: #999 !important;
   }
 }
-
-/* Hidden on desktop */
-.mobile-partials {
-    display: none;
-  }
-  
-  /* Visible on mobile (<960px) */
-  @media (max-width: 960px) {
-    .mobile-partials {
-      display: block;
-      margin-top: 2rem;
-    }
-  
-    .mobile-partials .md-sidebar__inner {
-      margin-bottom: 1.2rem;
-    }
-  }
-  
