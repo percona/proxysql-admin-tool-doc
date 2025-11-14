@@ -63,10 +63,12 @@ extra_css:
   - css/extra.css
   - css/nocopy.css
   - css/mysql.css
+  - css/rating.css
 
 extra_javascript:
   - js/promptremover.js
   - js/consent.js
+  - js/rating.js
 
 markdown_extensions:
   attr_list: {}
@@ -109,7 +111,13 @@ markdown_extensions:
 plugins:
     search:
       separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
-    git-revision-date: {}
+    git-revision-date-localized:
+      enable_creation_date: true
+      enabled: !ENV [ENABLED_GIT_REVISION_DATE, True]
+    git-committers:
+      enabled: !ENV [CI, false]
+      repository: percona/proxysql-admin-tool-doc
+      branch: "main"
     meta-descriptions:
       export_csv: false
       quiet: false
