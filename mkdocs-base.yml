@@ -117,7 +117,7 @@ plugins:
     git-committers:
       enabled: !ENV [CI, false]
       repository: percona/proxysql-admin-tool-doc
-      branch: "main"
+      branch: main
     meta-descriptions:
       export_csv: false
       quiet: false
