@@ -111,6 +111,7 @@ markdown_extensions:
 plugins:
     search:
       separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+    git-revision-date: {}
     git-committers:
       enabled: !ENV [CI, false]
       repository: percona/proxysql-admin-tool-doc
