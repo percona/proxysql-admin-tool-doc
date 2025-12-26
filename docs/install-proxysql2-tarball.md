@@ -18,9 +18,9 @@ The tar file binary have the following format:
 
 proxysql-&lt;version&gt;-&lt;operating_system&gt;-&lt;architecture&gt;-&lt;glibc_version&gt;.tar.gz
 
-The following is an example of a tar file binary for ProxySQL 3.0.1
+The following is an example of a tar file binary for ProxySQL 3.0.6
 
- proxysql-3.0.1-Linux-x86_64.glibc2.31.tar.gz 
+ proxysql-3.0.6-Linux-x86_64.glibc2.34.tar.gz
  
 ## Download the file
 
@@ -28,27 +28,36 @@ The following is an example of a tar file binary for ProxySQL 3.0.1
 
 Be sure to select the appropriate file for your operating system based on the `glibc version` used. Verify that you're installing the correct ProxySQL version for your environment, such as `proxysql2` or `proxysql3`.
 
+!!! note
+    Available glibc versions in the tarball names can change depending on the ProxySQL version and the operating system. Check the [Percona download page](https://www.percona.com/download-proxysql) for the current options for your version and platform.
+
+??? note "tar files for ProxySQL 3.x or higher"
+
+    | Name | Description |
+    | ---- | ----------- |
+    | proxysql-&lt;version&gt;-Linux-x86_64.glibc&lt;glibc_version&gt;.tar.gz | For supported operating systems with glibc &lt;glibc_version&gt;. Check the [Percona download page](https://www.percona.com/download-proxysql) for current options. |
+
 ??? note "tar files for ProxySQL 2.4.4 and higher"
 
-    | Name                                              | Description                           |
-    | ------------------------------------------------- | ------------------------------------- |
-    | proxysql-2-<version>-Linux-x86_64.glibc2.23.xenial.tar.gz  | For Ubuntu 16.04 `xenial` only |
-    |proxysql-2-<version>-Linux-x86_64.glibc2.17.tar.gz          | For every supported operating system |
-    |proxysql-2-<version>-Linux-x86_64.glibc2.27.tar.gz          | For every supported operating system but `xenial`. For CentOS 7, install OpenSSL 1.1.1, if needed.  |
+    | Name | Description |
+    | ---- | ----------- |
+    | proxysql-2-&lt;version&gt;-Linux-x86_64.glibc&lt;glibc_version&gt;.xenial.tar.gz | For Ubuntu 16.04 `xenial` only |
+    | proxysql-2-&lt;version&gt;-Linux-x86_64.glibc&lt;glibc_version&gt;.tar.gz | For every supported operating system |
+    | proxysql-2-&lt;version&gt;-Linux-x86_64.glibc&lt;glibc_version&gt;.tar.gz | For every supported operating system but `xenial`. For CentOS 7, install OpenSSL 1.1.1, if needed. Check the download page for current glibc options. |
 
 ??? note "tar files from ProxySQL 2.3.2-1.2 to ProxySQL 2.4.3"
 
-  | Name                                              | Description                           |
-  | ------------------------------------------------- | ------------------------------------- |
-  | proxysql-2-<version>-Linux-x86_64.glibc2.23.xenial.tar.gz  | For Ubuntu 16.04 `xenial` only |
+    | Name | Description |
+    | ---- | ----------- |
+    | proxysql-2-&lt;version&gt;-Linux-x86_64.glibc&lt;glibc_version&gt;.xenial.tar.gz | For Ubuntu 16.04 `xenial` only |
 
 ??? note "tar files from ProxySQL 2.0.15 to ProxySQL 2.3.2"
 
-  | Name                                                  | Description                                                                                        |
-  | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-  | proxysql-2.0.XX-Linux-x86_64.glibc2.12.tar.gz         | For every supported operating system but `xenial`. For CentOS 7, install OpenSSL 1.1.1, if needed. |
-  | proxysql-2.x.xx-Linux-x86_64.glibc2.17.tar.gz         | For every supported operating system                                                               |
-  | proxysql-2.0.XX-Linux-x86_64.glibc2.23.xenial.tar.gz  | For Ubuntu 16.04 `xenial` only.
+    | Name | Description |
+    | ---- | ----------- |
+    | proxysql-2-&lt;version&gt;-Linux-x86_64.glibc&lt;glibc_version&gt;.tar.gz | For every supported operating system but `xenial`. For CentOS 7, install OpenSSL 1.1.1, if needed. |
+    | proxysql-2-&lt;version&gt;-Linux-x86_64.glibc&lt;glibc_version&gt;.tar.gz | For every supported operating system |
+    | proxysql-2-&lt;version&gt;-Linux-x86_64.glibc&lt;glibc_version&gt;.xenial.tar.gz | For Ubuntu 16.04 `xenial` only. Check the download page for current glibc options. |
 
 ## Install the file
 
