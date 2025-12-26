@@ -18,9 +18,9 @@ The tar file binary have the following format:
 
 proxysql-&lt;version&gt;-&lt;operating_system&gt;-&lt;architecture&gt;-&lt;glibc_version&gt;.tar.gz
 
-The following is an example of a tar file binary for ProxySQL 3.0.1
+The following is an example of a tar file binary for ProxySQL 3.0.4
 
- proxysql-3.0.1-Linux-x86_64.glibc2.31.tar.gz 
+ proxysql-3.0.4-Linux-x86_64.glibc2.31.tar.gz 
  
 ## Download the file
 

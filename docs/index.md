@@ -14,7 +14,7 @@ Configuration is handled using SQL-like statements, including runtime options, s
 
 !!! note
 
-    [ProxySQL 3.0.1 contains a PostgreSQL module in beta.](https://github.com/sysown/proxysql/releases) The Percona build of ProxySQL is only tested with Percona Server for MySQL.
+    [ProxySQL 3.0 contains a PostgreSQL module in beta.](https://github.com/sysown/proxysql/releases) The Percona build of ProxySQL is only tested with Percona Server for MySQL.
 
 The [ProxySQL documentation](https://proxysql.com/documentation/) includes detailed guidance on installation, operation, and the use of supporting tools. The maintained releases are listed on 
 [ProxySQL Installation](https://proxysql.com/documentation/installing-proxysql/).
