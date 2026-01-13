@@ -11,11 +11,6 @@
       line-height: 1.6;
   }
 
-  .md-sidebar__inner {
-    font-size: 0.65rem;   /* Font size */
-    line-height: 1.6;
-}
-
 /* Banner container */
 .edit-contrib-banner {
   display: flex;
