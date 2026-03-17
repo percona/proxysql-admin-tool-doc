@@ -30,7 +30,7 @@ As a general rule of thumb, please try to create a bug report that has the follo
 
 ## Copyright
 
-ProxySQL Admin Copyright (c) Percona LLC and/or its affiliates 2015-2022
+The ProxySQL and ProxySQL Admin utilities documentation is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
 
 ## How to get involved
 
