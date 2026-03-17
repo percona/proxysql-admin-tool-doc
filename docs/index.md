@@ -14,7 +14,7 @@ Configuration is handled using SQL-like statements, including runtime options, s
 
 !!! note
 
-    [ProxySQL 3.0.1 contains a PostgreSQL module in beta.](https://github.com/sysown/proxysql/releases) The Percona build of ProxySQL is only tested with Percona Server for MySQL.
+    [ProxySQL 3.0 contains a PostgreSQL module in beta.](https://github.com/sysown/proxysql/releases) The Percona build of ProxySQL is only tested with Percona Server for MySQL.
 
 The [ProxySQL documentation](https://proxysql.com/documentation/) includes detailed guidance on installation, operation, and the use of supporting tools. The maintained releases are listed on 
 [ProxySQL Installation](https://proxysql.com/documentation/installing-proxysql/).
@@ -28,14 +28,7 @@ Version 1 is no longer actively maintained. The ProxySQL downloads may include:
   node failures, service degradation, or maintenance. Available from 
   [ProxySQL 2.3.2-1.2](./release-notes-2.3.2-1.md) and higher.
 
-In a MySQL 8.4 or Percona Server for MySQL 8.4 environment, you may face these 
-issues:
-
-* ProxySQL contains counters that have not been updated to use the new terminology, 
-  leading to unexpected results.
-
-* The binlog reader errors out during initialization due to the use of old 
-  terminology, such as the `SHOW MASTER STATUS` command
+In 8.4.x environments, the ProxySQL binlog reader can fail to initialize because it uses legacy commands, such as `SHOW MASTER STATUS`. Some internal counters also use outdated terminology. To address most terminology issues, enable the [terminology_use_previous](https://dev.mysql.com/doc/refman/8.4/en/replication-options-replica.html#sysvar_terminology_use_previous) system variable on the database server. This workaround addresses only terminology compatibility and may not fix all failures.
 
 <div data-grid markdown><div data-banner markdown>
 
