@@ -50,6 +50,7 @@ theme:
   features:
     - search.highlight
     - navigation.top
+    - navigation.indexes
     - content.tabs.link
 #    - content.action.edit
     - content.action.view
@@ -150,6 +151,25 @@ extra:
 
 nav:
   - Home: index.md
+  - Install:
+      - Package manager install: install-v2.md
+      - Download locations: where-to-download-proxysql.md
+      - Tarball install: install-proxysql2-tarball.md
+      - Build pxc_scheduler_handler: build-psh.md
+      - Uninstall ProxySQL: uninstall-proxysql2.md
+  - Configure and operate:
+      - Start and stop ProxySQL: start-or-stop-proxysql2.md
+      - Upgrade ProxySQL: upgrade-proxysql2.md
+      - proxysql-admin:
+          - proxysql-admin utility: proxysql-admin-tool-v2-config.md
+          - proxysql-admin-tool-changes.md
+          - proxysql-admin-tool-functions.md
+      - pxc_scheduler_handler:
+          - psh-overview.md
+          - psh-configuration.md
+          - psh-options.md
+          - psh-detailed-options.md
+          - psh-known-limitations.md
   - limitations.md
   - get-help.md
   - Release notes:
@@ -177,29 +197,6 @@ nav:
         - 2.4.3.md
         - 2.4.2.md
         - release-notes-2.3.2-1.md
-  - ProxySQL and admin tools:
-      - Install:
-        - where-to-download-proxysql.md
-        - install-v2.md
-        - install-proxysql2-tarball.md
-        - build-psh.md
-        - uninstall-proxysql2.md
-      - Deploy:
-        - start-or-stop-proxysql2.md
-        - upgrade-proxysql2.md
-        - uninstall-proxysql2.md
-      - proxysql-admin:
-
-        - proxysql-admin-tool-changes.md
-        - proxysql-admin-tool-v2-config.md
-        - proxysql-admin-tool-functions.md
-      - pxc_scheduler_handler:
-
-        - psh-overview.md
-        - psh-configuration.md
-        - psh-options.md
-        - psh-detailed-options.md
-        - psh-known-limitations.md
   - Reference:
       - trademark-policy.md
       - copyright-and-licensing-information.md

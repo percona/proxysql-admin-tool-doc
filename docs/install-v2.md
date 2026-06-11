@@ -1,26 +1,37 @@
 # Install Percona build of ProxySQL and the admin tools
 
+This task guide installs the Percona build of ProxySQL and Percona admin tools with a package manager.
 
-Select the same package installer used to install [Percona XtraDB Cluster](https://www.percona.com/doc/percona-xtradb-cluster/8.0/install/index.html) or other Percona software to ensure compatibility.
+Use the same package manager that installs [Percona XtraDB Cluster](https://www.percona.com/doc/percona-xtradb-cluster/8.0/install/index.html) or other Percona software. Matching package managers ensures repository compatibility.
 
-Verify that you're installing the correct ProxySQL version for your environment, such as `proxysql2` or `proxysql3`.
+For tarball or offline installs, see the [tarball installation guide](install-proxysql2-tarball.md) or the [download locations guide](where-to-download-proxysql.md).
+
+!!! tip "Recommended version"
+
+    Install the latest ProxySQL 3 release with the `proxysql3` package. Use `proxysql2` only for an existing ProxySQL 2.x deployment or a version lock. See [release notes](release-notes.md) for the current ProxySQL 3 version.
+
+## Install ProxySQL with a package manager
+
+Select the tab that matches your Linux distribution.
 
 === "On a Debian-derived distribution"
 
-    If you installed Percona software using APT, run the following command as sudo or as root. Make sure to use the correct package name for the version you installed, such as `proxysql2` or `proxysql3`.
-    
-    ```{.bash data-prompt="$"}
-    $ sudo apt install proxysql2
-    ```
-    
-    or 
-    
+    Use APT when Percona software is installed from APT repositories. Run one of the following commands as root or with `sudo`.
+
+    For ProxySQL 3 (recommended):
+
     ```{.bash data-prompt="$"}
     $ sudo apt install proxysql3
     ```
-    
-    ??? example "Expected output" 
-    
+
+    For ProxySQL 2 (legacy deployments only):
+
+    ```{.bash data-prompt="$"}
+    $ sudo apt install proxysql2
+    ```
+
+    ??? example "Expected output"
+
         ```{.text .no-copy}
         Reading package lists... Done
         Building dependency tree
@@ -36,20 +47,22 @@ Verify that you're installing the correct ProxySQL version for your environment,
 
 === "On a Red Hat-derived distribution"
 
-     If you installed Percona software using YUM, run the following command. Make sure to use the correct package name for the version you installed, such as `proxysql2` or `proxysql3`.
-    
-    ```{.bash data-prompt="$"}
-    $ sudo yum install proxysql2
-    ```
-    
-    or 
-    
+    Use YUM or DNF when Percona software is installed from YUM repositories. Run one of the following commands as root or with `sudo`.
+
+    For ProxySQL 3 (recommended):
+
     ```{.bash data-prompt="$"}
     $ sudo yum install proxysql3
     ```
-    
+
+    For ProxySQL 2 (legacy deployments only):
+
+    ```{.bash data-prompt="$"}
+    $ sudo yum install proxysql2
+    ```
+
     ??? example "Expected output"
-    
+
         ```{.text .no-copy}
         Last metadata expiration check: 0:01:47 ago on Wed Oct  5 14:42:00 2022.
         Dependencies resolved.
@@ -60,11 +73,11 @@ Verify that you're installing the correct ProxySQL version for your environment,
         proxysql2                x86_64                2.4.4-1.1.el8                  tools-release-x86_64                 21 M
         Installing dependencies:
         logrotate                x86_64                3.14.0-4.el8                   baseos                               85 k
-    
+
         Transaction Summary
         =========================================================================================================================
         Install  2 Packages
-    
+
         Total download size: 21 M
         Installed size: 88 M
         Is this ok [y/N]: y
@@ -76,15 +89,15 @@ Verify that you're installing the correct ProxySQL version for your environment,
         ...
         ```
 
-## Verify the pxc_scheduler_handler installation
+## Verify pxc_scheduler_handler installation
 
-If you have installed [ProxySQL 2.3.2-2.1](release-notes-2.3.2-1.md) or later, verify the [pxc_scheduler_handler](psh-overview.md) installation with the following command:
+ProxySQL 3 releases and [ProxySQL 2.3.2-1.2](release-notes-2.3.2-1.md) and later 2.x releases include [pxc_scheduler_handler](psh-overview.md). Verify the installation with the following command:
 
 ```{.bash data-prompt="$"}
 $ percona-scheduler-admin --debug
 ```
 
-Running this command without the [pxc_scheduler_handler configuration file](psh-configuration.md) generates an error.
+Without the [pxc_scheduler_handler configuration file](psh-configuration.md), the command reports an error.
 
 ??? example "Error message"
 
@@ -92,13 +105,13 @@ Running this command without the [pxc_scheduler_handler configuration file](psh-
     ERROR : The --config-file option is required but is missing from the command.
     ```
 
-## Run Docker
+## Run ProxySQL in Docker
 
-To run the Percona build of ProxySQL in Docker, do the following:
+Pull a Docker image from one of the following repositories:
 
-* ProxySQL2 in Docker, download the latest image at [percona/proxysql2](https://hub.docker.com/r/percona/proxysql2).
+* ProxySQL 3 (recommended) — [percona/proxysql3](https://hub.docker.com/r/percona/proxysql3)
 
-* ProxySQL3 in Docker, download the latest image at [percona/proxysql3](https://hub.docker.com/r/percona/proxysql3).
+* ProxySQL 2 (legacy deployments only) — [percona/proxysql2](https://hub.docker.com/r/percona/proxysql2)
 
 ## MySQL 8.4 and Percona Server for MySQL 8.4 considerations
 
