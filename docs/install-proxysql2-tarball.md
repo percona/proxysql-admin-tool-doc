@@ -1,100 +1,105 @@
 # Install Percona build of ProxySQL binary tarball
 
-If installing [Percona build of ProxySQL with a package manager](install-v2.md) is not an option in your environment, you can install from a binary tarball. The difference between versions is the available tar files or the command to extract the file.
+This task guide installs the Percona build of ProxySQL from a binary tarball.
 
-## Version changes
+Servers with Percona repositories should use the [package manager installation guide](install-v2.md) and install `proxysql3`. Tarball installs differ by ProxySQL version in file names and extraction commands.
 
-### CentOS 6
+Percona recommends a ProxySQL 3 tarball for standard deployments. Select a ProxySQL 2 tarball only for an existing 2.x deployment or a version lock.
 
-Starting with [_ProxySQL 2.3.2-1.2_](release-notes-2.3.2-1.md), Percona no longer provides a tarball for CentOS 6. For more information, see [Spring Cleaning: Discontinuing RHEL 6/CentOS 6 (glibc2.12) and 32-bit Binary Builds of Percona Software](https://www.percona.com/blog/spring-cleaning-discontinuing-rhel-6-centos-6-glibc-2-12-and-32-bit-binary-builds-of-percona-software/)
+## Review version-specific tarball changes
 
-### OpenSSL 1.1.1
+### CentOS 6 discontinuation
 
-The password-based file encryption requires OpenSSL 1.1.1, but Ubuntu 16.04 does not support this OpenSSL version. A special statically linked OpenSSL 1.1.1 binary is packaged with the executable. This packaged binary avoids conflicts with the system OpenSSL and any shared libraries. Each new release rebuilds the binary.
+[_ProxySQL 2.3.2-1.2_](release-notes-2.3.2-1.md) and later releases omit a CentOS 6 tarball. See [Spring Cleaning: Discontinuing RHEL 6/CentOS 6 (glibc2.12) and 32-bit Binary Builds of Percona Software](https://www.percona.com/blog/spring-cleaning-discontinuing-rhel-6-centos-6-glibc-2-12-and-32-bit-binary-builds-of-percona-software/) for details.
 
-## Format
+### OpenSSL 1.1.1 on Ubuntu 16.04
 
-The tar file binary have the following format:
+Password-based file encryption requires OpenSSL 1.1.1. Ubuntu 16.04 does not include OpenSSL 1.1.1. Percona packages a statically linked OpenSSL 1.1.1 binary with the executable. The packaged binary avoids conflicts with the system OpenSSL and shared libraries. Each release rebuilds the binary.
+
+## Identify tarball file name format
+
+Tarball binaries use the following file name pattern:
 
 proxysql-&lt;version&gt;-&lt;operating_system&gt;-&lt;architecture&gt;-&lt;glibc_version&gt;.tar.gz
 
-The following is an example of a tar file binary for ProxySQL 3.0.6
+The following file name is an example for ProxySQL 3.0.6:
 
- proxysql-3.0.6-Linux-x86_64.glibc2.34.tar.gz
- 
-## Download the file
+proxysql-3.0.6-Linux-x86_64.glibc2.34.tar.gz
 
-[Follow the instructions in `Download locations for Percona’s build of ProxySQL and ProxySQL admin tools`](where-to-download-proxysql.md)
+## Download the tarball
 
-Be sure to select the appropriate file for your operating system based on the `glibc version` used. Verify that you're installing the correct ProxySQL version for your environment, such as `proxysql2` or `proxysql3`.
+Follow the [download locations guide](where-to-download-proxysql.md) to select *Platform*, *Linux*, and *Generic* on the Percona download page.
+
+Select a ProxySQL 3 tarball that matches your operating system and `glibc` version. Select a ProxySQL 2 tarball only when your deployment requires the 2.x product line.
 
 !!! note
-    Available glibc versions in the tarball names can change depending on the ProxySQL version and the operating system. Check the [Percona download page](https://www.percona.com/download-proxysql) for the current options for your version and platform.
 
-??? note "tar files for ProxySQL 3.x or higher"
+    Tarball file names can list different `glibc` versions by ProxySQL version and operating system. See the [Percona download page](https://www.percona.com/download-proxysql) for options for your version and platform.
 
-    | Name | Description |
-    | ---- | ----------- |
-    | proxysql-&lt;version&gt;-Linux-x86_64.glibc&lt;glibc_version&gt;.tar.gz | For supported operating systems with glibc &lt;glibc_version&gt;. Check the [Percona download page](https://www.percona.com/download-proxysql) for current options. |
-
-??? note "tar files for ProxySQL 2.4.4 and higher"
+??? note "Tarball file names for ProxySQL 3.x or higher"
 
     | Name | Description |
     | ---- | ----------- |
-    | proxysql-2-&lt;version&gt;-Linux-x86_64.glibc&lt;glibc_version&gt;.xenial.tar.gz | For Ubuntu 16.04 `xenial` only |
-    | proxysql-2-&lt;version&gt;-Linux-x86_64.glibc&lt;glibc_version&gt;.tar.gz | For every supported operating system |
-    | proxysql-2-&lt;version&gt;-Linux-x86_64.glibc&lt;glibc_version&gt;.tar.gz | For every supported operating system but `xenial`. For CentOS 7, install OpenSSL 1.1.1, if needed. Check the download page for current glibc options. |
+    | proxysql-&lt;version&gt;-Linux-x86_64.glibc&lt;glibc_version&gt;.tar.gz | Supported operating systems with `glibc` &lt;glibc_version&gt;. See the [Percona download page](https://www.percona.com/download-proxysql) for options. |
 
-??? note "tar files from ProxySQL 2.3.2-1.2 to ProxySQL 2.4.3"
+??? note "Tarball file names for ProxySQL 2.4.4 and higher"
 
     | Name | Description |
     | ---- | ----------- |
-    | proxysql-2-&lt;version&gt;-Linux-x86_64.glibc&lt;glibc_version&gt;.xenial.tar.gz | For Ubuntu 16.04 `xenial` only |
+    | proxysql-2-&lt;version&gt;-Linux-x86_64.glibc&lt;glibc_version&gt;.xenial.tar.gz | Ubuntu 16.04 `xenial` only |
+    | proxysql-2-&lt;version&gt;-Linux-x86_64.glibc&lt;glibc_version&gt;.tar.gz | Every supported operating system |
+    | proxysql-2-&lt;version&gt;-Linux-x86_64.glibc&lt;glibc_version&gt;.tar.gz | Every supported operating system except `xenial`. On CentOS 7, install OpenSSL 1.1.1 when required. See the download page for available `glibc` options. |
 
-??? note "tar files from ProxySQL 2.0.15 to ProxySQL 2.3.2"
+??? note "Tarball file names from ProxySQL 2.3.2-1.2 to ProxySQL 2.4.3"
 
     | Name | Description |
     | ---- | ----------- |
-    | proxysql-2-&lt;version&gt;-Linux-x86_64.glibc&lt;glibc_version&gt;.tar.gz | For every supported operating system but `xenial`. For CentOS 7, install OpenSSL 1.1.1, if needed. |
-    | proxysql-2-&lt;version&gt;-Linux-x86_64.glibc&lt;glibc_version&gt;.tar.gz | For every supported operating system |
-    | proxysql-2-&lt;version&gt;-Linux-x86_64.glibc&lt;glibc_version&gt;.xenial.tar.gz | For Ubuntu 16.04 `xenial` only. Check the download page for current glibc options. |
+    | proxysql-2-&lt;version&gt;-Linux-x86_64.glibc&lt;glibc_version&gt;.xenial.tar.gz | Ubuntu 16.04 `xenial` only |
 
-## Install the file
+??? note "Tarball file names from ProxySQL 2.0.15 to ProxySQL 2.3.2"
 
-1.  Navigate to the downloaded tar file.
+    | Name | Description |
+    | ---- | ----------- |
+    | proxysql-2-&lt;version&gt;-Linux-x86_64.glibc&lt;glibc_version&gt;.tar.gz | Every supported operating system except `xenial`. On CentOS 7, install OpenSSL 1.1.1 when required. |
+    | proxysql-2-&lt;version&gt;-Linux-x86_64.glibc&lt;glibc_version&gt;.tar.gz | Every supported operating system |
+    | proxysql-2-&lt;version&gt;-Linux-x86_64.glibc&lt;glibc_version&gt;.xenial.tar.gz | Ubuntu 16.04 `xenial` only. See the download page for available `glibc` options. |
 
-2.  Extract the files with the following commands:
+## Install the tarball
+
+Complete the following steps after you download the tarball:
+{.power-number}
+
+1. Change to the directory that contains the downloaded tarball.
+
+2. Extract the tarball with the command that matches your ProxySQL version:
 
     ??? "Extract ProxySQL 2.0.14 or higher"
 
         ```{.bash data-prompt="$"}
-        $ tar xzf proxysql-<version>-Linux-<PLATFORM-ARCHITECTURE>-<glibc version>.tar.gz
-        $ cd proxysql-<VERSION>-Linux-<PLATFORM-ARCHITECTURE>
+        $ tar xzf proxysql-<VERSION>-Linux-<PLATFORM_ARCHITECTURE>-<GLIBC_VERSION>.tar.gz
+        $ cd proxysql-<VERSION>-Linux-<PLATFORM_ARCHITECTURE>
         ```
 
     ??? "Extract ProxySQL 2.0.13 or lower"
 
         ```{.bash data-prompt="$"}
-        # Extract the files (assumes you have changed to the download destination directory)
-        $ tar xzf proxysql-<VERSION>-<Linux-PLATFORM-ARCHITECTURE*>.tar.gz
-        # Change to the directory that contains the extracted files
-        $ cd proxysql-<VERSION>-Linux-<PLATFORM-ARCHITECTURE>
+        $ tar xzf proxysql-<VERSION>-<LINUX_PLATFORM_ARCHITECTURE>.tar.gz
+        $ cd proxysql-<VERSION>-Linux-<PLATFORM_ARCHITECTURE>
         ```
 
-3.  Create a directory to store the _ProxySQL_ data.
+3. Create a directory to store ProxySQL data.
 
       ```{.bash data-prompt="$"}
       $ mkdir /home/user/data
       ```
 
-4.  In the configuration file, update the `datadir` value to point
-    to the created data directory.
+4. Set the `datadir` value in the configuration file to the data directory path.
 
       ```{.text .no-copy}
       datadir="/home/user/data"
       ```
 
-5.  Set the other options, as needed.
+5. Set the remaining ProxySQL options as required.
 
 ## MySQL 8.4 and Percona Server for MySQL 8.4 considerations
 

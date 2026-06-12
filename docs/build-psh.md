@@ -1,70 +1,73 @@
 # Build the pxc_scheduler_handler tool
 
-The pxc_scheduler_handler tool has two main files: the `pxc_scheduler_handler` binary and the `percona_scheduler_admin` script.
+This task guide builds `pxc_scheduler_handler` from source. For package manager installs, see [Install Percona build of ProxySQL and the admin tools](install-v2.md).
 
-The `pxc_scheduler_handler` does the following tasks:
+The `pxc_scheduler_handler` tool includes two main files: the `pxc_scheduler_handler` binary and the `percona_scheduler_admin` script.
 
-* Monitors the cluster health
+The `pxc_scheduler_handler` binary performs the following tasks:
 
-* Processes the cluster state and evaluates the scenario
+* Evaluates the cluster state and scenario
 
-* Performs actions, such as failover in case of an incident
+* Monitors cluster health
 
-The `percona_scheduler_admin` script runs and provides responses based on the
-configuration file for the `pxc-scheduler_handler` binary.
+* Performs actions, including failover during an incident
 
-Running `pxc_scheduler_handler`  without `percona_scheduler_admin` requires
-manual intervention.
+The `percona_scheduler_admin` script runs `pxc_scheduler_handler` and returns responses from the configuration file.
 
-Cloning a git project that contains submodules does not automatically check out the submodule content. The submodules require initialization and updating before they are functional.
+`pxc_scheduler_handler` requires `percona_scheduler_admin` for normal operation. Manual intervention is required without `percona_scheduler_admin`.
 
-## Build the module
+A git clone with submodules does not check out submodule content. Submodules require initialization and update before the build.
 
-You can perform the submodule initialization by running the following statement:
+## Build the scheduler submodule
 
-```{.bash data-prompt="$"}
-$ git submodule update --init
-```
+Complete the following steps to build `pxc_scheduler_handler`:
+{.power-number}
 
-Run the following command to build the scheduler submodule.
+1. Initialize git submodules:
 
-```{.bash data-prompt="$"}
-$ build_scheduler.sh
-```
+    ```{.bash data-prompt="$"}
+    $ git submodule update --init
+    ```
 
-The `pxc_scheduler_handler` binary is located in the base directory.
+2. Build the scheduler submodule:
 
-Do not run multiple instances of this binary. If you start a new instance when an instance of
-`pxc_scheduler_handler` is already running, both instances execute, but the second instance:
+    ```{.bash data-prompt="$"}
+    $ build_scheduler.sh
+    ```
 
-* Consumes additional network and system resources
+The build writes the `pxc_scheduler_handler` binary to the repository base directory.
 
-* Returns identical results because both use the same configuration file
+Do not run multiple instances of `pxc_scheduler_handler`. A second instance started while another instance runs causes the following results:
 
-## Create an account
+* Additional network and system resource consumption
 
-Create an `admin` user account. Use this account for communication through ProxySQL and pxc_scheduler_handler.
+* Identical results from both instances because both read the same configuration file
 
-The following example uses the `mysql_native_password` authentication method to create an admin user account:
+## Create a MySQL admin account
+
+Create an `admin` user account for communication between ProxySQL and `pxc_scheduler_handler`.
+
+Create the account with `mysql_native_password` authentication:
 
 ```{.bash data-prompt="mysql>"}
 mysql> CREATE USER 'admin'@'192.%' IDENTIFIED WITH 'mysql_native_password'
 by 'admin';
 ```
 
-If you are using a [ProxySQL version 2.6.2](2.6.2.md) or later, you can use the `caching_sha2_password` authentication method. The following example creates an admin user account using that method:
+[ProxySQL 2.6.2](2.6.2.md) and later releases support `caching_sha2_password` authentication. Create the account with that method when your environment requires it:
 
 ```{.bash data-prompt="mysql>"}
 mysql> CREATE USER 'admin'@'192.%' IDENTIFIED WITH 'caching_sha2_password' BY 'admin';
 ```
 
-Grant privileges to the `admin` user account:
+Grant privileges to the `admin` account:
 
 ```{.bash data-prompt="mysql>"}
 mysql> GRANT ALL PRIVILEGES ON *.* TO 'admin'@'192.%' WITH GRANT OPTION;
 ```
 
-!!! admonition "See also"
-    
-    [Log file or lock file locations](psh-known-limitations.md#do-not-place-the-log-file-or-lock-file-in-the-home-directory)
+For configuration details, see [pxc_scheduler_handler overview](psh-overview.md) and [configuration file reference](psh-configuration.md).
 
+!!! note "Related topic"
+
+    [Log file or lock file locations](psh-known-limitations.md#do-not-place-the-log-file-or-lock-file-in-the-home-directory)
