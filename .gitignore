@@ -5,3 +5,4 @@ percona-theme
 **/.DS_Store
 COMMIT_MESSAGE
 site/
+push-docs.ps1
