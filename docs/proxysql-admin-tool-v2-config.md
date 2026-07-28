@@ -244,7 +244,16 @@ export USE_SSL='no'
 # If set to 'backup', then only the backup-writers will be added to
 # the read hostgroup.
 export WRITERS_ARE_READERS='backup'
+
+# MySQL authentication plugin to use when creating users.
+# Valid values: 'caching_sha2_password' (default) or 'mysql_native_password'
+# Available in ProxySQL admin tools 3.0.9 and later.
+export AUTH_PLUGIN='caching_sha2_password'
 ```
+
+!!! note "`AUTH_PLUGIN` (3.0.9+)"
+
+    From [ProxySQL admin tools 3.0.9](https://github.com/percona/proxysql-admin-tool/pull/287), `AUTH_PLUGIN` replaces hardcoded `mysql_native_password` in user-creation SQL and in client `default-auth` for both `proxysql-admin` and `percona-scheduler-admin`. The default is `caching_sha2_password`. Use that value for MySQL 9.x / PXC 9.x. This setting does not change ProxySQL’s `mysql-default_authentication_plugin`; see [Connect to ProxySQL with MySQL 9.x clients](mysql-9-authentication.md).
 
 ## Configuring the proxysql-admin login
 

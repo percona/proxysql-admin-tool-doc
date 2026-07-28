@@ -29,6 +29,10 @@ $ /home/user/<path-to-extracted-dir>/usr/bin/proxysql \
 
     [ProxySQL Documentation: Getting Started](https://proxysql.com/documentation/getting-started/).
 
+!!! note "MySQL 9.x clients"
+
+    If the only available `mysql` client is MySQL 9.x, set `mysql-default_authentication_plugin` to `caching_sha2_password` before you can connect to the admin interface. See [Connect to ProxySQL with MySQL 9.x clients](mysql-9-authentication.md).
+
 ## Stop ProxySQL
 
 To stop ProxySQL, run any of the following commands:

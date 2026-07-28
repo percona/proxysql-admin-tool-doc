@@ -161,6 +161,7 @@ nav:
       - Uninstall ProxySQL: uninstall-proxysql2.md
   - Configure and operate:
       - Start and stop ProxySQL: start-or-stop-proxysql2.md
+      - Connect with MySQL 9.x clients: mysql-9-authentication.md
       - Upgrade ProxySQL: upgrade-proxysql2.md
       - proxysql-admin:
           - proxysql-admin utility: proxysql-admin-tool-v2-config.md

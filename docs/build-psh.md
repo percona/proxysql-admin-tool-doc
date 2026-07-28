@@ -47,18 +47,20 @@ Do not run multiple instances of `pxc_scheduler_handler`. A second instance star
 
 Create an `admin` user account for communication between ProxySQL and `pxc_scheduler_handler`.
 
-Create the account with `mysql_native_password` authentication:
+On MySQL 8.0 environments that still allow it, you can create the account with `mysql_native_password`:
 
 ```{.bash data-prompt="mysql>"}
 mysql> CREATE USER 'admin'@'192.%' IDENTIFIED WITH 'mysql_native_password'
 by 'admin';
 ```
 
-[ProxySQL 2.6.2](2.6.2.md) and later releases support `caching_sha2_password` authentication. Create the account with that method when your environment requires it:
+[ProxySQL 2.6.2](2.6.2.md) and later releases support `caching_sha2_password` authentication. Use this method for MySQL 9.x (where `mysql_native_password` is removed) and for any environment that requires SHA-2 authentication:
 
 ```{.bash data-prompt="mysql>"}
 mysql> CREATE USER 'admin'@'192.%' IDENTIFIED WITH 'caching_sha2_password' BY 'admin';
 ```
+
+If MySQL 9.x is the only client available on the ProxySQL host, also set `mysql-default_authentication_plugin` to `caching_sha2_password`. See [Connect to ProxySQL with MySQL 9.x clients](mysql-9-authentication.md).
 
 Grant privileges to the `admin` account:
 

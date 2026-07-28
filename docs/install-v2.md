@@ -116,3 +116,12 @@ Pull a Docker image from one of the following repositories:
 ## MySQL 8.4 and Percona Server for MySQL 8.4 considerations
 
 --8<--- "note-8.4.md"
+
+## MySQL 9.x considerations
+
+MySQL 9.x removes `mysql_native_password`. After you install ProxySQL:
+
+* For MySQL 9.x clients, set ProxySQL’s `mysql-default_authentication_plugin` to `caching_sha2_password` in `proxysql.cnf` (preferred). This is a ProxySQL setting, not a separate package.
+* With admin tools 3.0.9 and later, set `AUTH_PLUGIN` in `/etc/proxysql-admin.cnf` if you need a non-default value. The default is already `caching_sha2_password`; you do not install an auth plugin package.
+
+For full configuration and troubleshooting steps, see [Connect to ProxySQL with MySQL 9.x clients](mysql-9-authentication.md).

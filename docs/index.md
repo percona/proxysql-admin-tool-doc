@@ -30,6 +30,8 @@ Version 1 is no longer actively maintained. The ProxySQL downloads may include:
 
 In 8.4.x environments, the ProxySQL binlog reader can fail to initialize because it uses legacy commands, such as `SHOW MASTER STATUS`. Some internal counters also use outdated terminology. To address most terminology issues, enable the [terminology_use_previous](https://dev.mysql.com/doc/refman/8.4/en/replication-options-replica.html#sysvar_terminology_use_previous) system variable on the database server. This workaround addresses only terminology compatibility and may not fix all failures.
 
+With MySQL 9.x clients, admin and frontend connections fail unless `mysql-default_authentication_plugin` is set to `caching_sha2_password`, because MySQL 9 removes `mysql_native_password`. See [Connect to ProxySQL with MySQL 9.x clients](mysql-9-authentication.md).
+
 <div data-grid markdown><div data-banner markdown>
 
 ### :material-progress-download: Installation guide { .title }
