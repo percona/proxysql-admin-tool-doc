@@ -10,6 +10,10 @@ Use the `--config-file` option to run the pxc-scheduler-handler script.
 
     We do not recommend storing the scheduler configuration file in the Home directory.
 
+!!! note "MySQL 9.x and authentication"
+
+    The TOML file does not set an authentication plugin. When `percona-scheduler-admin` creates monitor or application users during setup, it uses `AUTH_PLUGIN` from `/etc/proxysql-admin.cnf` (default `caching_sha2_password` in admin tools 3.0.9 and later). For MySQL 9 clients connecting to ProxySQL, also configure ProxySQL’s `mysql-default_authentication_plugin`. See [Connect to ProxySQL with MySQL 9.x clients](mysql-9-authentication.md).
+
 ## Example of a configuration file
 
 A configuration file is used to control the `pxc-scheduler-handler` operations. The file can be changed as needed. The administrator controls what protected resources the tool can access. 
