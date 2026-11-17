@@ -436,7 +436,7 @@ The default behavior is to display all tables and files. By using the following 
 |–monitor|Monitor tables|
 |–runtime|Runtime-related data (implies –main)|
 |–stats|Stats tables|
-|–table=<table_name>|Only tables that contain the table name (a case-sensitive match)|
+|–table=`<table_name>`|Only tables that contain the table name (a case-sensitive match)|
 |–with-stats-reset|_reset tables, by default _reset tables will not be queried.|
 
 !!! note

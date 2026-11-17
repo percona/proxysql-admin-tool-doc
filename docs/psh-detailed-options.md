@@ -773,8 +773,8 @@ $ percona-scheduler-admin --config-file=config.toml --update-mysql-version
 Combining –update-cluster with this option assigns the specified read
 weight to a node.
 
-The syntax for the arguments are: <IP_ADDRESS:PORT> and <New Weight>. The
-<IP_ADDRESS> format can be either Internet Protocol version 4 (IPv4)
+The syntax for the arguments are: `<IP_ADDRESS:PORT>` and `<New Weight>`. The
+`<IP_ADDRESS>` format can be either Internet Protocol version 4 (IPv4)
 or Internet Protocol version 6 (IPv6).
 
 ### update-read-weight example
@@ -842,8 +842,8 @@ $ percona-scheduler-admin --config-file=config.toml --update-cluster --update-re
 Combining this option with [update-cluster](#update-cluster)  assigns the
 specified write weight to a node.
 
-The syntax for the arguments are: <IP_ADDRESS:PORT> and <New Weight>. The
-<IP_ADDRESS> format can be either Internet Protocol version 4 (IPv4)
+The syntax for the arguments are: `<IP_ADDRESS:PORT>` and `<New Weight>`. The
+`<IP_ADDRESS>` format can be either Internet Protocol version 4 (IPv4)
 or Internet Protocol version 6 (IPv6).
 
 ### update-write-weight example
