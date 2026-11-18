@@ -15,5 +15,5 @@ mike
 mkdocs-print-site-plugin
 mkdocs-git-committers-plugin-2
 mkdocs-git-revision-date-plugin
-mkdocs-llmstxt>=0.5.1
-mkdocs-percona-llmstxt @ git+https://github.com/EvgeniyPatlan/mkdocs-percona-llmstxt@d52e840cd7ad171233eb98a4eb998e30fec5e19f  # v0.2.0
+mkdocs-llmstxt>=0.5.1,<0.6
+mkdocs-percona-llmstxt @ git+https://github.com/percona/mkdocs-percona-llmstxt@8dcddd265be6f56a7fbf6c7c6a8fb6135ca31f01  # v0.3.1
