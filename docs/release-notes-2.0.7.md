@@ -30,6 +30,6 @@ The proxysql-admin tool now supports MariaDB 10.4.
 
 * [PSQLADM-157](https://jira.percona.com/browse/PSQLADM-157): In some cases, the proxysql_status script used the cat command to display a file without checking if the file existed and was readable.
 
-* [PSQLADM-181](https://jira.percona.com/browse/PSQLADM-181): When run with `–update-cluster`, `–write-node` set to <node_name>, `proxysql-admin` now verifies that the writer nodes are not read-only.
+* [PSQLADM-181](https://jira.percona.com/browse/PSQLADM-181): When run with `–update-cluster`, `–write-node` set to `<node_name>`, `proxysql-admin` now verifies that the writer nodes are not read-only.
 
 *ProxySQL* is available under Open Source license GPLv3.
