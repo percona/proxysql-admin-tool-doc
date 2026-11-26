@@ -1,7 +1,7 @@
 # MkDocs base configuration that other conf files will inherit
 
 site_name: Percona ProxySQL admin tools
-site_description: Documentation
+site_description: "Percona ProxySQL admin tools: the Percona build of ProxySQL with proxysql-admin and percona-scheduler-handler for Percona XtraDB Cluster, with installation, configuration and reference"
 site_author: Percona LLC
 
 repo_name: percona/proxysql-admin-tool-doc
